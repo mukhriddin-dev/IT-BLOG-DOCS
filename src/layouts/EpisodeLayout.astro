@@ -5,6 +5,7 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import HeaderCard from "../components/headerCard/HeaderCard.astro";
 import astropodConfig from "../../.astropod/astropod.config.json";
 import "./style.css";
+import "../assets/fonts/WEB/css/clash-display.css";
 
 const { title, explicit, pubDate, cover, description, type, hashtags } =
   Astro.props;
@@ -28,8 +29,8 @@ const displayDate = dayjs(pubDate).format("ll");
     <article
       class="card prose min-w-full prose-img:mx-auto bg-base-100 shadow-md md:p-8 p-2 mt-12"
     >
-      <div class="rounded-2xl wr">
-        <div class="flex gap-x-3">
+      <div class="rounded-2xl wr custom-500">
+        <div class="flex gap-x-3 custom-500">
           <p
             class="flex text-xs cursor-pointer gap-x-2 px-2 border border-red-400 rounded-full"
           >
@@ -50,7 +51,7 @@ const displayDate = dayjs(pubDate).format("ll");
       <div>
         {
           hashtags?.map((item: any) => (
-            <p class="inline-block  rounded-full me-2 px-2 border border-lime-500 cursor-pointer hover:bg-lime-100 duration-150">
+            <p class="inline-block custom-600 rounded-full me-2 px-2 border border-lime-500 cursor-pointer hover:bg-lime-100 duration-150">
               <i class="bi bi-hash text-lg" />
               {item}
             </p>
