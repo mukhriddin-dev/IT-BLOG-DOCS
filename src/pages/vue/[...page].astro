@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HorizontalCard from "../../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import astropodConfig from "../../../.astropod/astropod.config.json";
+import HeaderCard from "../../components/headerCard/HeaderCard.astro";
+import AudioPlayer from "../../components/audioPlayer.astro";
+import PlainTextRenderer from "marked-plaintext";
+import { marked } from "marked";
+import Pagination from "../../components/pagination.astro";
+
+const renderer = new PlainTextRenderer() as any;
+export async function getStaticPaths({ paginate }) {
+  const blogs = await getCollection("vue");
+  blogs.sort(
+    (a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+  return paginate(blogs, { pageSize: astropodConfig.pageSize });
+}
+const { page } = Astro.props as any;
+---
+
+<BaseLayout>
+  <HeaderCard title={astropodConfig.name} subtitle={astropodConfig.author} />
+
+  <div class="card min-w-full bg-base-100 shadow-md p-3 pb-3 mt-12">
+    {
+      page.data.map((blogs: any, index: any) => (
+        <HorizontalCard
+          title={blogs.data.title}
+          cover={blogs.data.cover}
+          desc={marked.parse(blogs.body.slice(0, 500), { renderer: renderer })}
+          url={"/vue/" + blogs.slug}
+          pubDate={blogs.data.pubDate}
+          hashtags={blogs.data.hashtags}
+          postType={blogs.data.type}
+          id={"card-" + index}
+        />
+      ))
+    }
+  </div>
+  {(page.url.next || page.url.prev) && <Pagination page={page} slug="vue" />}
+</BaseLayout>
+
+<AudioPlayer />

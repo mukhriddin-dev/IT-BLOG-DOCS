@@ -1,0 +1,337 @@
+logo_url: "/cmsBanner.svg"
+backend:
+  name: "git-gateway"
+  branch: "main"
+collections:
+  - name: "blogs"
+    label: "Bloglar"
+    label_singular: "blogs"
+    folder: "src/content/blogs"
+    sortable_fields: ["title", "cover", "pubDate", "body", "id", "type", "hashtags"]
+    create: true
+    delete: true
+    fields:
+      - name: "title"
+        widget: "string"
+        label: "Sarlavha"
+      - name: "pubDate"
+        widget: "date"
+        label: "Chop etilgan vaqt"
+        format: "DD MMM YYYY"
+      - name: "body"
+        widget: "markdown"
+        label: "Maqola asosi"
+        required: false
+      - name: "cover"
+        widget: "image"
+        label: "Asosiy rasmi"
+        required: false
+      - name: "id"
+        widget: "number"
+        label: "Post raqami"
+        required: false
+      - name: "type"
+        widget: "select"
+        label: "Post turi"
+        default: "blog"
+        options:
+          - { label: "News", value: "news" }
+          - { label: "Vue", value: "vue" }
+          - { label: "Nuxt", value: "nuxt" }
+          - { label: "TypeScript", value: "typescript" }
+          - { label: "JavaScript", value: "javascript" }
+          - { label: "CSS", value: "css" }
+          - { label: "React", value: "react" }
+          - { label: "Next", value: "next" }
+          - { label: "HTML", value: "html" }
+          - { label: "NodeJS", value: "nodejs" }
+          - { label: "Kutubxonalar", value: "libraries" }
+          - { label: "Blog", value: "blog" }
+      - name: "hashtags"
+        widget: "list"
+        label: "Hashteglar"
+        required: false
+        hint: "Post uchun mos hashtaglarni kiriting"
+        field:
+          widget: "string"
+          name: "hashtag"
+
+  # Vue.js kolleksiyasi
+  - name: "vue"
+    label: "Vue.js"
+    label_singular: "vue"
+    folder: "src/content/vue"
+    sortable_fields: ["title", "cover", "pubDate", "body", "id", "type", "hashtags"]
+    create: true
+    delete: true
+    fields:
+      - name: "title"
+        widget: "string"
+        label: "Sarlavha"
+      - name: "pubDate"
+        widget: "date"
+        label: "Chop etilgan vaqt"
+        format: "DD MMM YYYY"
+      - name: "body"
+        widget: "markdown"
+        label: "Maqola asosi"
+        required: false
+      - name: "cover"
+        widget: "image"
+        label: "Asosiy rasmi"
+        required: false
+      - name: "id"
+        widget: "number"
+        label: "Post raqami"
+        required: false
+      - name: "type"
+        widget: "select"
+        label: "Post turi"
+        default: "vue"
+        options:
+          - { label: "Yangiliklar", value: "news" }
+          - { label: "Vue", value: "vue" }
+          - { label: "Nuxt", value: "nuxt" }
+          - { label: "TypeScript", value: "typescript" }
+          - { label: "JavaScript", value: "javascript" }
+          - { label: "CSS", value: "css" }
+          - { label: "React", value: "react" }
+          - { label: "Next", value: "next" }
+          - { label: "HTML", value: "html" }
+          - { label: "NodeJS", value: "nodejs" }
+          - { label: "Kutubxonalar", value: "libraries" }
+          - { label: "Blog", value: "blog" }
+      - name: "hashtags"
+        widget: "list"
+        label: "Hashteglar"
+        required: false
+        hint: "Post uchun mos hashtaglarni kiriting"
+        field:
+          widget: "string"
+          name: "hashtag"
+
+  # React.js kolleksiyasi
+  - name: "react"
+    label: "React.js"
+    label_singular: "react"
+    folder: "src/content/react"
+    sortable_fields: ["title", "cover", "pubDate", "body", "id", "type", "hashtags"]
+    create: true
+    delete: true
+    fields:
+      - name: "title"
+        widget: "string"
+        label: "Sarlavha"
+      - name: "pubDate"
+        widget: "date"
+        label: "Chop etilgan vaqt"
+        format: "DD MMM YYYY"
+      - name: "body"
+        widget: "markdown"
+        label: "Maqola asosi"
+        required: false
+      - name: "cover"
+        widget: "image"
+        label: "Asosiy rasmi"
+        required: false
+      - name: "id"
+        widget: "number"
+        label: "Post raqami"
+        required: false
+      - name: "type"
+        widget: "select"
+        label: "Post turi"
+        default: "react"
+        options:
+          - { label: "Yangiliklar", value: "news" }
+          - { label: "Vue", value: "vue" }
+          - { label: "Nuxt", value: "nuxt" }
+          - { label: "TypeScript", value: "typescript" }
+          - { label: "JavaScript", value: "javascript" }
+          - { label: "CSS", value: "css" }
+          - { label: "React", value: "react" }
+          - { label: "Next", value: "next" }
+          - { label: "HTML", value: "html" }
+          - { label: "NodeJS", value: "nodejs" }
+          - { label: "Kutubxonalar", value: "libraries" }
+          - { label: "Blog", value: "blog" }
+      - name: "hashtags"
+        widget: "list"
+        label: "Hashteglar"
+        required: false
+        hint: "Post uchun mos hashtaglarni kiriting"
+        field:
+          widget: "string"
+          name: "hashtag"
+          
+          
+          
+  - name: "english"
+  label: "Ingliz tili"
+  label_singular: "english"
+  folder: "src/content/english"
+  sortable_fields: ["title", "cover", "pubDate", "body", "id", "type", "hashtags"]
+  create: true
+  delete: true
+  fields:
+    - name: "title"
+      widget: "string"
+      label: "Sarlavha"
+    - name: "pubDate"
+      widget: "date"
+      label: "Chop etilgan vaqt"
+      format: "DD MMM YYYY"
+    - name: "body"
+      widget: "markdown"
+      label: "Maqola asosi"
+      required: false
+    - name: "cover"
+      widget: "image"
+      label: "Asosiy rasmi"
+      required: false
+    - name: "id"
+      widget: "number"
+      label: "Post raqami"
+      required: false
+    - name: "type"
+      widget: "select"
+      label: "Post turi"
+      default: "english"
+      options:
+        - { label: "Yangiliklar", value: "news" }
+        - { label: "Vue", value: "vue" }
+        - { label: "Nuxt", value: "nuxt" }
+        - { label: "TypeScript", value: "typescript" }
+        - { label: "JavaScript", value: "javascript" }
+        - { label: "CSS", value: "css" }
+        - { label: "React", value: "react" }
+        - { label: "Next", value: "next" }
+        - { label: "HTML", value: "html" }
+        - { label: "NodeJS", value: "nodejs" }
+        - { label: "Kutubxonalar", value: "libraries" }
+        - { label: "Blog", value: "blog" }
+        - { label: "English", value: "english" }
+    - name: "hashtags"
+      widget: "list"
+      label: "Hashteglar"
+      required: false
+      hint: "Post uchun mos hashtaglarni kiriting"
+      field:
+        widget: "string"
+        name: "hashtag"
+
+
+  # Settings kolleksiyasi
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "general"
+        label: "General"
+        file: ".astropod/astropod.config.json"
+        fields:
+          - name: "name"
+            widget: "string"
+            label: "Name"
+          - name: "description"
+            widget: "text"
+            label: "Description"
+          - name: "link"
+            widget: "string"
+            label: "Link"
+          - name: "cover"
+            widget: "image"
+            label: "Cover | Recomended Size 1400x1400"
+          - name: "banner"
+            widget: "image"
+            label: "Banner | Recomended Size 960x320"
+          - name: "favicon"
+            widget: "image"
+            label: "Favicon"
+          - name: "author"
+            widget: "string"
+            label: "Author"
+          - name: "email"
+            widget: "string"
+            label: "Email"
+            pattern: ["^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$", "Please enter a valid email address"]
+          - name: "owner"
+            widget: "string"
+            label: "Owner"
+            required: false
+          - name: "copyright"
+            widget: "string"
+            label: "Copyright"
+            required: false
+          - name: "language"
+            widget: "select"
+            label: "Language"
+            default: "en"
+            options: languageList
+          - name: "category"
+            widget: "select"
+            label: "Category"
+            multiple: true
+            options: podcastMainCategories
+            max: 3
+          - name: "explicit"
+            widget: "boolean"
+            label: "Explicit"
+            default: false
+          - name: "theme"
+            widget: "select"
+            label: "Web Site Theme"
+            options: themes
+          - name: "pageSize"
+            widget: "number"
+            label: "Episodes per page"
+          - name: "feedSize"
+            widget: "number"
+            label: "Feed Size (Empty for include all episodes)"
+            required: false
+          - name: "fundingUrl"
+            widget: "string"
+            label: "Funding Url"
+            required: false
+          - name: "fundingText"
+            widget: "string"
+            label: "Funding Text"
+            required: false
+      - name: "listenOn"
+        label: "Listen On"
+        file: ".astropod/astropod.config.json"
+        fields:
+          - name: "listenOn"
+            widget: "list"
+            label: "Listen On"
+            fields:
+              - name: "name"
+                widget: "string"
+                label: "Name"
+              - name: "link"
+                widget: "string"
+                label: "Link"
+                pattern: ["^(https?|ftp)://[^s/$.?#].[^s]*$", "Please enter a valid URL"]
+              - name: "icon"
+                widget: "image"
+                label: "Icon"
+
+      - name: "socialLinks"
+        label: "Social Links"
+        file: ".astropod/astropod.config.json"
+        fields:
+          - name: "socialLinks"
+            widget: "list"
+            label: "Social Links"
+            fields:
+              - name: "name"
+                widget: "string"
+                label: "Name"
+              - name: "link"
+                widget: "string"
+                label: "Link"
+                pattern: ["^(https?|ftp)://[^s/$.?#].[^s]*$", "Please enter a valid URL"]
+              - name: "icon"
+                widget: "image"
+                label: "Icon"
+
+disable_identity_widget_injection: true

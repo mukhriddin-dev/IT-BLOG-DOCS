@@ -1,0 +1,48 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import type { blogSchema } from "../../content/config";
+import BlogsLayout from "../../layouts/EpisodeLayout.astro";
+import AudioPlayer from "../../components/audioPlayer.astro";
+import PlainTextRenderer from "marked-plaintext";
+import { marked } from "marked";
+
+export async function getStaticPaths() {
+  const postEntries = await getCollection("english");
+  return postEntries.map((entry: any) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"blogs">;
+}
+
+const { entry } = Astro.props as Props;
+const blogs: blogSchema = entry.data;
+const { Content } = await entry.render();
+const renderer = new PlainTextRenderer() as any;
+const description = marked
+  .parse(entry.body.slice(0, 500), { renderer: renderer })
+  .slice(0, 200);
+---
+
+<BlogsLayout
+  title={blogs.title}
+  pubDate={blogs.pubDate}
+  hashtags={blogs.hashtags}
+  type={blogs.type}
+  cover={blogs.cover}
+  description={description}
+  cover={blogs.cover}
+  id={blogs.id}
+>
+  <Content />
+</BlogsLayout>
+
+<AudioPlayer />
+
+<script>
+  const footer = document.querySelector(".footer > div");
+  footer?.classList.add("pb-24");
+</script>

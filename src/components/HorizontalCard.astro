@@ -1,0 +1,59 @@
+---
+const { title, cover, desc, url, id, pubDate, hashtags, postType } =
+  Astro.props;
+
+import astropodConfig from "../../.astropod/astropod.config.json";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+dayjs.extend(localizedFormat);
+
+let cover_url = cover ? cover : astropodConfig.cover;
+const displayDate = dayjs(pubDate).format("ll");
+---
+
+<div class="episode-card">
+  <div class="flex items-center gap-x-4">
+    <a href={url} class="min-w-fit">
+      <img
+        src={cover_url}
+        alt={title}
+        class="shadow-lg object-cover rounded-md w-[5.5rem] h-[5.5rem] md:w-32 md:h-32"
+      />
+    </a>
+
+    <div class="grow w-full overflow-auto">
+      <a href={url}>
+        <h2 class="md:text-xl text-sm font-semibold truncate">
+          {title}
+        </h2>
+        <p class="text-xs font-medium opacity-60">
+          {displayDate}
+        </p>
+        <p class="my-1 text-xs md:text-sm line-clamp-2">{desc}</p>
+      </a>
+
+      <ul>
+        {
+          hashtags?.map((item: any) => (
+            <span class="bg-gray-100 badge text-gray-800 text-xs font-medium me-1 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+              {item}
+            </span>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <hr class="my-3 border-base-content opacity-[.15]" />
+</div>
+
+<style>
+  .episode-card:last-child hr {
+    display: none;
+  }
+
+  .badge {
+    border: 1px solid rgba(26, 171, 0, 0.219);
+    cursor: pointer;
+    border-radius: 30px;
+  }
+</style>
