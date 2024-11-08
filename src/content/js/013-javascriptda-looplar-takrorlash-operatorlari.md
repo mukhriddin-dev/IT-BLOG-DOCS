@@ -14,6 +14,7 @@ type: javascript
 postType: full
 episode: 13
 ---
+
 JavaScriptda **looplar (takrorlash operatorlari)** biror kod blokini bir necha marta bajarish uchun ishlatiladi. JavaScriptda ko'p turdagi looplar mavjud, ularning har biri turli holatlarda ishlatiladi. Quyida asosiy looplar haqida ko'rib chiqamiz.
 
 ![khodieff.uz js loops](https://i.ytimg.com/vi/Kn06785pkJg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD8Db3xoszD_LWmoLN5HYZWAPEZHA "khodieff.uz js loops")
@@ -28,7 +29,7 @@ JavaScriptda **looplar (takrorlash operatorlari)** biror kod blokini bir necha m
 
 ```javascript
 while (shart) {
-    // Shart to'g'ri bo'lsa, bu kod bloklari takror-takror bajariladi
+  // Shart to'g'ri bo'lsa, bu kod bloklari takror-takror bajariladi
 }
 ```
 
@@ -38,8 +39,8 @@ while (shart) {
 let count = 0;
 
 while (count < 5) {
-    console.log(count);
-    count++;
+  console.log(count);
+  count++;
 }
 // 0, 1, 2, 3, 4 ni chiqaradi
 ```
@@ -56,7 +57,7 @@ Bu misolda `count` 5 dan kichik bo'lgunga qadar loop ishlaydi.
 
 ```javascript
 do {
-    // Kod bloklari kamida bir marta bajariladi
+  // Kod bloklari kamida bir marta bajariladi
 } while (shart);
 ```
 
@@ -66,8 +67,8 @@ do {
 let count = 0;
 
 do {
-    console.log(count);
-    count++;
+  console.log(count);
+  count++;
 } while (count < 5);
 // 0, 1, 2, 3, 4 ni chiqaradi
 ```
@@ -84,7 +85,7 @@ do {
 
 ```javascript
 for (boshlanish; shart; update) {
-    // Kod bloklari shart to'g'ri bo'lganda bajariladi
+  // Kod bloklari shart to'g'ri bo'lganda bajariladi
 }
 ```
 
@@ -92,7 +93,7 @@ for (boshlanish; shart; update) {
 
 ```javascript
 for (let i = 0; i < 5; i++) {
-    console.log(i);
+  console.log(i);
 }
 // 0, 1, 2, 3, 4 ni chiqaradi
 ```
@@ -107,7 +108,7 @@ Bu misolda, `i` 0 dan boshlanadi va har safar 1 ga oshadi (`i++`), loop `i` 5 da
 
 ```javascript
 for (let element of iterable) {
-    // Har bir element uchun kod bloklari bajariladi
+  // Har bir element uchun kod bloklari bajariladi
 }
 ```
 
@@ -117,7 +118,7 @@ for (let element of iterable) {
 let array = [10, 20, 30, 40];
 
 for (let value of array) {
-    console.log(value);
+  console.log(value);
 }
 // 10, 20, 30, 40 ni chiqaradi
 ```
@@ -132,7 +133,7 @@ Bu misolda, `for...of` loopi massivning har bir elementini oladi va uni `value` 
 
 ```javascript
 for (let key in object) {
-    // Har bir key uchun kod bloklari bajariladi
+  // Har bir key uchun kod bloklari bajariladi
 }
 ```
 
@@ -140,13 +141,13 @@ for (let key in object) {
 
 ```javascript
 let person = {
-    name: "Alice",
-    age: 25,
-    city: "New York"
+  name: "Alice",
+  age: 25,
+  city: "New York",
 };
 
 for (let key in person) {
-    console.log(key + ": " + person[key]);
+  console.log(key + ": " + person[key]);
 }
 // "name: Alice", "age: 25", "city: New York" ni chiqaradi
 ```
@@ -169,10 +170,10 @@ break;
 
 ```javascript
 for (let i = 0; i < 10; i++) {
-    if (i === 5) {
-        break; // i 5 ga teng bo'lganda loopni to'xtatadi
-    }
-    console.log(i);
+  if (i === 5) {
+    break; // i 5 ga teng bo'lganda loopni to'xtatadi
+  }
+  console.log(i);
 }
 // 0, 1, 2, 3, 4 ni chiqaradi
 ```
@@ -193,10 +194,10 @@ continue;
 
 ```javascript
 for (let i = 0; i < 10; i++) {
-    if (i % 2 === 0) {
-        continue; // i juft bo'lsa, keyingi iteratsiyaga o'tadi
-    }
-    console.log(i);
+  if (i % 2 === 0) {
+    continue; // i juft bo'lsa, keyingi iteratsiyaga o'tadi
+  }
+  console.log(i);
 }
 // 1, 3, 5, 7, 9 ni chiqaradi
 ```
@@ -211,15 +212,15 @@ Bu misolda, `i` juft bo'lganda `continue` operatori keyingi iteratsiyaga o'tadi,
 
 ```javascript
 for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5; j++) {
-        if (j === 2) {
-            continue; // ichki loopda j = 2 bo'lsa, bu iteratsiyani o'tkazadi
-        }
-        if (j === 4) {
-            break; // ichki loopda j = 4 bo'lsa, ichki loopni to'xtatadi
-        }
-        console.log(`i: ${i}, j: ${j}`);
+  for (let j = 0; j < 5; j++) {
+    if (j === 2) {
+      continue; // ichki loopda j = 2 bo'lsa, bu iteratsiyani o'tkazadi
     }
+    if (j === 4) {
+      break; // ichki loopda j = 4 bo'lsa, ichki loopni to'xtatadi
+    }
+    console.log(`i: ${i}, j: ${j}`);
+  }
 }
 // i: 0, j: 0
 // i: 0, j: 1
@@ -237,11 +238,11 @@ Bu misolda `j` 2 ga teng bo'lganda, `continue` operatori ichki loopdagi kodni o'
 
 ### **Xulosa:**
 
-* **`while` loop** - Shart to'g'ri ekan, kodni takrorlaydi.
-* **`do...while` loop** - Kodni kamida bir marta bajaradi va keyin shartni tekshiradi.
-* **`for` loop** - Belgilangan sonli takrorlashlar uchun ishlatiladi.
-* **`for...of` loop** - Iterable obyektlar (massivlar, strings, Map, Set) orqali takrorlash uchun ishlatiladi.
-* **`for...in` loop** - Obyektning kalitlarini (keys) yoki massiv indekslarini iteratsiya qiladi.
-* **`break`** operatori loop yoki switch-case blokini to'xtatish uchun ishlatiladi.
-* **`continue`** operatori loop ichidagi qolgan kodni o'tkazib yuboradi va keyingi iteratsiyaga o'tadi.
+- **`while` loop** - Shart to'g'ri ekan, kodni takrorlaydi.
+- **`do...while` loop** - Kodni kamida bir marta bajaradi va keyin shartni tekshiradi.
+- **`for` loop** - Belgilangan sonli takrorlashlar uchun ishlatiladi.
+- **`for...of` loop** - Iterable obyektlar (massivlar, strings, Map, Set) orqali takrorlash uchun ishlatiladi.
+- **`for...in` loop** - Obyektning kalitlarini (keys) yoki massiv indekslarini iteratsiya qiladi.
+- **`break`** operatori loop yoki switch-case blokini to'xtatish uchun ishlatiladi.
+- **`continue`** operatori loop ichidagi qolgan kodni o'tkazib yuboradi va keyingi iteratsiyaga o'tadi.
   Ushbu operatorlar looplarni yanada samarali boshqarish va kodni o'qish oson qilish uchun juda foydalidir.

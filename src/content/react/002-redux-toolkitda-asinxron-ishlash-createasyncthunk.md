@@ -16,6 +16,7 @@ type: libraries
 postType: full
 episode: 3
 ---
+
 Redux Toolkit'dagi asinxron ishlashi uchun `createAsyncThunk` funksiyasidan foydalanamiz. Bu funksiya API chaqiruvlari yoki boshqa asinxron vazifalarni boshqarish uchun juda qulay. Quyida bosqichma-bosqich asinxron thunk yaratish va undan foydalanishni ko‘rib chiqamiz.
 
 ![khodieff.uz](https://miro.medium.com/v2/resize:fit:1358/1*AyYYoeDMTTK_7J7aCeaIUA.gif "khodieff.uz")
@@ -32,42 +33,44 @@ Misol uchun, biz foydalanuvchilar ma'lumotini API orqali yuklaydigan thunk yarat
 **`userSlice.js` faylida:**
 
 ```js
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // 1. Asinxron thunk yaratish
 export const fetchUserById = createAsyncThunk(
-  'users/fetchById',
+  "users/fetchById",
   async (userId) => {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${userId}`,
+    );
     return response.json();
-  }
+  },
 );
 
 // 2. Slice yaratish
 const userSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState: {
     user: null,
-    status: 'idle', // idle, loading, succeeded, failed
-    error: null
+    status: "idle", // idle, loading, succeeded, failed
+    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
     // pending holatida
     builder.addCase(fetchUserById.pending, (state) => {
-      state.status = 'loading';
+      state.status = "loading";
     });
     // muvaffaqiyatli holatda
     builder.addCase(fetchUserById.fulfilled, (state, action) => {
-      state.status = 'succeeded';
+      state.status = "succeeded";
       state.user = action.payload;
     });
     // xato holatida
     builder.addCase(fetchUserById.rejected, (state, action) => {
-      state.status = 'failed';
+      state.status = "failed";
       state.error = action.error.message;
     });
-  }
+  },
 });
 
 export default userSlice.reducer;
@@ -75,9 +78,9 @@ export default userSlice.reducer;
 
 Yuqoridagi kodda biz `fetchUserById` nomli thunk funksiyasini yaratdik. Bu funksiya `userId` parametri bilan API'ga so‘rov yuboradi va javobni qaytaradi.
 
-* **pending**: So‘rov yuborilganida holatni `loading` holatiga o‘zgartiramiz.
-* **fulfilled**: So‘rov muvaffaqiyatli bajarilganda `succeeded` holatini va foydalanuvchi ma'lumotlarini saqlaymiz.
-* **rejected**: Xatolik yuz berganda esa `failed` holatini o‘rnatamiz va xatoni saqlaymiz.
+- **pending**: So‘rov yuborilganida holatni `loading` holatiga o‘zgartiramiz.
+- **fulfilled**: So‘rov muvaffaqiyatli bajarilganda `succeeded` holatini va foydalanuvchi ma'lumotlarini saqlaymiz.
+- **rejected**: Xatolik yuz berganda esa `failed` holatini o‘rnatamiz va xatoni saqlaymiz.
 
 ### 2. Redux storeni sozlash
 
@@ -86,8 +89,8 @@ Redux do‘konida `userSlice`ni qo‘shishimiz kerak:
 **`store.js` faylida:**
 
 ```js
-import { configureStore } from '@reduxjs/toolkit';
-import userReducer from './userSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import userReducer from "./userSlice";
 
 const store = configureStore({
   reducer: {
@@ -107,9 +110,9 @@ Endi foydalanuvchi ma'lumotlarini yuklash va ekranga chiqarish uchun `fetchUserB
 **`User.js` faylida:**
 
 ```js
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchUserById } from './userSlice';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUserById } from "./userSlice";
 
 function User({ userId }) {
   const dispatch = useDispatch();
@@ -123,17 +126,17 @@ function User({ userId }) {
   }, [dispatch, userId]);
 
   // 2. Holatga qarab komponentni render qilish
-  if (status === 'loading') {
+  if (status === "loading") {
     return <p>Loading...</p>;
   }
 
-  if (status === 'failed') {
+  if (status === "failed") {
     return <p>Error: {error}</p>;
   }
 
   return (
     <div>
-      {status === 'succeeded' && user && (
+      {status === "succeeded" && user && (
         <div>
           <h2>{user.name}</h2>
           <p>{user.email}</p>
@@ -148,9 +151,9 @@ export default User;
 
 Bu yerda:
 
-* `useEffect` hook'idan foydalanib, komponent yuklanganda `dispatch(fetchUserById(userId))` chaqiramiz.
-* `useSelector` yordamida Redux do‘konidan foydalanuvchi ma'lumotlari, yuklanish holati (`status`) va xatolik (`error`)ni olamiz.
-* Holatga qarab, foydalanuvchi ma'lumotlari yuklanayotgan bo‘lsa `Loading...`, muvaffaqiyatli yuklangan bo‘lsa foydalanuvchi ma'lumotlarini, xato bo‘lsa esa xatolikni chiqaramiz.
+- `useEffect` hook'idan foydalanib, komponent yuklanganda `dispatch(fetchUserById(userId))` chaqiramiz.
+- `useSelector` yordamida Redux do‘konidan foydalanuvchi ma'lumotlari, yuklanish holati (`status`) va xatolik (`error`)ni olamiz.
+- Holatga qarab, foydalanuvchi ma'lumotlari yuklanayotgan bo‘lsa `Loading...`, muvaffaqiyatli yuklangan bo‘lsa foydalanuvchi ma'lumotlarini, xato bo‘lsa esa xatolikni chiqaramiz.
 
 ### 4. Asinxron ishlar bilan ishlash natijasi
 

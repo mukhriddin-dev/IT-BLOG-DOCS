@@ -16,11 +16,13 @@ type: vue
 postType: full
 episode: 3
 ---
+
 Vue.js-da `script setup` sintaksisi Vue 3.2 versiyasidan boshlab qo'shilgan yangi sintaksis variantidir va `Composition API`-ni ishlatishni juda osonlashtiradi. Bu sintaksis yordamida siz Vue komponentlarini yozish uchun ancha qisqa va tushunarli kod yozishingiz mumkin. Mana asosiy nuqtalari:
 
 ### `script setup` Sintaksisi
 
 1. **Asosiy Struktur**:
+
    ```vue
    <template>
      <!-- Shablon  HTML kodi -->
@@ -31,48 +33,53 @@ Vue.js-da `script setup` sintaksisi Vue 3.2 versiyasidan boshlab qo'shilgan yang
    </script>
 
    <style>
-     /* Stil kodi */
+   /* Stil kodi */
    </style>
    ```
 
 2. **O'zgaruvchilar va Funksiyalar**:
+
    - `script setup` blokida siz to'g'ridan-to'g'ri o'zgaruvchilar va funksiyalarni aniqlashingiz mumkin va ular avtomatik ravishda shablon bilan bog'lanadi.
    - Misol:
+
      ```vue
      <template>
        <p>{{ message }}</p>
      </template>
 
      <script setup>
-     import { ref } from 'vue';
+     import { ref } from "vue";
 
-     const message = ref('Salom, dunyo!');
+     const message = ref("Salom, dunyo!");
      </script>
      ```
 
 3. **Props va Emits**:
+
    - `props` va `emits` ni aniqlash juda oson.
    - Props:
      ```vue
      <script setup>
      defineProps({
-       msg: String
+       msg: String,
      });
      </script>
      ```
    - Emits:
      ```vue
      <script setup>
-     const emit = defineEmits(['update']);
+     const emit = defineEmits(["update"]);
      </script>
      ```
 
 4. **Komponentlar**:
+
    - Mahalliy komponentlarni `script setup` ichida import qilib, bevosita ishlatishingiz mumkin.
    - Misol:
+
      ```vue
      <script setup>
-     import MyComponent from './MyComponent.vue';
+     import MyComponent from "./MyComponent.vue";
      </script>
 
      <template>
@@ -81,11 +88,13 @@ Vue.js-da `script setup` sintaksisi Vue 3.2 versiyasidan boshlab qo'shilgan yang
      ```
 
 5. **Reaktivlik**:
+
    - `ref` va `reactive` kabi `Composition API` funksiyalarini to'g'ridan-to'g'ri ishlatishingiz mumkin.
    - Misol:
+
      ```vue
      <script setup>
-     import { ref } from 'vue';
+     import { ref } from "vue";
 
      const count = ref(0);
 
@@ -101,6 +110,7 @@ Vue.js-da `script setup` sintaksisi Vue 3.2 versiyasidan boshlab qo'shilgan yang
      ```
 
 ### Afzalliklari:
+
 - **Qisqaroq va Tushunarli Kod**: Kodni qisqartiradi va ko'proq intuitiv qiladi.
 - **Soddaligi**: `Composition API` va `Props` ni aniqlash osonlashadi.
 - **Kodni Tashkillashtirish**: O'zgaruvchilar va funksiyalarni soddaroq qilib tashkil qilish imkonini beradi.

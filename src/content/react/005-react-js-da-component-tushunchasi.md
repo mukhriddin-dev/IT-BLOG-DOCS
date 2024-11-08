@@ -15,9 +15,11 @@ type: react
 postType: full
 episode: 5
 ---
+
 React komponentlari — React ilovalarining asosiy qurilish bloklari bo‘lib, ular foydalanuvchi interfeysini yaratishda ishlatiladi. Har bir komponent o‘zining UI qismini va mantiqiy qismini o‘z ichiga oladi. Quyida React komponentining qanday tuzilishi va ishlashini umummiy o'rganamiz.
 
 ### 1. **Komponent Nima?**
+
 React komponenti — bu JavaScript funksiyasi yoki klass bo‘lib, UI (foydalanuvchi interfeysi) elementlarini yaratish uchun ishlatiladi. Har bir komponent o‘zining UI qismini tavsiflaydi va interaktivlikni boshqaradi.
 
 ### 2. **Komponent Turlari**
@@ -31,7 +33,7 @@ React komponenti — bu JavaScript funksiyasi yoki klass bo‘lib, UI (foydalanu
 Funktsional komponentning oddiy namunasi:
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 function MyComponent(props) {
   return (
@@ -54,7 +56,7 @@ export default MyComponent;
 Class komponentining oddiy namunasi:
 
 ```jsx
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class MyComponent extends Component {
   render() {

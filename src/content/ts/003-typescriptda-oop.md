@@ -15,6 +15,7 @@ type: typescript
 postType: full
 episode: 3
 ---
+
 TypeScriptda obyektga yo‘naltirilgan dasturlash (OOP) konseptsiyalari JavaScriptga asoslangan, lekin TypeScript bu konseptsiyalarni yanada kuchli qilib beradi. TypeScript sizga klasslar, meros olish, interfeyslar, inkapsulyatsiya, abstraktsiya kabi OOP prinsiplarini qo‘llab-quvvatlaydi.
 
 ![khodieff.uz](https://i.ytimg.com/vi/IeADHs5eQtI/maxresdefault.jpg "khodieff.uz")
@@ -41,7 +42,7 @@ class Animal {
 }
 
 const dog = new Animal("Dog", 3);
-dog.makeSound();  // "Dog is making a sound."
+dog.makeSound(); // "Dog is making a sound."
 ```
 
 Bu yerda `Animal` nomli klass yaratilgan, uning `name` va `age` xususiyatlari hamda `makeSound` metodi mavjud. `constructor` metodi klassdan yangi obyekt yaratishda chaqiriladi.
@@ -65,8 +66,8 @@ class Dog extends Animal {
 }
 
 const myDog = new Dog("Buddy", 2, "Golden Retriever");
-myDog.makeSound();  // "Buddy is making a sound."
-myDog.bark();       // "Buddy is barking."
+myDog.makeSound(); // "Buddy is making a sound."
+myDog.bark(); // "Buddy is barking."
 ```
 
 Bu misolda `Dog` klassi `Animal` klassidan meros oladi. `super()` metodi orqali ota-klassning konstruktoriga murojaat qilinadi. `Dog` klassi qo‘shimcha `bark` metodiga va `breed` xususiyatiga ega.
@@ -75,9 +76,9 @@ Bu misolda `Dog` klassi `Animal` klassidan meros oladi. `super()` metodi orqali 
 
 Inkapsulyatsiya orqali klassning xususiyatlari va metodlarini tashqi kirishdan himoya qilish mumkin. TypeScriptda bu `private`, `protected`, va `public` kalit so‘zlari bilan amalga oshiriladi.
 
-* **`public`**: Xususiyat yoki metod hamma uchun ochiq (default).
-* **`private`**: Xususiyat yoki metod faqat klass ichida ko‘rinadi.
-* **`protected`**: Xususiyat yoki metod faqat klass va uning merosxo‘rlari uchun ochiq.
+- **`public`**: Xususiyat yoki metod hamma uchun ochiq (default).
+- **`private`**: Xususiyat yoki metod faqat klass ichida ko‘rinadi.
+- **`protected`**: Xususiyat yoki metod faqat klass va uning merosxo‘rlari uchun ochiq.
 
 ```typescript
 class Car {
@@ -95,7 +96,7 @@ class Car {
 }
 
 const myCar = new Car("Toyota", "Corolla");
-console.log(myCar.getDetails());  // "Toyota Corolla"
+console.log(myCar.getDetails()); // "Toyota Corolla"
 // console.log(myCar.brand);  // Xato: 'brand' private
 ```
 
@@ -127,7 +128,7 @@ class Car implements Vehicle {
 }
 
 const myCar = new Car("Toyota", "Corolla");
-console.log(myCar.getDetails());  // "Toyota Corolla"
+console.log(myCar.getDetails()); // "Toyota Corolla"
 ```
 
 Bu misolda `Vehicle` interfeysi `brand`, `model`, va `getDetails` xususiyatlarini aniqlaydi. `Car` klassi esa bu interfeysni amalga oshiradi (`implements` kalit so‘zi orqali) va barcha xususiyatlar va metodlarni amalga oshiradi.
@@ -159,8 +160,8 @@ class Circle extends Shape {
 }
 
 const circle = new Circle(5);
-console.log(circle.area());      // 78.53981633974483
-console.log(circle.describe());  // "This is a shape."
+console.log(circle.area()); // 78.53981633974483
+console.log(circle.describe()); // "This is a shape."
 ```
 
 Bu misolda `Shape` abstrakt klassi yaratilgan. Uning `area` metodi abstrakt bo‘lib, u merosxo‘r klassda amalga oshirilishi kerak. `Circle` klassi `Shape`dan meros olib, `area` metodini amalga oshiradi.
@@ -187,7 +188,7 @@ class Rectangle extends Shape {
 
 const shapes: Shape[] = [new Circle(5), new Rectangle(10, 20)];
 
-shapes.forEach(shape => {
+shapes.forEach((shape) => {
   console.log(shape.area());
 });
 ```

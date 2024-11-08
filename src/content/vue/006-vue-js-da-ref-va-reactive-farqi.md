@@ -16,6 +16,7 @@ type: vue
 postType: full
 episode: 6
 ---
+
 **Vue.js-da**`ref` va `reactive` hook-larini tanlashda qaysi biri qulayroq ekanligini aniqlashda, ularning farqlarini va qanday holatlarda foydalanishni tushunish kerak . Har ikkala hook ham reaktiv ma'lumotlar yaratish uchun ishlatiladi, lekin ularning ishlash usuli va qo'llanilishi jichcha farq qiladi.
 
 ### `ref`
@@ -29,7 +30,7 @@ episode: 6
 #### Misol
 
 ```javascript
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const count = ref(0);
 count.value++; // Qiymatni oshirish
@@ -45,35 +46,37 @@ count.value++; // Qiymatni oshirish
 #### Misol
 
 ```javascript
-import { reactive } from 'vue';
+import { reactive } from "vue";
 
 const state = reactive({
   count: 0,
-  name: 'Vue'
+  name: "Vue",
 });
 state.count++; // Qiymatni oshirish
-state.name = 'Vue 3'; // Xususiyatni o'zgartirish
+state.name = "Vue 3"; // Xususiyatni o'zgartirish
 ```
 
 ### `ref` va `reactive` farqlari
 
 1. **Qiymat turi**:
 
-   * `ref` oddiy qiymatlar uchun mos va `.value` orqali ularga kiriladi.
-   * `reactive` complex holatga ega object yoki array uchun mos va to'g'ridan-to'g'ri xususiyatlarga kiriladi.
+   - `ref` oddiy qiymatlar uchun mos va `.value` orqali ularga kiriladi.
+   - `reactive` complex holatga ega object yoki array uchun mos va to'g'ridan-to'g'ri xususiyatlarga kiriladi.
+
 2. **Qo'llanilish holatlari**:
 
-   * `ref` primitive turlar (string, number, boolean) va DOM elementlari uchun ishlatiladi.
-   * `reactive` object yoki array kabi murakkab tuzilmalar uchun ishlatiladi.
+   - `ref` primitive turlar (string, number, boolean) va DOM elementlari uchun ishlatiladi.
+   - `reactive` object yoki array kabi murakkab tuzilmalar uchun ishlatiladi.
+
 3. **Reaktivlik**:
 
-   * `ref` faqat bitta qiymatni reaktiv qiladi.
-   * `reactive` butun bir object yoki array ni reaktiv qiladi, shu jumladan uning barcha xususiyatlarini.
+   - `ref` faqat bitta qiymatni reaktiv qiladi.
+   - `reactive` butun bir object yoki array ni reaktiv qiladi, shu jumladan uning barcha xususiyatlarini.
 
 ### Tanlash qachon qulay
 
-* Agar sizda oddiy qiymat bo'lsa yoki DOM elementiga murojaat qilish kerak bo'lsa, `ref` dan foydalaning.
-* Agar sizda ko'p xususiyatlarga ega bo'lgan object yoki array bo'lsa, `reactive` dan foydalaning.
+- Agar sizda oddiy qiymat bo'lsa yoki DOM elementiga murojaat qilish kerak bo'lsa, `ref` dan foydalaning.
+- Agar sizda ko'p xususiyatlarga ega bo'lgan object yoki array bo'lsa, `reactive` dan foydalaning.
 
 ### Umumiy misol
 
@@ -93,18 +96,18 @@ Quyida `ref` va `reactive` ni birgalikda qo'llash misoli keltirilgan:
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive } from "vue";
 
-const message = ref('Hello, Vue 3!');
+const message = ref("Hello, Vue 3!");
 const todos = reactive([
-  { id: 1, text: 'Learn Vue 3' },
-  { id: 2, text: 'Build something awesome' }
+  { id: 1, text: "Learn Vue 3" },
+  { id: 2, text: "Build something awesome" },
 ]);
-const newTodoText = ref('');
+const newTodoText = ref("");
 
 function addTodo() {
   todos.push({ id: todos.length + 1, text: newTodoText.value });
-  newTodoText.value = '';
+  newTodoText.value = "";
 }
 </script>
 ```
@@ -115,6 +118,6 @@ Ushbu misol `ref` va `reactive` hook-larini qanday birgalikda ishlatish mumkinli
 
 **PS: Yuqridagi rasmda nega bunday demoqda , 🤔🤔🫢🫢🙄🙄🙄😩😫😫 , video darsda javob berib o'taman bu haiqda :)**
 
-*Bizni tarmoqlarda kuzatishingiz mumkin va maqola foydali bo'lsa izoh va Vuechi do'stlaringizga ulashing. 🫡*
+_Bizni tarmoqlarda kuzatishingiz mumkin va maqola foydali bo'lsa izoh va Vuechi do'stlaringizga ulashing. 🫡_
 
 🔗 https://t.me/mukhriddinweb

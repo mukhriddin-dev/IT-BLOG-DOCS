@@ -14,9 +14,8 @@ type: javascript
 postType: full
 episode: 6
 ---
+
 ### JavaScriptda Object
-
-
 
 ![khodieff.uz](https://miro.medium.com/v2/resize:fit:1400/1*25GHddWfeusJEGE5IET6_g.jpeg "khodieff.uz")
 
@@ -34,7 +33,7 @@ Bu usul eng oson va eng keng tarqalgan usuldir:
 let person = {
   name: "Najimbey",
   age: 14,
-  city: "New York"
+  city: "New York",
 };
 ```
 
@@ -51,9 +50,7 @@ person.city = "New York";
 
 ### Obyekt Xususiyatlariga Kirish
 
-
-
-Obyektning xususiyatlariga kirishning ikkita usuli bor:  ( **.**  notation va bracket \[] notation )
+Obyektning xususiyatlariga kirishning ikkita usuli bor: ( **.** notation va bracket \[] notation )
 
 #### 1. ( . ) notation
 
@@ -61,7 +58,7 @@ Nuqta (`.`) yordamida xususiyat nomiga murojaat qilish mumkin:
 
 ```javascript
 console.log(person.name); // "Najimbey"
-console.log(person.age);  // 14
+console.log(person.age); // 14
 ```
 
 #### 2. bracket \[] notation
@@ -70,22 +67,22 @@ Qavslar (`[]`) ichida xususiyat nomi string ko'rinishida yoziladi:
 
 ```javascript
 console.log(person["name"]); // "Najimbey"
-console.log(person["age"]);  // 14
+console.log(person["age"]); // 14
 ```
 
- bracket \[] notation ayniqsa, xususiyat nomi o'zgaruvchida saqlanganda yoki xususiyat nomi sifatida foydalanish mumkin bo'lmagan belgilar mavjud bo'lganda foydali bo'ladi.
+bracket \[] notation ayniqsa, xususiyat nomi o'zgaruvchida saqlanganda yoki xususiyat nomi sifatida foydalanish mumkin bo'lmagan belgilar mavjud bo'lganda foydali bo'ladi.
 
 ### Obyektga Xususiyatlarini Qo'shish yoki O'zgartirish
 
 JavaScriptda obyektning xususiyatlarini osongina qo'shish yoki o'zgartirish mumkin:
 
-* **Xususiyat qo'shish**:
+- **Xususiyat qo'shish**:
 
 ```javascript
 person.country = "Turkey";
 ```
 
-* **Xususiyatni o'zgartirish**:
+- **Xususiyatni o'zgartirish**:
 
 ```javascript
 person.age = 31;
@@ -108,9 +105,9 @@ Obyektlar ichida funksiyalarni saqlash mumkin. Bunday funksiyalar metodlar deb a
 let person = {
   name: "Najimbey",
   age: 14,
-  greet: function() {
+  greet: function () {
     console.log("Hello, " + this.name);
-  }
+  },
 };
 
 person.greet(); // "Hello, Najimbey"
@@ -135,7 +132,7 @@ for (let key in person) {
 
 Obyektlarni birlashtirish uchun `Object.assign()` metodidan yoki spead operatoridan (`...`) foydalanish mumkin.
 
-* **`Object.assign()` yordamida**:
+- **`Object.assign()` yordamida**:
 
 ```javascript
 let additionalInfo = { country: "Turkey", profession: "Engineer" };
@@ -143,7 +140,7 @@ let mergedPerson = Object.assign({}, person, additionalInfo);
 console.log(mergedPerson);
 ```
 
-* **Spread operatori yordamida**:
+- **Spread operatori yordamida**:
 
 ```javascript
 let mergedPerson = { ...person, ...additionalInfo };
@@ -158,9 +155,9 @@ console.log(mergedPerson);
 let car = {
   brand: "Toyota",
   model: "Camry",
-  fullDetails: function() {
+  fullDetails: function () {
     return this.brand + " " + this.model;
-  }
+  },
 };
 
 console.log(car.fullDetails()); // "Toyota Camry"
@@ -169,7 +166,5 @@ console.log(car.fullDetails()); // "Toyota Camry"
 ### Xulosa
 
 JavaScriptdagi `Object` — bu (ky-value) pair dinamik ma'lumot turi. `Object` yordamida murakkab ma'lumotlarni saqlash, ularga kirish, ularni yangilash, va bir nechta xususiyatlarni birlashtirish mumkin. `Object` dasturlashda muhim rol o'ynaydi va uni to'g'ri tushunish va undan samarali foydalanish muhim hisoblanadi.
-
-
 
 Keyingi postlarda batafsil tanishamiz.

@@ -18,7 +18,6 @@ postType: full
 episode: 2
 ---
 
-
 **Assalamu alaykum!** Demak **Vite** texnologiyasi yordamidan **Vue** loyiha qurishni o'rganamiz!
 
 ![khodieff.uz](https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgfxaeg657ajnvtpebilv.jpg "khodieff.uz")
@@ -34,7 +33,7 @@ b. Loyihani yaratish uchun quyidagi buyruqni bajaring:
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p1lkcy19grbikw8wczj7.png)
 
-va 
+va
 
 ```
 npm create vite@latest [loyiha_nomi]
@@ -62,7 +61,7 @@ yuqoridagi buyruq orqali biz kerakli "package" larni o'rnatib olib loyihamizni i
 npm run dev
 ```
 
-Ushbu buyruqdan so'ng, terminalda mahalliy (local) server manzili ko'rsatiladi, odatda bu http://localhost:3000 yoki 5174 bo'ladi. Brauzeringizda ushbu manzilga o'tib, yangi Vue.js ilovamizni  ko'rishimiz mumkin.
+Ushbu buyruqdan so'ng, terminalda mahalliy (local) server manzili ko'rsatiladi, odatda bu http://localhost:3000 yoki 5174 bo'ladi. Brauzeringizda ushbu manzilga o'tib, yangi Vue.js ilovamizni ko'rishimiz mumkin.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cfu3rbfhvcfp73m1fin9.png)
 

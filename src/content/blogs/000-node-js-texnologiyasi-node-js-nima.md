@@ -16,7 +16,8 @@ type: nodejs
 postType: full
 episode: 1
 ---
-Node.js — bu server tomonida JavaScript kodini ishga tushirish uchun mo'ljallangan ochiq manba platforma. U asosan veb-ilovalarni ishlab chiqish, real-vaqt tizimlar va mikroservislar yaratish uchun ishlatiladi. Quyida Node.js haqida  tanishib o'tamiz.
+
+Node.js — bu server tomonida JavaScript kodini ishga tushirish uchun mo'ljallangan ochiq manba platforma. U asosan veb-ilovalarni ishlab chiqish, real-vaqt tizimlar va mikroservislar yaratish uchun ishlatiladi. Quyida Node.js haqida tanishib o'tamiz.
 
 ![khodieff.uz](https://externlabs.com/blogs/wp-content/uploads/2021/12/2400%D1%851260-rw-blog-node-js.png "khodieff.uz | nodejs")
 
@@ -28,8 +29,8 @@ Node.js 2009 yilda Ryan Dahl tomonidan yaratilgan. Uning asosiy maqsadi JavaScri
 
 Node.js ning eng katta afzalliklaridan biri uning asinxron va hodisalarga asoslangan arxitekturasi hisoblanadi. Bu shuni anglatadiki:
 
-* **Asinxron I/O**: Node.js ko'pgina kirish/chiqish (I/O) operatsiyalarini asinxron ravishda bajaradi, ya'ni ular bajarilayotgan paytda server boshqa vazifalarni bajarishda davom etadi. Bu esa bir vaqtning o'zida ko'plab so'rovlarni qayta ishlash imkonini beradi.
-* **Event-driven**: Node.js hodisalar asosida ishlaydi, ya'ni har bir hodisa yuz berganda (masalan, foydalanuvchi serverga so'rov yuborganida) mos funktsiya ishga tushadi.
+- **Asinxron I/O**: Node.js ko'pgina kirish/chiqish (I/O) operatsiyalarini asinxron ravishda bajaradi, ya'ni ular bajarilayotgan paytda server boshqa vazifalarni bajarishda davom etadi. Bu esa bir vaqtning o'zida ko'plab so'rovlarni qayta ishlash imkonini beradi.
+- **Event-driven**: Node.js hodisalar asosida ishlaydi, ya'ni har bir hodisa yuz berganda (masalan, foydalanuvchi serverga so'rov yuborganida) mos funktsiya ishga tushadi.
 
 ### 3. **Yagona jarayon**:
 
@@ -43,21 +44,21 @@ Node.js bilan birga keladigan NPM dunyodagi eng yirik paket menejeri hisoblanadi
 
 Node.js juda ko'p turdagi dasturlarni yaratish uchun ishlatiladi, jumladan:
 
-* **Veb serverlar**: Express.js kabi ramkalar yordamida samarali veb serverlar va API'lar yaratish.
-* **Real-vaqt dasturlari**: Chat dasturlari, onlayn o'yinlar yoki real-vaqt yangilanishlar talab qiladigan dasturlar yaratish (masalan, Socket.IO yordamida).
-* **Mikroservislar**: Katta tizimlarni kichik xizmatlarga bo'lish va ularni samarali boshqarish.
-* **Serverda ishlovchi ilovalar**: Backend logikasini amalga oshirish va ma'lumotlar bazasi bilan ishlash.
+- **Veb serverlar**: Express.js kabi ramkalar yordamida samarali veb serverlar va API'lar yaratish.
+- **Real-vaqt dasturlari**: Chat dasturlari, onlayn o'yinlar yoki real-vaqt yangilanishlar talab qiladigan dasturlar yaratish (masalan, Socket.IO yordamida).
+- **Mikroservislar**: Katta tizimlarni kichik xizmatlarga bo'lish va ularni samarali boshqarish.
+- **Serverda ishlovchi ilovalar**: Backend logikasini amalga oshirish va ma'lumotlar bazasi bilan ishlash.
 
 ### 6. **Afzalliklari**
 
-* **Yuqori tezlik**: V8 dvigateli va asinxron arxitektura tufayli yuqori samaradorlik.
-* **Yagona til**: Frontend va backend uchun bitta til (JavaScript) ishlatish imkoniyati.
-* **Keng ekotizim**: NPM orqali oson kirish mumkin bo'lgan katta miqdordagi kutubxonalar.
+- **Yuqori tezlik**: V8 dvigateli va asinxron arxitektura tufayli yuqori samaradorlik.
+- **Yagona til**: Frontend va backend uchun bitta til (JavaScript) ishlatish imkoniyati.
+- **Keng ekotizim**: NPM orqali oson kirish mumkin bo'lgan katta miqdordagi kutubxonalar.
 
 ### 7. **Kamchiliklari**
 
-* **Bitta jarayonli tabiat**: Murakkab hisoblash vazifalarida samaradorlik pasayishi mumkin.
-* **Og'irliklarga moyillik**: Asinxron modelda ishlash murakkabliklarni keltirib chiqarishi mumkin, ayniqsa katta va kompleks loyihalarda.
+- **Bitta jarayonli tabiat**: Murakkab hisoblash vazifalarida samaradorlik pasayishi mumkin.
+- **Og'irliklarga moyillik**: Asinxron modelda ishlash murakkabliklarni keltirib chiqarishi mumkin, ayniqsa katta va kompleks loyihalarda.
 
 ### Demak:
 
@@ -71,23 +72,27 @@ Node.js’ni o'rnatish uchun platformaga qarab biroz farqlar bo'lishi mumkin. Qu
 
 1. **Node.js veb-saytiga o'ting**:
 
-   * [Node.js rasmiy sayti](https://nodejs.org/)ga kiring.
+   - [Node.js rasmiy sayti](https://nodejs.org/)ga kiring.
+
 2. **Installerni yuklab oling**:
 
-   * `LTS (Long Term Support)` yoki `Current` versiyasini tanlab yuklab oling.
+   - `LTS (Long Term Support)` yoki `Current` versiyasini tanlab yuklab oling.
+
 3. **O'rnatuvchini ishga tushiring**:
 
-   * Yuklab olingan `.msi` faylini ishga tushiring.
-   * O'rnatish jarayonida `Next`, `I Agree`, va `Install` tugmalarini bosib, o'rnatishni yakunlang.
-   * `PATH` muhit o'zgaruvchisini yangilash bo'yicha so'rov kelsa, uni tasdiqlang.
+   - Yuklab olingan `.msi` faylini ishga tushiring.
+   - O'rnatish jarayonida `Next`, `I Agree`, va `Install` tugmalarini bosib, o'rnatishni yakunlang.
+   - `PATH` muhit o'zgaruvchisini yangilash bo'yicha so'rov kelsa, uni tasdiqlang.
+
 4. **O'rnatishni tekshirish**:
 
-   * O'rnatilganligini tekshirish uchun Command Prompt yoki PowerShell’da quyidagi buyruqni kiriting:
+   - O'rnatilganligini tekshirish uchun Command Prompt yoki PowerShell’da quyidagi buyruqni kiriting:
 
      ```bash
      node -v
      ```
-   * Node.js ning versiyasi ko'rsatilishi kerak. NPM ham o'rnatilganligini tekshirish uchun:
+
+   - Node.js ning versiyasi ko'rsatilishi kerak. NPM ham o'rnatilganligini tekshirish uchun:
 
      ```bash
      npm -v
@@ -97,21 +102,25 @@ Node.js’ni o'rnatish uchun platformaga qarab biroz farqlar bo'lishi mumkin. Qu
 
 1. **Node.js veb-saytiga o'ting**:
 
-   * [Node.js rasmiy sayti](https://nodejs.org/)ga kiring.
+   - [Node.js rasmiy sayti](https://nodejs.org/)ga kiring.
+
 2. **Installerni yuklab oling**:
 
-   * `LTS` yoki `Current` versiyasini tanlab yuklab oling.
+   - `LTS` yoki `Current` versiyasini tanlab yuklab oling.
+
 3. **O'rnatuvchini ishga tushiring**:
 
-   * Yuklab olingan `.pkg` faylini ishga tushiring va o'rnatishni yakunlang.
+   - Yuklab olingan `.pkg` faylini ishga tushiring va o'rnatishni yakunlang.
+
 4. **O'rnatishni tekshirish**:
 
-   * Terminalni oching va quyidagi buyruqni kiriting:
+   - Terminalni oching va quyidagi buyruqni kiriting:
 
      ```bash
      node -v
      ```
-   * Node.js ning versiyasi ko'rsatilishi kerak. NPM ham o'rnatilganligini tekshirish uchun:
+
+   - Node.js ning versiyasi ko'rsatilishi kerak. NPM ham o'rnatilganligini tekshirish uchun:
 
      ```bash
      npm -v
@@ -119,7 +128,7 @@ Node.js’ni o'rnatish uchun platformaga qarab biroz farqlar bo'lishi mumkin. Qu
 
    **Alternativ usul (Homebrew orqali):**
 
-* Agar Homebrew o'rnatilgan bo'lsa, quyidagi buyruq yordamida Node.js’ni o'rnatishingiz mumkin:
+- Agar Homebrew o'rnatilgan bo'lsa, quyidagi buyruq yordamida Node.js’ni o'rnatishingiz mumkin:
 
   ```bash
   brew install node
@@ -127,60 +136,67 @@ Node.js’ni o'rnatish uchun platformaga qarab biroz farqlar bo'lishi mumkin. Qu
 
 ### 3. **Linuxga Node.js’ni o'rnatish**
 
-   Linux’ga qarab Node.js’ni o'rnatish biroz farq qilishi mumkin. Asosan Ubuntu/Debian va CentOS/Fedora distribyutsiyalari uchun quyidagi usullar qo'llaniladi.
+Linux’ga qarab Node.js’ni o'rnatish biroz farq qilishi mumkin. Asosan Ubuntu/Debian va CentOS/Fedora distribyutsiyalari uchun quyidagi usullar qo'llaniladi.
 
-   **Ubuntu/Debian uchun:**
+**Ubuntu/Debian uchun:**
 
 1. **Node.js PPA qo'shish**:
 
-   * Terminalni oching va NodeSource repozitoriyasini qo'shing:
+   - Terminalni oching va NodeSource repozitoriyasini qo'shing:
 
      ```bash
      curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
      ```
+
 2. **Node.js’ni o'rnatish**:
 
-   * Node.js va NPM’ni o'rnatish uchun quyidagi buyruqni kiriting:
+   - Node.js va NPM’ni o'rnatish uchun quyidagi buyruqni kiriting:
 
      ```bash
      sudo apt-get install -y nodejs
      ```
+
 3. **O'rnatishni tekshirish**:
 
-   * O'rnatilganligini tekshirish uchun quyidagi buyruqni kiriting:
+   - O'rnatilganligini tekshirish uchun quyidagi buyruqni kiriting:
 
      ```bash
      node -v
      ```
-   * NPM ham o'rnatilganligini tekshirish uchun:
+
+   - NPM ham o'rnatilganligini tekshirish uchun:
 
      ```bash
      npm -v
      ```
 
    **CentOS/Fedora uchun:**
+
 4. **Node.js repozitoriyasini qo'shish**:
 
-   * Terminalda NodeSource repozitoriyasini qo'shing:
+   - Terminalda NodeSource repozitoriyasini qo'shing:
 
      ```bash
      curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
      ```
+
 5. **Node.js’ni o'rnatish**:
 
-   * Node.js va NPM’ni o'rnatish uchun:
+   - Node.js va NPM’ni o'rnatish uchun:
 
      ```bash
      sudo yum install -y nodejs
      ```
+
 6. **O'rnatishni tekshirish**:
 
-   * O'rnatilganligini tekshirish uchun:
+   - O'rnatilganligini tekshirish uchun:
 
      ```bash
      node -v
      ```
-   * NPM ham o'rnatilganligini tekshirish uchun:
+
+   - NPM ham o'rnatilganligini tekshirish uchun:
 
      ```bash
      npm -v
@@ -188,8 +204,8 @@ Node.js’ni o'rnatish uchun platformaga qarab biroz farqlar bo'lishi mumkin. Qu
 
 ### Xulosa:
 
-Node.js’ni o'rnatish juda oddiy va har bir platformada uncha katta farq qilmaydi. O'rnatilganidan so'ng, Node.js va NPM bilan ishlashga tayyor bo'lasiz. Ushbu vositalar bilan siz backend ilovalari, mikroservislar va boshqa ko'plab server tomonidagi dasturlarni yaratishingiz mumkin. Good luck) 
+Node.js’ni o'rnatish juda oddiy va har bir platformada uncha katta farq qilmaydi. O'rnatilganidan so'ng, Node.js va NPM bilan ishlashga tayyor bo'lasiz. Ushbu vositalar bilan siz backend ilovalari, mikroservislar va boshqa ko'plab server tomonidagi dasturlarni yaratishingiz mumkin. Good luck)
 
-**Bizni tarmoqlarda kuzatishingiz mumkin va maqola foydali bo’lsa  do’stlaringizga ham ulashing**. 🫡
+**Bizni tarmoqlarda kuzatishingiz mumkin va maqola foydali bo’lsa do’stlaringizga ham ulashing**. 🫡
 
 🔗 <https://t.me/mukhriddinweb>

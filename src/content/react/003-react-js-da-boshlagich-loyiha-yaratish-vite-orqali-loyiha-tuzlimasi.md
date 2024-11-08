@@ -14,6 +14,7 @@ type: react
 postType: full
 episode: 3
 ---
+
 Vite yordamida React loyihasini yaratish jarayoni juda oddiy va tezkor. Quyida bu jarayonni bosqichma-bosqich ko'rib chiqamiz va loyiha tuzilmasi bilan batafsil tanishamiz.
 
 ### Vite orqali React loyihasini yaratish
@@ -26,6 +27,7 @@ Vite yordamida React loyihasini yaratish jarayoni juda oddiy va tezkor. Quyida b
    ```
 
    Agar Node.js o'rnatilmagan bo'lsa, uni [Node.js rasmiy saytida](https://nodejs.org/) o'rnatishingiz mumkin.
+
 2. **Yangi React loyihasini yaratish**
    Terminal yoki Command Prompt’ni oching va quyidagi buyruqni kiriting:
 
@@ -35,21 +37,24 @@ Vite yordamida React loyihasini yaratish jarayoni juda oddiy va tezkor. Quyida b
 
    Bu buyruq sizdan loyiha nomini va shablonni tanlashni so'raydi:
 
-   * **Loyiha nomi**: Misol uchun, `my-react-app`.
-   * **Frameworkni tanlash**: `React`.
-   * **Variantni tanlash**: `JavaScript` yoki `TypeScript` (lojik talablariga qarab).
+   - **Loyiha nomi**: Misol uchun, `my-react-app`.
+   - **Frameworkni tanlash**: `React`.
+   - **Variantni tanlash**: `JavaScript` yoki `TypeScript` (lojik talablariga qarab).
+
 3. **Loyiha papkasiga o'tish**
    Loyiha yaratilib bo'lgandan so'ng, uning papkasiga o'ting:
 
    ```bash
    cd my-react-app
    ```
+
 4. **Paketlarni o'rnatish**
    Loyihaga kerakli paketlarni o'rnatish uchun quyidagi buyruqni bajarish kerak:
 
    ```bash
    npm install
    ```
+
 5. **Loyihani ishga tushirish**
    Loyiha lokal serverda ishlashi uchun quyidagi buyruqni kiriting:
 
@@ -82,12 +87,12 @@ my-react-app/
 
 ### Asosiy Fayllar
 
-* **`public/index.html`**: Loyihaning asosiy HTML fayli. Bu faylda `<div id="root"></div>` elementi mavjud bo'lib, React ilovasi shu elementga qo'shiladi.
-* **`src/App.jsx`**: Loyihaning asosiy React komponenti. Bu yerda siz React komponentlarini yaratib, dasturiy mantiqni amalga oshirishingiz mumkin.
-* **`src/main.jsx`**: React ilovasining kirish nuqtasi. Bu faylda React ilovasi `index.html`dagi `root` elementiga bog'lanadi.
-* **`vite.config.js`**: Vite konfiguratsiya fayli. Bu yerda Vite'ning sozlamalari, plaginlar va boshqa konfiguratsiyalarni sozlash mumkin.
-* **`package.json`**: Loyihaning paketlari va skriptlarini belgilovchi fayl. Bu yerda siz o'rnatilgan paketlar va loyiha uchun kerakli skriptlarni ko'rishingiz mumkin.
-* **`.gitignore`**: Git tomonidan e'tiborga olinmaydigan fayllarni belgilaydi. Odatda, `node_modules/` va boshqa avtomatik yaratilgan fayllar shu yerga qo'shiladi.
+- **`public/index.html`**: Loyihaning asosiy HTML fayli. Bu faylda `<div id="root"></div>` elementi mavjud bo'lib, React ilovasi shu elementga qo'shiladi.
+- **`src/App.jsx`**: Loyihaning asosiy React komponenti. Bu yerda siz React komponentlarini yaratib, dasturiy mantiqni amalga oshirishingiz mumkin.
+- **`src/main.jsx`**: React ilovasining kirish nuqtasi. Bu faylda React ilovasi `index.html`dagi `root` elementiga bog'lanadi.
+- **`vite.config.js`**: Vite konfiguratsiya fayli. Bu yerda Vite'ning sozlamalari, plaginlar va boshqa konfiguratsiyalarni sozlash mumkin.
+- **`package.json`**: Loyihaning paketlari va skriptlarini belgilovchi fayl. Bu yerda siz o'rnatilgan paketlar va loyiha uchun kerakli skriptlarni ko'rishingiz mumkin.
+- **`.gitignore`**: Git tomonidan e'tiborga olinmaydigan fayllarni belgilaydi. Odatda, `node_modules/` va boshqa avtomatik yaratilgan fayllar shu yerga qo'shiladi.
 
 > Vite yordamida React loyihasini yaratish juda tez va soddadir. Loyiha tuzilmasi oddiy va lozim bo'lgan barcha asosiy fayllarni o'z ichiga oladi. Vite'ning tezkor ishga tushirish va samarali rivojlantirish muhitidan foydalanish, loyiha ustida ishlashni ancha osonlashtiradi.
 

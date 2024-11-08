@@ -18,6 +18,7 @@ type: libraries
 postType: full
 episode: 3
 ---
+
 Redux Toolkit va TypeScript yordamida autentifikatsiya (auth) logikasini yozish uchun `createSlice` va `createAsyncThunk` dan foydalanib, asinxron autentifikatsiya so‘rovlarini boshqaramiz. Bunda `login`, `logout`, va `register` kabi funksiyalarni yaratamiz.
 
 Quyida bosqichma-bosqich TypeScript bilan autentifikatsiya uchun qanday qilib Redux logikasini yozishni ko‘rib chiqamiz.
@@ -41,7 +42,7 @@ Boshlang‘ich holatimizda foydalanuvchi ma'lumotlari, yuklanish holati, va xato
 ```ts
 // authSlice.ts
 
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Foydalanuvchi ma'lumotlarini tiplash
 interface User {
@@ -54,14 +55,14 @@ interface User {
 // Auth holatini tiplash
 interface AuthState {
   user: User | null;
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null;
 }
 
 // Boshlang‘ich holat
 const initialState: AuthState = {
   user: null,
-  status: 'idle',
+  status: "idle",
   error: null,
 };
 ```
@@ -72,45 +73,48 @@ Bu yerda `login`, `register`, va `logout` thunk'larini yaratamiz. Har biri API'g
 
 ```ts
 // Asinxron login thunk
-export const login = createAsyncThunk<User, { username: string; password: string }>(
-  'auth/login',
-  async ({ username, password }, { rejectWithValue }) => {
-    try {
-      const response = await fetch('https://example.com/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+export const login = createAsyncThunk<
+  User,
+  { username: string; password: string }
+>("auth/login", async ({ username, password }, { rejectWithValue }) => {
+  try {
+    const response = await fetch("https://example.com/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    });
 
-      if (!response.ok) {
-        throw new Error('Login failed');
-      }
-
-      const data = await response.json();
-      return data as User; // Foydalanuvchi ma'lumotlari qaytariladi
-    } catch (err: any) {
-      return rejectWithValue(err.message);
+    if (!response.ok) {
+      throw new Error("Login failed");
     }
+
+    const data = await response.json();
+    return data as User; // Foydalanuvchi ma'lumotlari qaytariladi
+  } catch (err: any) {
+    return rejectWithValue(err.message);
   }
-);
+});
 
 // Asinxron register thunk
-export const register = createAsyncThunk<User, { username: string; email: string; password: string }>(
-  'auth/register',
+export const register = createAsyncThunk<
+  User,
+  { username: string; email: string; password: string }
+>(
+  "auth/register",
   async ({ username, email, password }, { rejectWithValue }) => {
     try {
-      const response = await fetch('https://example.com/api/register', {
-        method: 'POST',
+      const response = await fetch("https://example.com/api/register", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, email, password }),
       });
 
       if (!response.ok) {
-        throw new Error('Registration failed');
+        throw new Error("Registration failed");
       }
 
       const data = await response.json();
@@ -118,11 +122,11 @@ export const register = createAsyncThunk<User, { username: string; email: string
     } catch (err: any) {
       return rejectWithValue(err.message);
     }
-  }
+  },
 );
 
 // Logout thunk (bu faqat lokal holatni yangilaydi)
-export const logout = createAsyncThunk('auth/logout', async () => {
+export const logout = createAsyncThunk("auth/logout", async () => {
   return null; // Logoutda faqat foydalanuvchini bo‘shatamiz
 });
 ```
@@ -133,44 +137,44 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 
 ```ts
 const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     // Login thunk
     builder.addCase(login.pending, (state) => {
-      state.status = 'loading';
+      state.status = "loading";
       state.error = null;
     });
     builder.addCase(login.fulfilled, (state, action) => {
-      state.status = 'succeeded';
+      state.status = "succeeded";
       state.user = action.payload;
       state.error = null;
     });
     builder.addCase(login.rejected, (state, action) => {
-      state.status = 'failed';
+      state.status = "failed";
       state.error = action.payload as string;
     });
 
     // Register thunk
     builder.addCase(register.pending, (state) => {
-      state.status = 'loading';
+      state.status = "loading";
       state.error = null;
     });
     builder.addCase(register.fulfilled, (state, action) => {
-      state.status = 'succeeded';
+      state.status = "succeeded";
       state.user = action.payload;
       state.error = null;
     });
     builder.addCase(register.rejected, (state, action) => {
-      state.status = 'failed';
+      state.status = "failed";
       state.error = action.payload as string;
     });
 
     // Logout thunk
     builder.addCase(logout.fulfilled, (state) => {
       state.user = null;
-      state.status = 'idle';
+      state.status = "idle";
     });
   },
 });
@@ -185,8 +189,8 @@ Endi `authSlice` ni Redux storeiga qo‘shishimiz kerak:
 **`store.ts` fayli:**
 
 ```ts
-import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './authSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import authReducer from "./authSlice";
 
 const store = configureStore({
   reducer: {
@@ -208,18 +212,18 @@ Autentifikatsiya logikasini React komponentida ishlatish uchun `useSelector` va 
 **`Auth.tsx` fayli:**
 
 ```tsx
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { login, logout, register } from './authSlice';
-import { RootState, AppDispatch } from './store';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { login, logout, register } from "./authSlice";
+import { RootState, AppDispatch } from "./store";
 
 const Auth: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const authState = useSelector((state: RootState) => state.auth);
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleLogin = () => {
     dispatch(login({ username, password }));
@@ -236,7 +240,7 @@ const Auth: React.FC = () => {
   return (
     <div>
       <h1>Auth</h1>
-      {authState.status === 'loading' && <p>Loading...</p>}
+      {authState.status === "loading" && <p>Loading...</p>}
       {authState.error && <p>Error: {authState.error}</p>}
 
       {!authState.user ? (
@@ -282,4 +286,3 @@ export default Auth;
 - TypeScript yordamida barcha action'lar va holatlar tiplanib, kod xavfsizligi ta’minlandi.
 
 Mana shu yo‘nalish bo‘yicha loyihangiz uchun autentifikatsiya logikasini amalga oshirishingiz mumkin.
-

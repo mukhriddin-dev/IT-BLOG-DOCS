@@ -14,9 +14,8 @@ type: javascript
 postType: full
 episode: 11
 ---
+
 ### **`isNaN` funksiyasi**
-
-
 
 **`isNaN`** - bu JavaScriptdagi o'rnatilgan funksiya bo'lib, u berilgan qiymat raqam emasligini (Not-a-Number) tekshiradi. Agar argument raqam emas bo'lsa, u `true` qaytaradi, aks holda `false` qaytaradi.
 
@@ -25,7 +24,7 @@ episode: 11
 #### **Sintaksis:**
 
 ```javascript
-isNaN(value)
+isNaN(value);
 ```
 
 #### **`isNaN` bilan ishlash:**
@@ -33,29 +32,32 @@ isNaN(value)
 1. **Raqamlar bilan ishlash:**
 
    ```javascript
-   console.log(isNaN(123));     // false (123 - raqam)
-   console.log(isNaN('123'));   // false ('123' raqam sifatida qabul qilinadi)
-   console.log(isNaN('Hello')); // true ('Hello' raqamga o'zgartirilmaydi)
-   console.log(isNaN(NaN));     // true (NaN - raqam emas)
+   console.log(isNaN(123)); // false (123 - raqam)
+   console.log(isNaN("123")); // false ('123' raqam sifatida qabul qilinadi)
+   console.log(isNaN("Hello")); // true ('Hello' raqamga o'zgartirilmaydi)
+   console.log(isNaN(NaN)); // true (NaN - raqam emas)
    ```
+
 2. **Bo'sh string va `null`:**
 
    ```javascript
-   console.log(isNaN(''));      // false (bo'sh string 0 ga o'zgartiriladi)
-   console.log(isNaN(null));    // false (null 0 ga o'zgartiriladi)
+   console.log(isNaN("")); // false (bo'sh string 0 ga o'zgartiriladi)
+   console.log(isNaN(null)); // false (null 0 ga o'zgartiriladi)
    ```
+
 3. **Boolean qiymatlar:**
 
    ```javascript
-   console.log(isNaN(true));    // false (true 1 ga o'zgartiriladi)
-   console.log(isNaN(false));   // false (false 0 ga o'zgartiriladi)
+   console.log(isNaN(true)); // false (true 1 ga o'zgartiriladi)
+   console.log(isNaN(false)); // false (false 0 ga o'zgartiriladi)
    ```
+
 4. **Obyektlar:**
 
    ```javascript
-   console.log(isNaN({}));       // true (obyektlar raqamga o'zgartirilmaydi)
-   console.log(isNaN([]));       // false (bo'sh array 0 ga o'zgartiriladi)
-   console.log(isNaN([1, 2]));   // true (array raqamga o'zgartirilmaydi)
+   console.log(isNaN({})); // true (obyektlar raqamga o'zgartirilmaydi)
+   console.log(isNaN([])); // false (bo'sh array 0 ga o'zgartiriladi)
+   console.log(isNaN([1, 2])); // true (array raqamga o'zgartirilmaydi)
    ```
 
 ### **`isNaN` vs `Number.isNaN`**
@@ -65,28 +67,29 @@ isNaN(value)
 #### **Misol:**
 
 ```javascript
-console.log(isNaN('123ABC'));         // true
-console.log(Number.isNaN('123ABC'));  // false (chunki '123ABC' hech qachon NaN bo'lmaydi)
+console.log(isNaN("123ABC")); // true
+console.log(Number.isNaN("123ABC")); // false (chunki '123ABC' hech qachon NaN bo'lmaydi)
 ```
 
-### **Nullish values (qiymatlar)** 
+### **Nullish values (qiymatlar)**
 
 **Nullish values** deganda JavaScriptda `null` va `undefined` qiymatlariga nisbatan ishlatiladigan atama tushuniladi. Bu qiymatlar mavjud emas yoki belgilangan emas degan ma'noni anglatadi.
 
 #### **`null` va `undefined` haqida batafsil:**
 
-* **`null`**:
+- **`null`**:
 
-  * Bu qiymat mavjud bo'lmasligi yoki ataylab "bo'sh" o'zgaruvchi sifatida belgilanishi uchun ishlatiladi.
-  * Misol:
+  - Bu qiymat mavjud bo'lmasligi yoki ataylab "bo'sh" o'zgaruvchi sifatida belgilanishi uchun ishlatiladi.
+  - Misol:
 
     ```javascript
     let name = null;
     ```
-* **`undefined`**:
 
-  * Bu qiymat o'zgaruvchi e'lon qilingan, lekin unga qiymat berilmagan holatni bildiradi.
-  * Misol:
+- **`undefined`**:
+
+  - Bu qiymat o'zgaruvchi e'lon qilingan, lekin unga qiymat berilmagan holatni bildiradi.
+  - Misol:
 
     ```javascript
     let age;
@@ -111,6 +114,6 @@ console.log(finalName); // "Guest" (chunki name = null)
 
 ### **Xulosa:**
 
-* **`isNaN`** funksiyasi berilgan qiymatning raqam emasligini tekshiradi.
-* **Nullish values** (`null` va `undefined`) mavjud bo'lmagan yoki belgilangan bo'lmagan qiymatlar uchun ishlatiladi.
-* **Nullish coalescing operator (`??`)** `null` yoki `undefined` bo'lsa, zaxira qiymatni qaytaradi.
+- **`isNaN`** funksiyasi berilgan qiymatning raqam emasligini tekshiradi.
+- **Nullish values** (`null` va `undefined`) mavjud bo'lmagan yoki belgilangan bo'lmagan qiymatlar uchun ishlatiladi.
+- **Nullish coalescing operator (`??`)** `null` yoki `undefined` bo'lsa, zaxira qiymatni qaytaradi.

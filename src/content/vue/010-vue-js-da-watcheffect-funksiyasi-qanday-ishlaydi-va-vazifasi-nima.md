@@ -16,13 +16,12 @@ type: vue
 postType: full
 episode: 10
 ---
+
 Vue 3 da `watchEffect` - reaktiv hisoblashni (reactive computation ref , reactivelarni ) kuzatish uchun mo'ljallangan funksiya. U har qanday reaktiv o'zgaruvchi o'zgarganda avtomatik ravishda qayta ishga tushadi. Bu, asosan, side effektlarni kuzatish uchun foydalidir.
 
 ![khodieff.uz](https://blog.openreplay.com/images/discovering-vue-composition-api-with-examples/images/hero.png "khodieff.uz")
 
 ### Asosiy Misol:
-
-
 
 Keling, oddiy bir misol bilan boshlaymiz. Faraz qilaylik, bizda bir reaktiv o'zgaruvchi bor va uning qiymati o'zgarganda biron bir amal bajarilishi kerak. aha
 
@@ -54,8 +53,6 @@ watchEffect(() => {
 3. `watchEffect` ichidagi funksiyada `count` ning qiymati o'zgarganda `total` yangilanadi.
 
 ### Qo'shimcha Misol:
-
-
 
 Keling, `watchEffect` yordamida ko'proq non-primative data misol ko'raylik. Faraz qilaylik, bizda bir nechta reaktiv o'zgaruvchilar bor va ularga asoslangan hisobotni yaratmoqchimiz.
 
@@ -90,8 +87,6 @@ watchEffect(() => {
 
 ### Bir necha `watchEffect:`
 
-
-
 Agar siz bir nechta `watchEffect`lardan foydalanmoqchi bo'lsangiz, ularni alohida yarating. Har biri o'z reaktiv o'zgaruvchilarini kuzatadi ))
 
 ```javascript
@@ -125,7 +120,5 @@ watchEffect(() => {
 ```
 
 ### Bilib oldik:
-
-
 
 `watchEffect` - bu Vue 3 da reaktiv hisoblashlarni kuzatish uchun juda foydali vosita. U side effektlarni boshqarish va reaktiv ma'lumotlarni yangilashni osonlashtiradi. Har qanday reaktiv o'zgaruvchilar o'zgarganda avtomatik ravishda ishga tushadi, bu esa kodingizni yanada intuitiv va toza yozishga yaxshi.

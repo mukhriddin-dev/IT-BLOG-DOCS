@@ -15,6 +15,7 @@ type: typescript
 postType: full
 episode: 4
 ---
+
 TypeScriptda `Promise` va `Axios` bilan ishlash asosan asinxron operatsiyalarni bajarish uchun qo'llaniladi. `Promise` JavaScriptda asinxron operatsiyalarni boshqarish uchun asosiy vosita hisoblanadi, `Axios` esa HTTP so'rovlarini amalga oshirish uchun keng qo'llaniladigan kutubxonadir. Quyida TypeScriptda `Promise` va `Axios` bilan qanday ishlash haqida batafsil ko'rib chiqamiz.
 
 ![khodieff.uz](https://strapi.dhiwise.com/uploads/exploring_the_possibilities_of_axios_with_typescript_0_af8d5defd4.jpeg "khodieff.uz")
@@ -65,7 +66,9 @@ interface User {
 
 const fetchUserData = async (userId: number): Promise<User> => {
   try {
-    const response: AxiosResponse<User> = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    const response: AxiosResponse<User> = await axios.get(
+      `https://jsonplaceholder.typicode.com/users/${userId}`,
+    );
     return response.data;
   } catch (error) {
     throw new Error("Failed to fetch user data");
@@ -90,7 +93,10 @@ Bu misolda `fetchUserData` funksiyasi `Axios` yordamida HTTP GET so'rovini amalg
 ```typescript
 const createUser = async (user: User): Promise<User> => {
   try {
-    const response: AxiosResponse<User> = await axios.post("https://jsonplaceholder.typicode.com/users", user);
+    const response: AxiosResponse<User> = await axios.post(
+      "https://jsonplaceholder.typicode.com/users",
+      user,
+    );
     return response.data;
   } catch (error) {
     throw new Error("Failed to create user");
@@ -123,14 +129,15 @@ Bu misolda `createUser` funksiyasi `Axios` yordamida `POST` so'rovini amalga osh
 const apiClient = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com",
   timeout: 1000,
-  headers: { "Content-Type": "application/json" }
+  headers: { "Content-Type": "application/json" },
 });
 
-apiClient.get<User>("/users/1")
-  .then(response => {
+apiClient
+  .get<User>("/users/1")
+  .then((response) => {
     console.log(response.data);
   })
-  .catch(error => {
+  .catch((error) => {
     console.error(error.message);
   });
 ```

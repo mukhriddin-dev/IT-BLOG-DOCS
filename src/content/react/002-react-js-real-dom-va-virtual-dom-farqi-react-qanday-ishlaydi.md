@@ -15,6 +15,7 @@ type: react
 postType: full
 episode: 3
 ---
+
 #### Real DOM (Document Object Model) va Virtual DOM o'rtasidagi farqlarni tushunish uchun ularning mohiyatini tushuntirish kerak. Keling buni ko'rib chiqamiz.
 
 ![khodieff.uz](https://strapi.dhiwise.com/uploads/react_dom_decoded_unmasking_the_myths_of_shadow_dom_vs_virtual_dom_og_image_65cc8fae888fc_9284496cb7.webp "react.js | khodieff.uz")
@@ -23,16 +24,16 @@ episode: 3
 
 Real DOM bu HTML hujjatining dasturiy modelidir. Veb sahifadagi har bir element va ularning tuzilishi DOM tomonidan ifodalanadi. DOM daraxt shaklida tashkil etilgan bo'lib, har bir element tugun sifatida qaraladi. Real DOM bilan ishlashda:
 
-* **Yuqori xarajatli yangilanishlar**: Har safar DOM daraxtida o'zgarish qilinsa, butun daraxt qayta chizilishi mumkin, bu esa ko'p vaqt va resurs talab qiladi.
-* **Sezilarli kechikish**: Katta hajmdagi DOM tuzilishida kichik o'zgarishlar ham sahifaning qayta yuklanishi yoki sahifani qayta chizilishiga olib kelishi mumkin, bu esa veb-sayt ish faoliyatini sekinlashtirishi mumkin.
+- **Yuqori xarajatli yangilanishlar**: Har safar DOM daraxtida o'zgarish qilinsa, butun daraxt qayta chizilishi mumkin, bu esa ko'p vaqt va resurs talab qiladi.
+- **Sezilarli kechikish**: Katta hajmdagi DOM tuzilishida kichik o'zgarishlar ham sahifaning qayta yuklanishi yoki sahifani qayta chizilishiga olib kelishi mumkin, bu esa veb-sayt ish faoliyatini sekinlashtirishi mumkin.
 
 ### Virtual DOM
 
 Virtual DOM — bu Real DOMning yengil vazndagi nusxasi bo'lib, u JavaScript obyekti sifatida saqlanadi. Virtual DOM Real DOMdagi o'zgarishlarni boshqarish uchun ishlatiladi:
 
-* **Yuqori samaradorlik**: Virtual DOM Real DOMni yangilashdan oldin faqat o'zgartirilgan qismlarini yangilaydi. Bu esa sahifani tezroq ishlashiga yordam beradi.
-* **Diferensial algoritm**: Virtual DOM o'zgarishlarni qaysi qismlarda amalga oshirilganini aniqlab, faqat shu qismlarni Real DOMda yangilaydi. Bu "diffing" deb ataladi va bu jarayon Real DOMga nisbatan ancha samaraliroq.
-*
+- **Yuqori samaradorlik**: Virtual DOM Real DOMni yangilashdan oldin faqat o'zgartirilgan qismlarini yangilaydi. Bu esa sahifani tezroq ishlashiga yordam beradi.
+- **Diferensial algoritm**: Virtual DOM o'zgarishlarni qaysi qismlarda amalga oshirilganini aniqlab, faqat shu qismlarni Real DOMda yangilaydi. Bu "diffing" deb ataladi va bu jarayon Real DOMga nisbatan ancha samaraliroq.
+-
 
 ### Farqlari:
 
@@ -49,19 +50,19 @@ Virtual DOM foydalanuvchi interfeysi ish faoliyatini oshirish uchun ishlatiladi.
 
 ### 1. **Virtual DOM yaratish**
 
-   React komponentlarni yaratganda, har bir komponent o'zining Virtual DOMini hosil qiladi. Bu Virtual DOM JavaScript obyektlari shaklida saqlanadi va Real DOMning yengil vazndagi nusxasini ifodalaydi. Har safar komponentda o'zgarish bo'lsa, React yangi Virtual DOMni yaratadi.
+React komponentlarni yaratganda, har bir komponent o'zining Virtual DOMini hosil qiladi. Bu Virtual DOM JavaScript obyektlari shaklida saqlanadi va Real DOMning yengil vazndagi nusxasini ifodalaydi. Har safar komponentda o'zgarish bo'lsa, React yangi Virtual DOMni yaratadi.
 
 ### 2. **O'zgarishlarni aniqlash (Diffing)**
 
-   Komponentda o'zgarish yuz berganda, React yangi Virtual DOMni mavjud Virtual DOM bilan taqqoslaydi. Bu jarayon "diffing" deb ataladi. React faqat qaysi qismlar o'zgarganini aniqlaydi, va bu o'zgarishlarni Real DOMda yangilaydi.
+Komponentda o'zgarish yuz berganda, React yangi Virtual DOMni mavjud Virtual DOM bilan taqqoslaydi. Bu jarayon "diffing" deb ataladi. React faqat qaysi qismlar o'zgarganini aniqlaydi, va bu o'zgarishlarni Real DOMda yangilaydi.
 
 ### 3. **Patch (o'zgarishlarni qo'llash)**
 
-   React o'zgartirilgan qismlarini Real DOMga qo'llaydi. Bu jarayon "patching" deb ataladi. Faqat o'zgargan qismlar yangilanganligi sababli, butun DOM daraxtini qayta qurishga hojat qolmaydi, bu esa sahifa yuklanishini tezlashtiradi.
+React o'zgartirilgan qismlarini Real DOMga qo'llaydi. Bu jarayon "patching" deb ataladi. Faqat o'zgargan qismlar yangilanganligi sababli, butun DOM daraxtini qayta qurishga hojat qolmaydi, bu esa sahifa yuklanishini tezlashtiradi.
 
 ### 4. **Render qilish**
 
-   O'zgarishlar Real DOMga qo'llangandan so'ng, brauzer o'sha qismlarni qayta chizadi va foydalanuvchi interfeysi yangilanadi.
+O'zgarishlar Real DOMga qo'llangandan so'ng, brauzer o'sha qismlarni qayta chizadi va foydalanuvchi interfeysi yangilanadi.
 
 ![khodieff.uz](/2.png "khodieff.uz")
 

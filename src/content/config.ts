@@ -7,7 +7,7 @@ const jsSchema = z.object({
   pubDate: z.coerce.date().optional(),
   id: z.number().optional(),
   type: z.string().optional(),
-  hashtags: z.array(z.string()).optional()
+  hashtags: z.array(z.string()).optional(),
 });
 
 const tsSchema = z.object({
@@ -17,7 +17,7 @@ const tsSchema = z.object({
   pubDate: z.coerce.date().optional(),
   id: z.number().optional(),
   type: z.string().optional(),
-  hashtags: z.array(z.string()).optional()
+  hashtags: z.array(z.string()).optional(),
 });
 
 const vueSchema = z.object({
@@ -27,7 +27,7 @@ const vueSchema = z.object({
   pubDate: z.coerce.date().optional(),
   id: z.number().optional(),
   type: z.string().optional(),
-  hashtags: z.array(z.string()).optional()
+  hashtags: z.array(z.string()).optional(),
 });
 
 const reactSchema = z.object({
@@ -37,7 +37,7 @@ const reactSchema = z.object({
   pubDate: z.coerce.date().optional(),
   id: z.number().optional(),
   type: z.string().optional(),
-  hashtags: z.array(z.string()).optional()
+  hashtags: z.array(z.string()).optional(),
 });
 
 const frontendSchema = z.object({
@@ -47,7 +47,7 @@ const frontendSchema = z.object({
   pubDate: z.coerce.date().optional(),
   id: z.number().optional(),
   type: z.string().optional(),
-  hashtags: z.array(z.string()).optional()
+  hashtags: z.array(z.string()).optional(),
 });
 
 const blogSchema = z.object({
@@ -57,7 +57,7 @@ const blogSchema = z.object({
   pubDate: z.coerce.date().optional(),
   id: z.number().optional(),
   type: z.string().optional(),
-  hashtags: z.array(z.string()).optional()
+  hashtags: z.array(z.string()).optional(),
 });
 
 const englishSchema = z.object({
@@ -67,7 +67,7 @@ const englishSchema = z.object({
   pubDate: z.coerce.date().optional(),
   id: z.number().optional(),
   type: z.string().optional(),
-  hashtags: z.array(z.string()).optional()
+  hashtags: z.array(z.string()).optional(),
 });
 
 export type jsSchema = z.infer<typeof jsSchema>;
@@ -92,5 +92,5 @@ export const collections = {
   english: englishCollection,
   vue: vueCollection,
   react: reactCollection,
-  blogs: blogCollection
+  blogs: blogCollection,
 };

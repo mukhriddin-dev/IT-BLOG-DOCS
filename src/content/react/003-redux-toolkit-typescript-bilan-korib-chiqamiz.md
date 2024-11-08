@@ -16,6 +16,7 @@ type: libraries
 postType: full
 episode: 3
 ---
+
 Redux Toolkit bilan TypeScript’da ishlash juda qulay va TypeScript uchun mukammal integratsiya taqdim etadi. TypeScript yordamida Redux holatini, action'larni va thunk'larni qat'iy tiplash imkonini beradi. Quyida Redux Toolkit bilan TypeScript’da qanday ishlashni bosqichma-bosqich ko'rib chiqamiz.
 
 ### 1. Redux Toolkit va TypeScript o‘rnatilishi
@@ -31,8 +32,9 @@ npm install @reduxjs/toolkit react-redux
 Redux holatini va action'larni TypeScript yordamida qanday qilib tiplashni ko‘rib chiqamiz. Misol tariqasida, oddiy counter slice yaratamiz.
 
 **`counterSlice.ts` faylida:**
+
 ```ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // 1. Holatni tiplash
 interface CounterState {
@@ -46,7 +48,7 @@ const initialState: CounterState = {
 
 // 3. Slice yaratish
 const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState,
   reducers: {
     increment: (state) => {
@@ -67,6 +69,7 @@ export default counterSlice.reducer;
 ```
 
 Bu yerda:
+
 - **Holatni tiplash**: Biz `CounterState` interfeysini yaratib, holatni tipladik.
 - **PayloadAction**: Redux Toolkit’ning `PayloadAction` tipidan foydalanib, action payload'iga aniq tip berdik (masalan, `number`).
 
@@ -75,9 +78,10 @@ Bu yerda:
 Redux do‘konini TypeScript yordamida to‘g‘ri tiplash uchun biz `RootState` va `AppDispatch` tiplarini yaratishimiz kerak. Bu tiplar ilovaning do‘konini va dispatch funksiyalarini TypeScript yordamida boshqaradi.
 
 **`store.ts` faylida:**
+
 ```ts
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./counterSlice";
 
 // 1. Redux do‘konini yaratish
 const store = configureStore({
@@ -101,16 +105,18 @@ export default store;
 Endi React komponentlarida Redux holatini va action'larni TypeScript bilan ishlatamiz. Bunda `useSelector` va `useDispatch` hook'larini to‘g‘ri tiplaymiz.
 
 **`Counter.tsx` faylida:**
+
 ```tsx
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementByAmount } from './counterSlice';
-import { RootState, AppDispatch } from './store';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement, incrementByAmount } from "./counterSlice";
+import { RootState, AppDispatch } from "./store";
 
 // 1. useDispatch’ni tiplash
 const useAppDispatch: () => AppDispatch = useDispatch;
 // 2. useSelector’ni tiplash
-const useAppSelector: (selector: (state: RootState) => any) => any = useSelector;
+const useAppSelector: (selector: (state: RootState) => any) => any =
+  useSelector;
 
 const Counter: React.FC = () => {
   const count = useAppSelector((state) => state.counter.value);
@@ -121,7 +127,9 @@ const Counter: React.FC = () => {
       <h1>{count}</h1>
       <button onClick={() => dispatch(increment())}>Increment</button>
       <button onClick={() => dispatch(decrement())}>Decrement</button>
-      <button onClick={() => dispatch(incrementByAmount(5))}>Increment by 5</button>
+      <button onClick={() => dispatch(incrementByAmount(5))}>
+        Increment by 5
+      </button>
     </div>
   );
 };
@@ -130,6 +138,7 @@ export default Counter;
 ```
 
 Bu yerda:
+
 - `useAppDispatch`: `useDispatch` hook'ini `AppDispatch` tipi bilan tiplaymiz.
 - `useAppSelector`: `useSelector` hook'ini `RootState` dan foydalanib tiplaymiz.
 
@@ -138,8 +147,9 @@ Bu yerda:
 Asinxron ishlash uchun `createAsyncThunk` funksiyasidan foydalanamiz. TypeScript yordamida asinxron thunk’larni ham to‘g‘ri tiplashimiz mumkin.
 
 **`userSlice.ts` faylida:**
+
 ```ts
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // 1. Foydalanuvchi ma'lumotlarining turi
 interface User {
@@ -151,41 +161,43 @@ interface User {
 // 2. Boshlang‘ich holatning turi
 interface UserState {
   user: User | null;
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null;
 }
 
 const initialState: UserState = {
   user: null,
-  status: 'idle',
+  status: "idle",
   error: null,
 };
 
 // 3. Asinxron thunk yaratish va tiplash
 export const fetchUserById = createAsyncThunk<User, number>(
-  'users/fetchById',
+  "users/fetchById",
   async (userId) => {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${userId}`,
+    );
     return (await response.json()) as User;
-  }
+  },
 );
 
 // 4. Slice yaratish
 const userSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserById.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(fetchUserById.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.status = "succeeded";
         state.user = action.payload;
       })
       .addCase(fetchUserById.rejected, (state, action) => {
-        state.status = 'failed';
+        state.status = "failed";
         state.error = action.error.message;
       });
   },
@@ -195,15 +207,17 @@ export default userSlice.reducer;
 ```
 
 Bu yerda:
+
 - **`createAsyncThunk<User, number>`**: `User` tipini thunk qaytaradi va `number` tipidagi foydalanuvchi ID'sini parametrlari sifatida oladi.
 - **Thunk natijalari**: `fulfilled`, `pending`, va `rejected` holatlari uchun reducer'larni TypeScript bilan to‘g‘ri tipladik.
 
 ### Xulosa
 
 Redux Toolkit TypeScript bilan juda yaxshi moslashgan. Quyidagi asosiy tiplashlarni o‘rganish kerak:
+
 1. **Holatni tiplash** (interface).
 2. **Action payload’larini tiplash** (`PayloadAction`).
 3. **RootState va AppDispatch tiplari**.
-4. **Thunk tiplari** (`createAsyncThunk` yordamida). 
+4. **Thunk tiplari** (`createAsyncThunk` yordamida).
 
-Bu yondashuv loyihangizdagi Redux holat boshqaruvini TypeScript bilan xavfsiz va aniq qiladi. 
+Bu yondashuv loyihangizdagi Redux holat boshqaruvini TypeScript bilan xavfsiz va aniq qiladi.

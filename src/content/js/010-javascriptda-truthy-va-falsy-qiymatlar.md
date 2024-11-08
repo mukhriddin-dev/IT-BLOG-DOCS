@@ -15,6 +15,7 @@ type: javascript
 postType: full
 episode: 10
 ---
+
 JavaScriptda **Truthy** va **Falsy** qiymatlar - bu shartli ifodalarda `true` yoki `false` sifatida talqin qilinadigan qiymatlar. JavaScriptda har qanday qiymat shartli ifodada `true` yoki `false` sifatida baholanadi.
 
 ![khodieff.uz](https://media.licdn.com/dms/image/D5612AQEfF6K4DZ3HDw/article-cover_image-shrink_720_1280/0/1677735519671?e=2147483647&v=beta&t=W5kB_xas95aqEI5RlTDuOD2GP2DX_y04Nf0lsga3HwQ "khodieff.uz")
@@ -27,7 +28,7 @@ JavaScriptda **Truthy** va **Falsy** qiymatlar - bu shartli ifodalarda `true` yo
 2. `0` - Sonli qiymat (nol).
 3. `-0` - Manfiy nol.
 4. `0n` - BigInt turi uchun nol qiymat.
-5. `""` yoki `''` yoki  (bo'sh string) - Har qanday bo'sh string.
+5. `""` yoki `''` yoki (bo'sh string) - Har qanday bo'sh string.
 6. `null` - Mavjud bo'lmagan yoki qiymatsiz o'zgaruvchi.
 7. `undefined` - Belgilanmagan qiymat.
 8. `NaN` - Not-a-Number, raqamli ifoda noto'g'ri yoki matematik xato bo'lsa.
@@ -109,8 +110,8 @@ if ({}) {
 
 ### **Amaliy Maslahatlar:**
 
-* Har doim `Truthy` va `Falsy` qiymatlarini e'tiborga olish kerak, chunki ular kutilmagan xatti-harakatlarga olib kelishi mumkin.
-* `Falsy` qiymatlar ro'yxatidan tashqari barcha qiymatlar `Truthy` ekanligini yodda saqlash kerak.
-* **Truthy** va **Falsy** qiymatlar haqida bilish, JavaScript kodini yozishda murakkab bo'lgan mantiqiy xatolarni aniqlashda yordam beradi.
+- Har doim `Truthy` va `Falsy` qiymatlarini e'tiborga olish kerak, chunki ular kutilmagan xatti-harakatlarga olib kelishi mumkin.
+- `Falsy` qiymatlar ro'yxatidan tashqari barcha qiymatlar `Truthy` ekanligini yodda saqlash kerak.
+- **Truthy** va **Falsy** qiymatlar haqida bilish, JavaScript kodini yozishda murakkab bo'lgan mantiqiy xatolarni aniqlashda yordam beradi.
 
 Shu bilan **Truthy** va **Falsy** qiymatlar haqidagi asosiy tushunchalarni bilib oldik keyingi maqolalarda ko'rishguncha.

@@ -16,9 +16,11 @@ type: libraries
 postType: full
 episode: 1
 ---
+
 Redux — bu JavaScript kutubxonasi bo‘lib, asosan React kabi kutubxonalar bilan ishlatiladi va dasturiy holatni (state) boshqarish uchun qulay vosita hisoblanadi. Redux asosan katta miqdordagi ma'lumotlar oqimini boshqarish, murakkab ilovalarda holatni markazlashtirish uchun mo‘ljallangan.
 
 Redux’ning asosiy tushunchalari:
+
 1. **Store (Do‘kon)**: Dasturdagi barcha holat (state)ni saqlaydi.
 2. **Actions (Harakatlar)**: Bu oddiy obyektlar bo‘lib, qanday o‘zgarishlar bo‘lishini tavsiflaydi.
 3. **Reducers**: Bu funksiyalar bo‘lib, holatning qanday o‘zgarishini belgilaydi.
@@ -29,14 +31,16 @@ Keling, endi Redux’ning ishlash jarayonini bosqichma-bosqich ko'rib chiqamiz.
 
 ### 1. Redux’ni o‘rnatish
 
-Redux bilan ishlash uchun avval Redux va React-Redux paketlarini o‘rnatishingiz kerak. 
+Redux bilan ishlash uchun avval Redux va React-Redux paketlarini o‘rnatishingiz kerak.
 
 **npm yordamida o‘rnatish:**
+
 ```bash
 npm install redux react-redux
 ```
 
 **yarn yordamida o‘rnatish:**
+
 ```bash
 yarn add redux react-redux
 ```
@@ -50,14 +54,15 @@ Redux store — bu sizning ilovangizdagi barcha holatni markaziy joyda saqlaydig
 Misol uchun, biz birinchi bo‘lib oddiy `reducer` yaratamiz, keyin Redux do‘konini yaratamiz:
 
 **`reducer.js` faylida:**
+
 ```js
 const initialState = { count: 0 };
 
 function counterReducer(state = initialState, action) {
   switch (action.type) {
-    case 'INCREMENT':
+    case "INCREMENT":
       return { ...state, count: state.count + 1 };
-    case 'DECREMENT':
+    case "DECREMENT":
       return { ...state, count: state.count - 1 };
     default:
       return state;
@@ -70,9 +75,10 @@ export default counterReducer;
 Bu yerda biz oddiy `counterReducer` yaratdik, u holatni o‘z ichiga oladi va kelayotgan `action`ga qarab o‘zgaradi.
 
 **`store.js` faylida:**
+
 ```js
-import { createStore } from 'redux';
-import counterReducer from './reducer';
+import { createStore } from "redux";
+import counterReducer from "./reducer";
 
 const store = createStore(counterReducer);
 
@@ -86,40 +92,42 @@ Bu yerda biz `counterReducer` asosida storeni yaratdik.
 React ilovasida Redux storeidan foydalanish uchun `Provider` komponentidan foydalanib, storeni butun ilova bo‘ylab taqdim etishimiz kerak.
 
 **`index.js` yoki `App.js` faylida:**
+
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from './store';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./store";
+import App from "./App";
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root"),
 );
 ```
 
 Bu yerda `Provider` Redux do‘konini React ilovasiga taqdim etadi, shunda siz store bilan ishlay olasiz.
 
-### 4. Actions  yaratish
+### 4. Actions yaratish
 
 `Action`lar Redux’da holatni o‘zgartirish uchun yuboriladigan oddiy obyektlardir. Ular qanday o‘zgarish bo‘lishi kerakligini ko‘rsatadi.
 
 Misol uchun, biz ikkita `action` yaratamiz: `increment` va `decrement`.
 
 **`actions.js` faylida:**
+
 ```js
 export const increment = () => {
   return {
-    type: 'INCREMENT',
+    type: "INCREMENT",
   };
 };
 
 export const decrement = () => {
   return {
-    type: 'DECREMENT',
+    type: "DECREMENT",
   };
 };
 ```
@@ -131,10 +139,11 @@ Redux’ning asosiy foydasi shundaki, siz ilovadagi har qanday komponentda marka
 Misol uchun, `Counter` komponentini yarataylik:
 
 **`Counter.js` faylida:**
+
 ```js
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './actions';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "./actions";
 
 function Counter() {
   const count = useSelector((state) => state.count);
@@ -167,8 +176,9 @@ Redux’ning muhim jihatlaridan biri bu storedagi holatni kuzatishdir. Redux avt
 4. **React komponenti yangilanadi**: storedagi holat o‘zgarsa, Redux bilan bog‘langan komponentlar avtomatik ravishda yangilanadi va qayta render qilinadi.
 
 ### Redux bilan ishlashning afzalliklari:
+
 - **Stateni markazlashtirish**: Barcha holat bitta joyda saqlanadi.
 - **Predictable (Oldindan aytib berish mumkin bo‘lgan) holat boshqaruvi**: Redux’da har bir o‘zgarish aniq va kuzatiladigan bo‘lib, bu ilovani debugging qilishni osonlashtiradi.
 - **Oson debugging**: Redux DevTools yordamida har bir action va holat o‘zgarishini kuzatish imkoniyati mavjud.
 
-Mana shu bosqichlar Redux bilan dastur yozishning asosiy qadamlaridir. Agar siz yanada samarali ishlashni xohlasangiz, **Redux Toolkit** dan foydalanishni tavsiya qilaman, chunki u an’anaviy Redux’dan ko‘ra sodda va kamroq kod yozishni talab qiladi. Hullas Redux-toolkit zo'r  :)
+Mana shu bosqichlar Redux bilan dastur yozishning asosiy qadamlaridir. Agar siz yanada samarali ishlashni xohlasangiz, **Redux Toolkit** dan foydalanishni tavsiya qilaman, chunki u an’anaviy Redux’dan ko‘ra sodda va kamroq kod yozishni talab qiladi. Hullas Redux-toolkit zo'r :)

@@ -17,21 +17,22 @@ type: vue
 postType: full
 episode: 5
 ---
+
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/26wrmf9cewarwh63obqe.png)
 
 Assalamu alaykum! ahli O'zbek Vue community! Keling bugun Vue.js da reaktivlik qanday ishlaydi , minde sizlarga tushuntirsam :)
 
 Bismillah!
 
-Hamma gap **JavaScriptda** , ya'ni `Object.defineProperty` va `Proxy` JavaScript-da obyektlarni manipulyatsiya qilish va eshitish uchun ishlatiladigan ikki xil mexanizmdir. **Vue2**  va **Vue3** reaktivlik tizimlarida bu ikkalasi qanday qo'llanilishi haqida gaplashamiz.
+Hamma gap **JavaScriptda** , ya'ni `Object.defineProperty` va `Proxy` JavaScript-da obyektlarni manipulyatsiya qilish va eshitish uchun ishlatiladigan ikki xil mexanizmdir. **Vue2** va **Vue3** reaktivlik tizimlarida bu ikkalasi qanday qo'llanilishi haqida gaplashamiz.
 
 ### `Object.defineProperty`
 
 #### Xususiyatlari
 
-* **Xususiyatlar holatini kuzatish**: `Object.defineProperty` biror obyektda mavjud bo'lgan xususiyatlarni (property) larni kuzatish uchun ishlatiladi. Bu xususiyatlarni o'qish va yozish uchun getter va setterlarni belgilash imkonini beradi.
-* **Biroz cheklov bor aynan bu metodda** : Bu usul faqat mavjud xususiyatlar uchun ishlaydi va yangi xususiyatlar (property) qo'shilganda avtomatik kuzatilmaydi.
-* **Vue2 da ishlatilishi**: Vue2 reaktivlik tizimi `Object.defineProperty` asosida qurilgan. Bu har bir xususiyat uchun getter va setterlarni yaratish orqali o'zgarishlarni kuzatadi.
+- **Xususiyatlar holatini kuzatish**: `Object.defineProperty` biror obyektda mavjud bo'lgan xususiyatlarni (property) larni kuzatish uchun ishlatiladi. Bu xususiyatlarni o'qish va yozish uchun getter va setterlarni belgilash imkonini beradi.
+- **Biroz cheklov bor aynan bu metodda** : Bu usul faqat mavjud xususiyatlar uchun ishlaydi va yangi xususiyatlar (property) qo'shilganda avtomatik kuzatilmaydi.
+- **Vue2 da ishlatilishi**: Vue2 reaktivlik tizimi `Object.defineProperty` asosida qurilgan. Bu har bir xususiyat uchun getter va setterlarni yaratish orqali o'zgarishlarni kuzatadi.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7849sgdyw8quzkoiln0r.png)
 
@@ -39,15 +40,15 @@ Hamma gap **JavaScriptda** , ya'ni `Object.defineProperty` va `Proxy` JavaScript
 
 ```javascript
 let data = {};
-Object.defineProperty(data, 'count', {
+Object.defineProperty(data, "count", {
   get() {
-    console.log('Getting value');
+    console.log("Getting value");
     return count;
   },
   set(newValue) {
-    console.log('Setting value');
+    console.log("Setting value");
     count = newValue;
-  }
+  },
 });
 
 data.count = 5; // Setting value
@@ -60,15 +61,15 @@ console.log(data.count); // Getting value
 
 #### Xususiyatlari
 
-* **Obyekt holatini kuzatish**: `Proxy` obyekt darajasida kuzatish imkonini beradi, ya'ni butun obyektni "proxylash" mumkin va bu obyektning har qanday xususiyatiga kirish yoki uni o'zgartirish kuzatiladi.
-* **Qo'llash**: `Proxy` yangi xususiyatlar qo'shilganda yoki olib tashlanganda ham kuzatilishini ta'minlaydi.
-* **Vue3 da ishlatilishi**: Vue 3 reaktivlik tizimi `Proxy` asosida qurilgan. Bu Vue2 ga nisbatan samarali va kengroq ko'lamli kuzatish imkonini beradi.
+- **Obyekt holatini kuzatish**: `Proxy` obyekt darajasida kuzatish imkonini beradi, ya'ni butun obyektni "proxylash" mumkin va bu obyektning har qanday xususiyatiga kirish yoki uni o'zgartirish kuzatiladi.
+- **Qo'llash**: `Proxy` yangi xususiyatlar qo'shilganda yoki olib tashlanganda ham kuzatilishini ta'minlaydi.
+- **Vue3 da ishlatilishi**: Vue 3 reaktivlik tizimi `Proxy` asosida qurilgan. Bu Vue2 ga nisbatan samarali va kengroq ko'lamli kuzatish imkonini beradi.
 
 #### Misol
 
 ```javascript
 let data = {
-  count: 0
+  count: 0,
 };
 
 let proxyData = new Proxy(data, {
@@ -80,7 +81,7 @@ let proxyData = new Proxy(data, {
     console.log(`Setting ${property} to ${value}`);
     target[property] = value;
     return true;
-  }
+  },
 });
 
 proxyData.count = 5; // Setting count to 5
@@ -89,20 +90,20 @@ console.log(proxyData.count); // Getting count
 
 ### `Object.defineProperty` va `Proxy` taqqoslash
 
-* **Kuzatishning ko'lamini**: `Object.defineProperty` faqat mavjud xususiyatlarni kuzatadi, yangi qo'shilgan xususiyatlarni avtomatik kuzatish qiyin. `Proxy` esa butun obyektni kuzatadi, shu jumladan yangi qo'shilgan xususiyatlarni ham.
-* **Performans**: `Proxy` samaraliroq bo‘lishi mumkin, chunki u obyektni bir marta proxylaydi va xususiyat darajasida ishlov bermaydi.
-* **Moslashuvchanlik**: `Proxy` ko'proq moslashuvchan bo‘lib, turli xil operatsiyalarni (masalan, xususiyatni o‘chirish) kuzatish imkonini beradi.
+- **Kuzatishning ko'lamini**: `Object.defineProperty` faqat mavjud xususiyatlarni kuzatadi, yangi qo'shilgan xususiyatlarni avtomatik kuzatish qiyin. `Proxy` esa butun obyektni kuzatadi, shu jumladan yangi qo'shilgan xususiyatlarni ham.
+- **Performans**: `Proxy` samaraliroq bo‘lishi mumkin, chunki u obyektni bir marta proxylaydi va xususiyat darajasida ishlov bermaydi.
+- **Moslashuvchanlik**: `Proxy` ko'proq moslashuvchan bo‘lib, turli xil operatsiyalarni (masalan, xususiyatni o‘chirish) kuzatish imkonini beradi.
 
 ### Vue reaktivlik tizimidagi farqlar
 
-* **Vue 2**: `Object.defineProperty` asosida qurilgan. Bu Vue 2 ning reaktivlik tizimini ba'zi cheklovlarga olib keladi, masalan, yangi xususiyatlarni kuzatishda muammo bor.
-* **Vue 3**: `Proxy` asosida qurilgan. Bu Vue 3 ning reaktivlik tizimini yanada kuchli va samarali qiladi, shu jumladan yangi xususiyatlarni va murakkab strukturalarni oson kuzatish imkonini beradi.
+- **Vue 2**: `Object.defineProperty` asosida qurilgan. Bu Vue 2 ning reaktivlik tizimini ba'zi cheklovlarga olib keladi, masalan, yangi xususiyatlarni kuzatishda muammo bor.
+- **Vue 3**: `Proxy` asosida qurilgan. Bu Vue 3 ning reaktivlik tizimini yanada kuchli va samarali qiladi, shu jumladan yangi xususiyatlarni va murakkab strukturalarni oson kuzatish imkonini beradi.
 
-Yuqoridagi misollar Vue2 va Vue3 ning reaktivlik tizimlarining qanday ishlashini va qaysi texnologiyalarni qo'llaganligini ko'rsatadi. Bu farqlar Vue3 ni Vue2 ga nisbatan yanada kuchliroq va flexibility qiladi. 
+Yuqoridagi misollar Vue2 va Vue3 ning reaktivlik tizimlarining qanday ishlashini va qaysi texnologiyalarni qo'llaganligini ko'rsatadi. Bu farqlar Vue3 ni Vue2 ga nisbatan yanada kuchliroq va flexibility qiladi.
 
 Quyida bu haqida rasmlarda ko'rib chiqamiz batafsil!
 
- Barakalloh fiikum!
+Barakalloh fiikum!
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/63p1hu744r8z5h2pnz18.png)
 

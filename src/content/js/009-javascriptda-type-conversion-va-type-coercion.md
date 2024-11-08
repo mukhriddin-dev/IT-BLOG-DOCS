@@ -14,11 +14,10 @@ type: javascript
 postType: full
 episode: 9
 ---
+
 **Type Conversion** va **Type Coercion** - JavaScriptda ma'lumot turlarini o'zgartirish jarayonlari bo'lib, ular dasturiy ta'minotdagi ifodalarning turini kerakli ma'lumot turiga moslash uchun ishlatiladi.
 
 ![khodieff.uz - JS darslari](https://pbs.twimg.com/media/EiuhiPVU8AAwjhF?format=jpg&name=4096x4096 "khodieff.uz - JS darslari")
-
-
 
 ### 1. **Type Conversion (Turli ma'lumot turiga o'zgartirish)**
 
@@ -31,7 +30,7 @@ episode: 9
 ```javascript
 let str = "123";
 let num = Number(str);
-console.log(num);        // 123
+console.log(num); // 123
 console.log(typeof num); // "number"
 ```
 
@@ -40,7 +39,7 @@ console.log(typeof num); // "number"
 ```javascript
 let num = 456;
 let str = String(num);
-console.log(str);        // "456"
+console.log(str); // "456"
 console.log(typeof str); // "string"
 ```
 
@@ -49,7 +48,7 @@ console.log(typeof str); // "string"
 ```javascript
 let num = 0;
 let bool = Boolean(num);
-console.log(bool);       // false
+console.log(bool); // false
 console.log(typeof bool); // "boolean"
 ```
 
@@ -64,7 +63,7 @@ console.log(typeof bool); // "boolean"
 ```javascript
 let num = 123;
 let str = "The number is " + num;
-console.log(str);        // "The number is 123"
+console.log(str); // "The number is 123"
 console.log(typeof str); // "string"
 ```
 
@@ -73,7 +72,7 @@ console.log(typeof str); // "string"
 ```javascript
 let str = "5";
 let result = str * 2; // "5" ni avtomatik son (5) ga o'zgartiradi
-console.log(result);  // 10
+console.log(result); // 10
 console.log(typeof result); // "number"
 ```
 
@@ -82,17 +81,17 @@ console.log(typeof result); // "number"
 ```javascript
 let str = "";
 if (str) {
-    console.log("True!");
+  console.log("True!");
 } else {
-    console.log("False!");
+  console.log("False!");
 }
 // Empty string (""), 0, null, undefined, va NaN avtomatik ravishda false bo'ladi.
 ```
 
 ### **Type Conversion va Type Coercion o'rtasidagi farq:**
 
-* **Type Conversion**: Ma'lumot turi dasturchi tomonidan aniq ko'rsatma bilan o'zgartiriladi. Bu ko'proq nazoratni ta'minlaydi va aniq maqsad bilan amalga oshiriladi.
-* **Type Coercion**: JavaScript tomonidan avtomatik ravishda turli ma'lumot turlariga o'zgartiriladi. Bu o'z-o'zidan yuz beradi va ba'zida kutilmagan natijalarni berishi mumkin.
+- **Type Conversion**: Ma'lumot turi dasturchi tomonidan aniq ko'rsatma bilan o'zgartiriladi. Bu ko'proq nazoratni ta'minlaydi va aniq maqsad bilan amalga oshiriladi.
+- **Type Coercion**: JavaScript tomonidan avtomatik ravishda turli ma'lumot turlariga o'zgartiriladi. Bu o'z-o'zidan yuz beradi va ba'zida kutilmagan natijalarni berishi mumkin.
 
 ### **Kutilmagan natijalar:**
 
@@ -101,8 +100,8 @@ Type Coercion ba'zida qiziqarli yoki kutilmagan natijalarga olib kelishi mumkin,
 Misol:
 
 ```javascript
-console.log(1 + "2");  // "12" (String concatenation)
-console.log("5" - 3);  // 2 (Number subtraction)
+console.log(1 + "2"); // "12" (String concatenation)
+console.log("5" - 3); // 2 (Number subtraction)
 console.log(true + 1); // 2 (true => 1, so 1 + 1 = 2)
 console.log("5" * "2"); // 10 (String to Number conversion)
 ```

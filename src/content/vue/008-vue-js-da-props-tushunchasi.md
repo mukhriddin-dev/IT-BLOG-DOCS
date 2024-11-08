@@ -16,14 +16,15 @@ type: vue
 postType: full
 episode: 8
 ---
+
 ![khodieff.uz](https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8by4qq35333qz05x5cfz.jpg "khodieff.uz | vue.js")
 
-**Assalamu alaykum !**  `Props` - Vue.js ning eng kerakli qismilaridan biri bo'lib, komponentlar aro ma'lumotni almashinish imkonini beradi. `props`-larni ishlatish `setup` funksiyasi ichida amalga oshiriladi. Quyida `props`-larni `<script setup>`  bilan qanday ishlash haqida batafsil ko'rishimiz mumkin:
+**Assalamu alaykum !** `Props` - Vue.js ning eng kerakli qismilaridan biri bo'lib, komponentlar aro ma'lumotni almashinish imkonini beradi. `props`-larni ishlatish `setup` funksiyasi ichida amalga oshiriladi. Quyida `props`-larni `<script setup>` bilan qanday ishlash haqida batafsil ko'rishimiz mumkin:
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dnrgz4ujxvv1zovryt4n.png)
 
 1. **Props-larni aniqlash**:
-   **Vue.js** da `props`-larni aniqlash uchun `defineProps` funksiyasidan foydalaniladi. `defineProps` obyekti `props`-larning turlarini va xususiyatlarini  belgilash uchun ishlatiladi.
+   **Vue.js** da `props`-larni aniqlash uchun `defineProps` funksiyasidan foydalaniladi. `defineProps` obyekti `props`-larning turlarini va xususiyatlarini belgilash uchun ishlatiladi.
 
 ```vue
 <template>
@@ -34,19 +35,19 @@ episode: 8
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps } from "vue";
 
 // Props-larni aniqlash
 const props = defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   message: {
     type: String,
-    default: 'Default message'
-  }
-})
+    default: "Default message",
+  },
+});
 </script>
 ```
 
@@ -67,17 +68,17 @@ Bu yerda `props` obyekti `title` va `message` prop-larini aniqlaydi. `title` pro
 const props = defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   message: {
     type: String,
-    default: 'Default message'
-  }
-})
+    default: "Default message",
+  },
+});
 
 // Props-larni ishlatish
-console.log(props.title)
-console.log(props.message)
+console.log(props.title);
+console.log(props.message);
 </script>
 ```
 
@@ -89,13 +90,13 @@ console.log(props.message)
 const props = defineProps({
   id: {
     type: Number,
-    required: true
+    required: true,
   },
   user: {
     type: Object,
-    default: () => ({ name: 'Johon', age: 30 })
-  }
-})
+    default: () => ({ name: "Johon", age: 30 }),
+  },
+});
 </script>
 ```
 

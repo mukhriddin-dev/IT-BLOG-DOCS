@@ -17,7 +17,6 @@ postType: full
 episode: 3
 ---
 
-
 #### Assalamu alaykum!
 
 Vue.js loyihasi Vite orqali yaratilganda, loyihaning tuzilmasi quyidagicha bo'ladi. Har bir katalog va faylning maqsadi va vazifalari haqida batafsil tanishamiz.
@@ -74,11 +73,11 @@ Bu asosiy Vue komponentidir. Bu komponent ilovangizning asosiy tuzilishini va bo
 Bu fayl ilovamzini ishga tushishi uchun kirish nuqtasi hisoblanadi. Bu faylda Vue ilovasi yaratiladi va asosiy komponent (`App.vue`) ni o'z ichida HTML faylga renderlaydi , bundan tashqar ba'zi css fayllarimizni global holatda ulashimiz mumkin bo'laadi.
 
 ```javascript
-import { createApp } from 'vue'
+import { createApp } from "vue";
 // import "./style.css" (misol)
-import App from './App.vue'
+import App from "./App.vue";
 
-createApp(App).mount('#app')
+createApp(App).mount("#app");
 ```
 
 #### `.gitignore`
@@ -90,11 +89,11 @@ Bu faylda Git uchun qaysi fayl va kataloglarni versiya boshqaruviga qo'shmaslik 
 Bu ilovamizga kirish uchun asosiy bo'lgan HTML fayl hisoblanadi. Bunda ilovangizni qayerda yuklash kerakligi belgilanadi.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Vue</title>
   </head>
   <body>
@@ -135,13 +134,13 @@ Bu fayl loyihamiz haqida ma'lumot beruvchi hujjatdir. Bu yerda loyihangizni qand
 Bu faylda Vite konfiguratsiyasi saqlanadi. Bu faylda tuzilma jarayonini o'zgartirish va kengaytirish mumkin.
 
 ```javascript
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
-})
+  plugins: [vue()],
+});
 ```
 
 ### Qo'shimcha kataloglar va fayllar

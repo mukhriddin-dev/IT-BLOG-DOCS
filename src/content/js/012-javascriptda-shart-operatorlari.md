@@ -14,6 +14,7 @@ type: javascript
 postType: full
 episode: 12
 ---
+
 **JavaScriptda** shart operatorlari (conditional operators) dasturda turli shartlarga ko'ra turli xil harakatlarni amalga oshirish imkonini beradi. Quyida JavaScriptda ishlatiladigan asosiy shart operatorlari haqida batafsil ko'rib chiqamiz.
 
 ![khodieff.uz](https://www.programiz.com/sites/tutorial2program/files/javascript-if-statement.png "khodieff.uz")
@@ -26,9 +27,9 @@ episode: 12
 
 ```javascript
 if (shart) {
-    // Shart to'g'ri bo'lsa, bu kod ishlaydi
+  // Shart to'g'ri bo'lsa, bu kod ishlaydi
 } else {
-    // Shart noto'g'ri bo'lsa, bu kod ishlaydi
+  // Shart noto'g'ri bo'lsa, bu kod ishlaydi
 }
 ```
 
@@ -38,9 +39,9 @@ if (shart) {
 let age = 18;
 
 if (age >= 18) {
-    console.log("Siz kattasiz");
+  console.log("Siz kattasiz");
 } else {
-    console.log("Siz hali yoshligingiz");
+  console.log("Siz hali yoshligingiz");
 }
 // "Siz kattasiz" ni chiqaradi, chunki shart to'g'ri.
 ```
@@ -53,11 +54,11 @@ if (age >= 18) {
 
 ```javascript
 if (shart1) {
-    // Agar shart1 to'g'ri bo'lsa, bu kod ishlaydi
+  // Agar shart1 to'g'ri bo'lsa, bu kod ishlaydi
 } else if (shart2) {
-    // Agar shart1 noto'g'ri, lekin shart2 to'g'ri bo'lsa, bu kod ishlaydi
+  // Agar shart1 noto'g'ri, lekin shart2 to'g'ri bo'lsa, bu kod ishlaydi
 } else {
-    // Agar barcha shartlar noto'g'ri bo'lsa, bu kod ishlaydi
+  // Agar barcha shartlar noto'g'ri bo'lsa, bu kod ishlaydi
 }
 ```
 
@@ -67,11 +68,11 @@ if (shart1) {
 let grade = 85;
 
 if (grade >= 90) {
-    console.log("A olasiz");
+  console.log("A olasiz");
 } else if (grade >= 80) {
-    console.log("B olasiz");
+  console.log("B olasiz");
 } else {
-    console.log("C yoki undan past olasiz");
+  console.log("C yoki undan past olasiz");
 }
 // "B olasiz" ni chiqaradi, chunki grade 85 va bu 80 dan yuqori.
 ```
@@ -83,14 +84,14 @@ if (grade >= 90) {
 #### **Sintaksis:**
 
 ```javascript
-let natija = (shart) ? if_true : if_false;
+let natija = shart ? if_true : if_false;
 ```
 
 #### **Misol:**
 
 ```javascript
 let age = 20;
-let message = (age >= 18) ? "Siz kattasiz" : "Siz hali yoshligingiz";
+let message = age >= 18 ? "Siz kattasiz" : "Siz hali yoshligingiz";
 console.log(message);
 // "Siz kattasiz" ni chiqaradi, chunki age 18 dan yuqori.
 ```
@@ -103,14 +104,14 @@ console.log(message);
 
 ```javascript
 switch (expression) {
-    case value1:
-        // Agar expression value1 ga teng bo'lsa, bu kod ishlaydi
-        break;
-    case value2:
-        // Agar expression value2 ga teng bo'lsa, bu kod ishlaydi
-        break;
-    default:
-        // Agar hech bir case mos kelmasa, bu kod ishlaydi
+  case value1:
+    // Agar expression value1 ga teng bo'lsa, bu kod ishlaydi
+    break;
+  case value2:
+    // Agar expression value2 ga teng bo'lsa, bu kod ishlaydi
+    break;
+  default:
+  // Agar hech bir case mos kelmasa, bu kod ishlaydi
 }
 ```
 
@@ -120,17 +121,17 @@ switch (expression) {
 let color = "qizil";
 
 switch (color) {
-    case "qizil":
-        console.log("Rang qizil");
-        break;
-    case "yashil":
-        console.log("Rang yashil");
-        break;
-    case "ko'k":
-        console.log("Rang ko'k");
-        break;
-    default:
-        console.log("Noma'lum rang");
+  case "qizil":
+    console.log("Rang qizil");
+    break;
+  case "yashil":
+    console.log("Rang yashil");
+    break;
+  case "ko'k":
+    console.log("Rang ko'k");
+    break;
+  default:
+    console.log("Noma'lum rang");
 }
 // "Rang qizil" ni chiqaradi, chunki color "qizil".
 ```
@@ -139,25 +140,27 @@ switch (color) {
 
 **Logical operators** - bir nechta shartlarni birlashtirish yoki ularni manipulyatsiya qilish uchun ishlatiladi. Eng keng tarqalgan mantiqiy operatorlar quyidagilardan iborat:
 
-* **AND (`&&`)**: Ikkala shart ham to'g'ri bo'lsa, `true` qaytaradi.
+- **AND (`&&`)**: Ikkala shart ham to'g'ri bo'lsa, `true` qaytaradi.
 
   ```javascript
   if (age > 18 && age < 30) {
-      console.log("Siz yoshsiz");
+    console.log("Siz yoshsiz");
   }
   ```
-* **OR (`||`)**: Kamida bitta shart to'g'ri bo'lsa, `true` qaytaradi.
+
+- **OR (`||`)**: Kamida bitta shart to'g'ri bo'lsa, `true` qaytaradi.
 
   ```javascript
   if (age < 18 || age > 60) {
-      console.log("Siz bu toifaga kirmaysiz");
+    console.log("Siz bu toifaga kirmaysiz");
   }
   ```
-* **NOT (`!`)**: Shartning qiymatini inkor qiladi. Agar shart `true` bo'lsa, `false` qaytaradi va aksincha.
+
+- **NOT (`!`)**: Shartning qiymatini inkor qiladi. Agar shart `true` bo'lsa, `false` qaytaradi va aksincha.
 
   ```javascript
   if (!isMember) {
-      console.log("Siz a'zo emassiz");
+    console.log("Siz a'zo emassiz");
   }
   ```
 

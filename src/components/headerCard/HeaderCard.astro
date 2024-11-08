@@ -1,127 +1,136 @@
 ---
-import astropodConfig from "../../../.astropod/astropod.config.json";
-const { title, subtitle, explicit, cover } = Astro.props;
-import FollowUsMenu from "./followUsMenu.astro";
-import HeartIcon from "../icons/heartIcon.astro";
-const currentPath = Astro.url.pathname;
-import "../../assets/fonts/WEB/css/clash-display.css";
+import astropodConfig from '../../../.astropod/astropod.config.json'
+const { title, subtitle, explicit, cover } = Astro.props
+import FollowUsMenu from './followUsMenu.astro'
+import HeartIcon from '../icons/heartIcon.astro'
+const currentPath = Astro.url.pathname
+import '../../assets/fonts/WEB/css/clash-display.css'
 
 const explicitLabel =
-  explicit === undefined ? astropodConfig.explicit : explicit;
-let cover_url = cover ? cover : astropodConfig.cover;
+    explicit === undefined ? astropodConfig.explicit : explicit
+let cover_url = cover ? cover : astropodConfig.cover
 
 const pathURL = (URL: string) => {
-  if (URL.length) {
-    const basePATH = URL.split("/")[1];
-    if (basePATH) {
-      return basePATH;
-    } else {
-      return URL;
+    if (URL.length) {
+        const basePATH = URL.split('/')[1]
+        if (basePATH) {
+            return basePATH
+        } else {
+            return URL
+        }
     }
-  }
-};
+}
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md md:pb-3 w-full">
-  <div class="aspect-[3/1] mt-5 w-full">
-    <div class="relative inline-block w-full">
-      <img
-        src={astropodConfig.banner}
-        alt={astropodConfig.name + " banner"}
-        class="object-cover w-full aspect-[3/1]"
-      />
-      <div
-        class="absolute top-0 left-0 items-center justify-center w-full h-full bg-gradient-to-t from-gray-900 to-50% to-transparent"
-      >
-        <div class="flex flex-col absolute bottom-0 left-32 md:left-52 px-3">
-          <p class="mb-1 text-xs font-medium custom-400 text-white">
-            {subtitle}
-          </p>
-          <h1 class="mb-3 custom-500 text-lg md:text-4xl text-white">
-            {title}
-          </h1>
+    <div class="aspect-[3/1] mt-5 w-full">
+        <div class="relative inline-block w-full">
+            <img
+                src={astropodConfig.banner}
+                alt={astropodConfig.name + ' banner'}
+                class="object-cover w-full aspect-[3/1]"
+            />
+            <div
+                class="absolute top-0 left-0 items-center justify-center w-full h-full bg-gradient-to-t from-gray-900 to-50% to-transparent"
+            >
+                <div
+                    class="flex flex-col absolute bottom-0 left-32 md:left-52 px-3"
+                >
+                    <p class="mb-1 text-xs font-medium custom-400 text-white">
+                        {subtitle}
+                    </p>
+                    <h1 class="mb-3 custom-500 text-lg md:text-3xl text-white">
+                        {title}
+                    </h1>
+                </div>
+            </div>
+            {
+                explicitLabel && (
+                    <span class="text-[10px] md:text-xs font-medium rounded-full text-white border inline px-2 m-2 absolute top-0 right-0">
+                        beta
+                    </span>
+                )
+            }
         </div>
-      </div>
-      {
-        explicitLabel && (
-          <span class="text-[10px] md:text-xs font-medium rounded-full text-white border inline px-2 m-2 absolute top-0 right-0">
-            beta
-          </span>
-        )
-      }
+        <img
+            alt={astropodConfig.name + 'cover'}
+            class="-mt-28 rounded-full mx-6 md:-mt-28 border-4 z-10 relative border-base-100 md:mx-11 w-24 h-24 md:h-40 md:w-40"
+            src={cover_url}
+        />
     </div>
-    <img
-      alt={astropodConfig.name + "cover"}
-      class="-mt-28 rounded-full mx-6 md:-mt-28 border-4 z-10 relative border-base-100 md:mx-11 w-24 h-24 md:h-40 md:w-40"
-      src={cover_url}
-    />
-  </div>
 
-  <div class="flex md:-mt-12 px-4 md:pl-52 overflow-scroll custom-500">
-    <a
-      href="/"
-      aria-current={pathURL(currentPath) === "/" ? "page" : undefined}
-      class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">IT Blog</a
-    >
-    <a
-      href="/react"
-      aria-current={pathURL(currentPath) === "react" ? "page" : undefined}
-      class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">React</a
-    >
-    <a
-      href="/vue"
-      aria-current={pathURL(currentPath) === "vue" ? "page" : undefined}
-      class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">Vue</a
-    >
-
-    <a
-      href="/js"
-      aria-current={pathURL(currentPath) === "js" ? "page" : undefined}
-      class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">JavaScript</a
-    >
-    <a
-      href="/ts"
-      aria-current={pathURL(currentPath) === "ts" ? "page" : undefined}
-      class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">TypeScript</a
-    >
-    <a
-      href="/frontend"
-      aria-current={pathURL(currentPath) === "frontend" ? "page" : undefined}
-      class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">FRONTEND</a
-    >
-    <a
-      href="/english"
-      aria-current={pathURL(currentPath) === "english" ? "page" : undefined}
-      class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">Ingliz tili</a
-    >
-
-    <FollowUsMenu />
-
-    {
-      astropodConfig.fundingUrl && (
+    <div class="flex md:-mt-12 px-4 md:pl-52 overflow-scroll custom-500">
         <a
-          href={astropodConfig.fundingUrl}
-          class="btn btn-ghost btn-square m-1 sm:w-12 w-10 "
-          title={astropodConfig.fundingText}
+            href="/"
+            aria-current={pathURL(currentPath) === '/' ? 'page' : undefined}
+            class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">IT Blog</a
         >
-          <HeartIcon />
-        </a>
-      )
-    }
-  </div>
+        <a
+            href="/react"
+            aria-current={pathURL(currentPath) === 'react' ? 'page' : undefined}
+            class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">React</a
+        >
+        <a
+            href="/vue"
+            aria-current={pathURL(currentPath) === 'vue' ? 'page' : undefined}
+            class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">Vue</a
+        >
+
+        <a
+            href="/js"
+            aria-current={pathURL(currentPath) === 'js' ? 'page' : undefined}
+            class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4"
+            >JavaScript</a
+        >
+        <a
+            href="/ts"
+            aria-current={pathURL(currentPath) === 'ts' ? 'page' : undefined}
+            class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4"
+            >TypeScript</a
+        >
+        <a
+            href="/frontend"
+            aria-current={pathURL(currentPath) === 'frontend'
+                ? 'page'
+                : undefined}
+            class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4">FRONTEND</a
+        >
+        <a
+            href="/english"
+            aria-current={pathURL(currentPath) === 'english'
+                ? 'page'
+                : undefined}
+            class="btn btn-ghost m-1 justify-self-end px-2 sm:px-4"
+            >Ingliz tili</a
+        >
+
+        <FollowUsMenu />
+
+        {
+            astropodConfig.fundingUrl && (
+                <a
+                    href={astropodConfig.fundingUrl}
+                    class="btn btn-ghost btn-square m-1 sm:w-12 w-10 "
+                    title={astropodConfig.fundingText}
+                >
+                    <HeartIcon />
+                </a>
+            )
+        }
+    </div>
 </div>
 
 <style>
-  [aria-current="page"] {
-    color: #fff;
-    font-weight: bold;
-    background-color: #1e201e;
-  }
+    [aria-current='page'] {
+        color: #fff;
+        font-weight: bold;
+        background-color: #1e201e;
+    }
 
-  .btn-ghost {
-    max-height: 35px !important;
-    height: 20px !important;
-    min-height: 32px;
-    padding: 0 20px;
-  }
+    .btn-ghost {
+        max-height: 35px !important;
+        height: 20px !important;
+        min-height: 32px;
+        padding: 0 20px;
+    }
 </style>

@@ -14,19 +14,14 @@ type: javascript
 postType: full
 episode: 7
 ---
-### JavaScriptda Array 
 
-
+### JavaScriptda Array
 
 JavaScriptda `Array` — bu ma'lumotlarning tartiblangan to'plamini saqlash uchun ishlatiladigan ma'lumot turi. Arraylarda turli xil ma'lumot turlari (raqamlar, satrlar, obyektlar, va hattoki boshqa arraylar) birgalikda saqlanishi mumkin. Arraydagi har bir element o'zining indeksiga ega bo'lib, bu indeks 0 dan boshlanadi.
 
 ![khodieff.uz](https://www.guvi.in/blog/wp-content/uploads/2024/03/creating_and_initializing_arrays-1200x628.webp "khodieff.uz")
 
-
-
 ### Arrayni yaratish
-
-
 
 Array yaratishning ikki asosiy usuli mavjud:
 
@@ -59,13 +54,14 @@ console.log(fruits[2]); // "cherry"
 
 Array elementlarini qo'shish yoki mavjudlarini o'zgartirish uchun indeksdan foydalaniladi.
 
-* **Element qo'shish**:
+- **Element qo'shish**:
 
   ```javascript
   fruits[3] = "orange";
   console.log(fruits); // ["apple", "banana", "cherry", "orange"]
   ```
-* **Elementni o'zgartirish**:
+
+- **Elementni o'zgartirish**:
 
   ```javascript
   fruits[1] = "blueberry";
@@ -80,65 +76,70 @@ Array uzunligi, ya'ni undagi elementlar soni, `length` xossasi yordamida aniqlan
 console.log(fruits.length); // 4
 ```
 
-### Keling Arrayning sodda  Metodlari bilan tanishamiz.
-
-
+### Keling Arrayning sodda Metodlari bilan tanishamiz.
 
 JavaScriptda arraylar bilan ishlash uchun ko'plab metodlar mavjud. Eng keng tarqalgan metodlar:
 
-* **`push()`**: Array oxiriga yangi element qo'shadi.
+- **`push()`**: Array oxiriga yangi element qo'shadi.
 
   ```javascript
   fruits.push("mango");
   console.log(fruits); // ["apple", "blueberry", "cherry", "orange", "mango"]
   ```
-* **`pop()`**: Array oxiridan elementni o'chiradi va qaytaradi.
+
+- **`pop()`**: Array oxiridan elementni o'chiradi va qaytaradi.
 
   ```javascript
   let lastFruit = fruits.pop();
   console.log(lastFruit); // "mango"
-  console.log(fruits);    // ["apple", "blueberry", "cherry", "orange"]
+  console.log(fruits); // ["apple", "blueberry", "cherry", "orange"]
   ```
-* **`shift()`**: Array boshidan elementni o'chiradi va qaytaradi.
+
+- **`shift()`**: Array boshidan elementni o'chiradi va qaytaradi.
 
   ```javascript
   let firstFruit = fruits.shift();
   console.log(firstFruit); // "apple"
-  console.log(fruits);     // ["blueberry", "cherry", "orange"]
+  console.log(fruits); // ["blueberry", "cherry", "orange"]
   ```
-* **`unshift()`**: Array boshiga yangi element qo'shadi.
+
+- **`unshift()`**: Array boshiga yangi element qo'shadi.
 
   ```javascript
   fruits.unshift("strawberry");
   console.log(fruits); // ["strawberry", "blueberry", "cherry", "orange"]
   ```
-* **`forEach()`**: Arraydagi har bir elementga amal bajaradi.
+
+- **`forEach()`**: Arraydagi har bir elementga amal bajaradi.
 
   ```javascript
-  fruits.forEach(function(fruit) {
+  fruits.forEach(function (fruit) {
     console.log(fruit);
   });
   ```
-* **`map()`**: Arraydagi har bir elementga amal bajarib, natijalaridan yangi array hosil qiladi.
+
+- **`map()`**: Arraydagi har bir elementga amal bajarib, natijalaridan yangi array hosil qiladi.
 
   ```javascript
-  let upperFruits = fruits.map(function(fruit) {
+  let upperFruits = fruits.map(function (fruit) {
     return fruit.toUpperCase();
   });
   console.log(upperFruits); // ["STRAWBERRY", "BLUEBERRY", "CHERRY", "ORANGE"]
   ```
-* **`filter()`**: Ma'lum shartga mos keladigan elementlardan iborat yangi array yaratadi.
+
+- **`filter()`**: Ma'lum shartga mos keladigan elementlardan iborat yangi array yaratadi.
 
   ```javascript
-  let longFruits = fruits.filter(function(fruit) {
+  let longFruits = fruits.filter(function (fruit) {
     return fruit.length > 6;
   });
   console.log(longFruits); // ["strawberry", "blueberry"]
   ```
-* **`reduce()`**: Arraydagi barcha elementlarni birlashtirib bitta qiymat yaratadi.
+
+- **`reduce()`**: Arraydagi barcha elementlarni birlashtirib bitta qiymat yaratadi.
 
   ```javascript
-  let totalLength = fruits.reduce(function(total, fruit) {
+  let totalLength = fruits.reduce(function (total, fruit) {
     return total + fruit.length;
   }, 0);
   console.log(totalLength); // 28
@@ -154,7 +155,7 @@ for (let i = 0; i < fruits.length; i++) {
 }
 
 // yoki forEach yordamida:
-fruits.forEach(function(fruit) {
+fruits.forEach(function (fruit) {
   console.log(fruit);
 });
 ```
@@ -163,14 +164,15 @@ fruits.forEach(function(fruit) {
 
 Arraylarni birlashtirish uchun `concat()` yoki spread operatoridan (`...`) foydalanish mumkin:
 
-* **`concat()` yordamida**:
+- **`concat()` yordamida**:
 
   ```javascript
   let moreFruits = ["grape", "kiwi"];
   let allFruits = fruits.concat(moreFruits);
   console.log(allFruits); // ["strawberry", "blueberry", "cherry", "orange", "grape", "kiwi"]
   ```
-* **Spread operatori yordamida**:
+
+- **Spread operatori yordamida**:
 
   ```javascript
   let allFruits = [...fruits, ...moreFruits];
@@ -179,8 +181,6 @@ Arraylarni birlashtirish uchun `concat()` yoki spread operatoridan (`...`) foyda
 
 ### Xulosa:
 
-
-
-JavaScriptdagi `Array` — bu tartiblangan ma'lumotlar to'plamini saqlash uchun qulay ma'lumot turi. Arraylar yordamida turli xil operatsiyalarni osonlik bilan bajarish, ma'lumotlarni tartiblash, filtrlar qo'llash va natijalarni qayta ishlash mumkin. Arraylar JavaScriptda keng qo'llaniladi va ularni to'g'ri tushunish dasturlashda juda muhim. 
+JavaScriptdagi `Array` — bu tartiblangan ma'lumotlar to'plamini saqlash uchun qulay ma'lumot turi. Arraylar yordamida turli xil operatsiyalarni osonlik bilan bajarish, ma'lumotlarni tartiblash, filtrlar qo'llash va natijalarni qayta ishlash mumkin. Arraylar JavaScriptda keng qo'llaniladi va ularni to'g'ri tushunish dasturlashda juda muhim.
 
 Keyingi postlarda batafsil tanishamiz.

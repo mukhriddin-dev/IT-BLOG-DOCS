@@ -14,6 +14,7 @@ type: javascript
 postType: full
 episode: 15
 ---
+
 JavaScriptda **TDZ (Temporal Dead Zone)** va **hoisting** xususiyatlari o‘zgaruvchilarni qanday boshqarilishi va ularga qachon kirishish mumkinligini belgilaydi. Bu tushunchalar asosan **`var`**, **`let`** va **`const`** bilan bog‘liq. Keling, har birini batafsil tushuntirib o‘tamiz va bloklar bilan qanday ishlashini ko‘rib chiqamiz.
 
 ![TDZ khodieff.uz](https://miro.medium.com/v2/resize:fit:1400/1*Nvxnq-bqM1iyTqwO_clFYQ.jpeg "TDZ khodieff.uz")
@@ -28,7 +29,7 @@ JavaScriptda **TDZ (Temporal Dead Zone)** va **hoisting** xususiyatlari o‘zgar
 
 `var` yordamida aniqlangan o‘zgaruvchilar hoisting qilinadi. Bu o‘zgaruvchilarni deklaratsiyasi avtomatik ravishda kodning yuqorisiga ko‘tariladi, lekin ularning qiymati `undefined` bo‘ladi, chunki ular faqat dastur bajarilayotganda qiymat oladi.
 
-* **Misol:**
+- **Misol:**
 
 ```javascript
 console.log(x); // undefined
@@ -38,7 +39,7 @@ console.log(x); // 5
 
 Bu misolda `x` o‘zgaruvchisi hoisting qilinadi, lekin `x` ga qiymat berilmagani uchun dastlab `undefined` bo‘ladi.
 
-* **Blokda `var`:**
+- **Blokda `var`:**
   `var` ning yana bir xususiyati shundaki, u **blok scoping**ga rioya qilmaydi, ya'ni funksiyaning ichida aniqlangan bo‘lsa ham global ko‘lamda mavjud bo‘ladi.
 
 ```javascript
@@ -54,7 +55,7 @@ Bu yerda `y` global bo‘lib qoldi, chunki `var` blok scopingni hisobga olmaydi.
 
 `let` va `const` ham hoisting qilinadi, lekin ularga **Temporal Dead Zone** (TDZ) qo‘llaniladi. Ya'ni, o‘zgaruvchiga deklaratsiya qilinmaguncha unga kirishish mumkin emas va ularni aniqlashdan oldin ishlatishga urinishda xato yuzaga keladi.
 
-* **Misol:**
+- **Misol:**
 
 ```javascript
 console.log(a); // ReferenceError: Cannot access 'a' before initialization
@@ -63,7 +64,7 @@ let a = 5;
 
 Bu misolda `a` o‘zgaruvchisi hoisting qilinadi, lekin deklaratsiyaga qadar u TDZda bo‘ladi, shuning uchun unga kirishish mumkin emas.
 
-* **Blokda `let` va `const`:**
+- **Blokda `let` va `const`:**
   `let` va `const` bilan aniqlangan o‘zgaruvchilar blok ko‘lamiga ega. Bu degani, ular faqat o‘sha blok ichida mavjud bo‘ladi.
 
 ```javascript
@@ -83,7 +84,7 @@ Bu yerda `b` va `c` faqat `if` blok ichida mavjud, tashqarida ularga kirishishga
 
 TDZ bu o‘zgaruvchi deklaratsiya qilinmaguncha unga kirishish mumkin bo‘lmagan vaqtinchalik hududdir. Bu holat faqat **`let`** va **`const`** o‘zgaruvchilariga taalluqli bo‘lib, ular hoisting qilinsa ham, deklaratsiyaga qadar o‘z qiymatlarini olmaguncha ishlatib bo‘lmaydi.
 
-* **Misol:**
+- **Misol:**
 
 ```javascript
 {
@@ -102,9 +103,9 @@ Bloklar JavaScriptda `{}` figurali qavslar bilan ifodalanadi va o‘zgaruvchilar
 
 #### **Global va lokal o‘zgaruvchilar**:
 
-* **`var`** global yoki funksiyaviy ko‘lamda ishlaydi.
-* **`let` va `const`** blok ko‘lamiga ega.
-* **Misol:**
+- **`var`** global yoki funksiyaviy ko‘lamda ishlaydi.
+- **`let` va `const`** blok ko‘lamiga ega.
+- **Misol:**
 
 ```javascript
 if (true) {
@@ -114,7 +115,7 @@ if (true) {
 }
 
 console.log(globalVar); // "I'm global"
-console.log(blockLet);  // ReferenceError: blockLet is not defined
+console.log(blockLet); // ReferenceError: blockLet is not defined
 console.log(blockConst); // ReferenceError: blockConst is not defined
 ```
 
@@ -122,11 +123,12 @@ Bu misolda `var` global bo‘lib qoladi, lekin `let` va `const` faqat blok ichid
 
 ### Xulosa:
 
-* **Hoisting** — bu o‘zgaruvchilar va funksiyalarni aniqlashdan oldin ko'tarish jarayoni.
+- **Hoisting** — bu o‘zgaruvchilar va funksiyalarni aniqlashdan oldin ko'tarish jarayoni.
 
-  * `var` bilan hoisting qilinadi, lekin dastlab qiymati `undefined`.
-  * `let` va `const` ham hoisting qilinadi, lekin ular **Temporal Dead Zone (TDZ)**da bo'ladi va deklaratsiyaga qadar ularga kirishib bo‘lmaydi.
-* **TDZ (Temporal Dead Zone)** — o‘zgaruvchi deklaratsiya qilinmaguncha unga kirishish mumkin bo‘lmagan hudud. Bu faqat `let` va `const` o‘zgaruvchilari uchun amal qiladi.
-* **Blok scoplar** — `let` va `const` blok ichida aniqlanadi va faqat shu blok ichida ishlaydi, `var` esa global yoki funksiyaviy ko‘lamda ishlaydi.
+  - `var` bilan hoisting qilinadi, lekin dastlab qiymati `undefined`.
+  - `let` va `const` ham hoisting qilinadi, lekin ular **Temporal Dead Zone (TDZ)**da bo'ladi va deklaratsiyaga qadar ularga kirishib bo‘lmaydi.
+
+- **TDZ (Temporal Dead Zone)** — o‘zgaruvchi deklaratsiya qilinmaguncha unga kirishish mumkin bo‘lmagan hudud. Bu faqat `let` va `const` o‘zgaruvchilari uchun amal qiladi.
+- **Blok scoplar** — `let` va `const` blok ichida aniqlanadi va faqat shu blok ichida ishlaydi, `var` esa global yoki funksiyaviy ko‘lamda ishlaydi.
 
 Shuning uchun `let` va `const` ko'pincha hozirgi zamonaviy JavaScript kod yozishda ishlatiladi, chunki ular kodning xatolikka moyilligini kamaytiradi va blok darajasida ko‘lami cheklaydi.

@@ -16,9 +16,10 @@ type: vue
 postType: full
 episode: 9
 ---
+
 ![khodieff.uz](https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvad145fux66sad93gntz.jpg "khodieff.uz | vue.js")
 
-* **Assalamu alaykum !** Vue.js da `emit` hodisalari yordamida komponentlar o'rtasida ma'lumot almashish imkoniyati mavjud. Emit hodisalari yordamida bola komponent ota komponentga ma'lumot yuborishi   mumkin. Quyida `emit` hodisalari haqida batafsil ko'rib chiqamiz.
+- **Assalamu alaykum !** Vue.js da `emit` hodisalari yordamida komponentlar o'rtasida ma'lumot almashish imkoniyati mavjud. Emit hodisalari yordamida bola komponent ota komponentga ma'lumot yuborishi mumkin. Quyida `emit` hodisalari haqida batafsil ko'rib chiqamiz.
 
 ### `emit` Hodisalarini Aniqlash (event handler)
 
@@ -29,7 +30,7 @@ episode: 9
 #### Gooo:
 
 1. **Eventlarni aniqlash (event handler)** :
-   `defineEmits` funksiyasidan foydalanib, komponentda chiqariladigan eventlarni ahndel qilsihimiz mumkin. 
+   `defineEmits` funksiyasidan foydalanib, komponentda chiqariladigan eventlarni ahndel qilsihimiz mumkin.
 2. **Eventlarni chiqarish**:
    Eventlarni kerakli joyda `emit` funksiyasi yordamida chiqarish mumkin.
 
@@ -45,14 +46,14 @@ Quyida batafsil msiloda ko'ramiz:
 </template>
 
 <script setup>
-import { defineEmits } from 'vue'
+import { defineEmits } from "vue";
 
 // Eventlarni aniqlash
-const emit = defineEmits(['myEvent'])
+const emit = defineEmits(["myEvent"]);
 
 const notifyParent = () => {
-  emit('myEvent', 'Assalamu alaykuuuum bratanim')
-}
+  emit("myEvent", "Assalamu alaykuuuum bratanim");
+};
 </script>
 ```
 
@@ -66,11 +67,11 @@ const notifyParent = () => {
 </template>
 
 <script setup>
-import ChildComponent from './ChildComponent.vue'
+import ChildComponent from "./ChildComponent.vue";
 
 const handleMyEvent = (message) => {
-  console.log(message) // Output: Assalamu alaykuuuum bratanim
-}
+  console.log(message); // Output: Assalamu alaykuuuum bratanim
+};
 </script>
 ```
 
@@ -84,11 +85,11 @@ const handleMyEvent = (message) => {
 </template>
 
 <script setup>
-const emit = defineEmits(['sendData'])
+const emit = defineEmits(["sendData"]);
 
 const sendData = () => {
-  emit('sendData', { id: 1, name: 'Jonibek Davronov' })
-}
+  emit("sendData", { id: 1, name: "Jonibek Davronov" });
+};
 </script>
 ```
 
@@ -102,11 +103,11 @@ const sendData = () => {
 </template>
 
 <script setup>
-import ChildComponent from './ChildComponent.vue'
+import ChildComponent from "./ChildComponent.vue";
 
 const receiveData = (data) => {
-  console.log(data) // Output: { id: 1, name: 'Jonibek Davronov' }
-}
+  console.log(data); // Output: { id: 1, name: 'Jonibek Davronov' }
+};
 </script>
 ```
 
@@ -148,17 +149,17 @@ const sendData = () => {
 </template>
 
 <script setup>
-import ChildComponent from './ChildComponent.vue'
+import ChildComponent from "./ChildComponent.vue";
 
 const handleValidatedData = (data) => {
-  console.log(data) // Output: { id: 1, name: 'Jonibek Davronov' }
-}
+  console.log(data); // Output: { id: 1, name: 'Jonibek Davronov' }
+};
 </script>
 ```
 
 ### Xulosa o'laroq:
 
-Vue.js da `emit` hodisalari yordamida komponentlar o'rtasida ma'lumot almashish mumkin ekan. `defineEmits` funksiyasidan foydalanib eventlarni aniqlash va `emit` funksiyasi yordamida eventlarni chiqarish mumkin (ota componentaga) . Bu hodisalar yordamida bola komponent ota komponentga ma'lumot yuborishi yoki xabar berishi mumkin. Eventlarni validatsiya qilish orqali, yuborilgan ma'lumotlarni to'g'ri ekanligiga ishonch hosil qilishimiz  mumkin ekan.
+Vue.js da `emit` hodisalari yordamida komponentlar o'rtasida ma'lumot almashish mumkin ekan. `defineEmits` funksiyasidan foydalanib eventlarni aniqlash va `emit` funksiyasi yordamida eventlarni chiqarish mumkin (ota componentaga) . Bu hodisalar yordamida bola komponent ota komponentga ma'lumot yuborishi yoki xabar berishi mumkin. Eventlarni validatsiya qilish orqali, yuborilgan ma'lumotlarni to'g'ri ekanligiga ishonch hosil qilishimiz mumkin ekan.
 
 **Bizni tarmoqlarda kuzatishingiz mumkin va maqola foydali bo'lsa izoh va Vuechi do'stlaringizga ulashing**. 🫡
 

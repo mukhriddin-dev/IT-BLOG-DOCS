@@ -14,6 +14,7 @@ type: react
 postType: full
 episode: 7
 ---
+
 ReactJS da **Fragment** — bu React komponentlarining bir necha elementini bir joyga to'plash uchun ishlatiladigan bir usuldir. Fragmentlar DOMda qo'shimcha tugunlar yaratmasdan, bir nechta elementni bir joyga joylashtirish imkonini beradi. Bu ko'pincha JSX kodini to'g'ri tashkil qilishda foydalidir.
 
 ![khodieff.uz](https://www.copycat.dev/blog/wp-content/uploads/2022/12/React-Fragment.png "khodieff.uz")
@@ -42,10 +43,10 @@ const MyComponent = () => {
 
 #### 2. **React.Fragment**
 
-Agar qisqa sintaksisni ishlatish imkoni bo'lmasa yoki ko'proq moslashuvchanlik kerak bo'lsa, siz `React.Fragment` komponentidan foydalanishingiz mumkin. 
+Agar qisqa sintaksisni ishlatish imkoni bo'lmasa yoki ko'proq moslashuvchanlik kerak bo'lsa, siz `React.Fragment` komponentidan foydalanishingiz mumkin.
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 const MyComponent = () => {
   return (
@@ -59,8 +60,8 @@ const MyComponent = () => {
 
 ### Qo'llanilishi:
 
-* **Listalarni Rendering Qilish**: Reactda ro'yxatni rendering qilishda, har bir ro'yxat elementini o'rash uchun Fragmentdan foydalanishingiz mumkin.
-* **HTML Tuzilmasini Soddalashtirish**: Bir necha elementni guruhlash va ularni DOM tugunlarisiz qaytarish orqali kodni toza va o'qilishi osonroq qiladi.
+- **Listalarni Rendering Qilish**: Reactda ro'yxatni rendering qilishda, har bir ro'yxat elementini o'rash uchun Fragmentdan foydalanishingiz mumkin.
+- **HTML Tuzilmasini Soddalashtirish**: Bir necha elementni guruhlash va ularni DOM tugunlarisiz qaytarish orqali kodni toza va o'qilishi osonroq qiladi.
 
 ### Qanday qilib ishlashini ko'rsatish:
 

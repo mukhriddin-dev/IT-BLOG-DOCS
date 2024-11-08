@@ -16,6 +16,7 @@ type: libraries
 postType: full
 episode: 1
 ---
+
 ![khodieff.uz](https://telegra.ph/file/ef3a5f0666b71b84118cd.png "khodieff.uz")
 
 **Vite** — bu JavaScript ilovalari uchun zamonaviy va yuqori samarali dasturlash vositasi bo'lib, u asosan frontend loyihalarini ishlab chiqishda ishlatiladi. Uning asosiy maqsadi — tezkor rivojlanish muhiti yaratish va veb-ilovalarni kompilyatsiya qilish jarayonini soddalashtirishdir. Vite so'zi fransuz tilida "tez" degan ma'noni anglatadi, bu uning eng katta afzalliklaridan biri bo'lgan tezlikka ishora qiladi.
@@ -32,20 +33,18 @@ episode: 1
 
 Vite'ning ishlash prinsipi boshqa dasturlash vositalaridan farq qiladi:
 
-* **Ishlab chiqish jarayoni**: Ishlab chiqish vaqtida Vite Native ES Modules (ESM) bilan ishlaydi va import qilingan fayllarni tarmoqdan dinamik tarzda yuklaydi.
-* **Build jarayoni**: Ishlab chiqarish uchun Vite loyihani Rollup orqali yig'adi, bu esa oxirgi chiqishni optimallashtiradi.
+- **Ishlab chiqish jarayoni**: Ishlab chiqish vaqtida Vite Native ES Modules (ESM) bilan ishlaydi va import qilingan fayllarni tarmoqdan dinamik tarzda yuklaydi.
+- **Build jarayoni**: Ishlab chiqarish uchun Vite loyihani Rollup orqali yig'adi, bu esa oxirgi chiqishni optimallashtiradi.
 
 ### Vite'ning afzalliklari:
 
-* **Tezkor**: Loyihani tez yuklash va ishlash imkoniyati.
-* **Soddaligi**: Minimal konfiguratsiya talab qiladi.
-* **Moslashuvchanlik**: Turli xil freymvorklar (React, Vue, Svelte) bilan ishlay oladi.
+- **Tezkor**: Loyihani tez yuklash va ishlash imkoniyati.
+- **Soddaligi**: Minimal konfiguratsiya talab qiladi.
+- **Moslashuvchanlik**: Turli xil freymvorklar (React, Vue, Svelte) bilan ishlay oladi.
 
 ### Shunday qilib:
 
-Vite — bu frontend rivojlantirish uchun zamonaviy va samarali dasturlash vositasi. U dasturlarni ishlab chiqish jarayonini ancha tezlashtiradi va rivojlantirish tajribasini yaxshilaydi. React, Vue, yoki boshqa freymvorklar bilan ishlashda Vite juda qulay va foydali bo'lishini taminlaydi. 
-
-
+Vite — bu frontend rivojlantirish uchun zamonaviy va samarali dasturlash vositasi. U dasturlarni ishlab chiqish jarayonini ancha tezlashtiradi va rivojlantirish tajribasini yaxshilaydi. React, Vue, yoki boshqa freymvorklar bilan ishlashda Vite juda qulay va foydali bo'lishini taminlaydi.
 
 **Bizni tarmoqlarda kuzatishingiz mumkin va maqola foydali bo’lsa do’stlaringizga ulashing**. 🫡
 

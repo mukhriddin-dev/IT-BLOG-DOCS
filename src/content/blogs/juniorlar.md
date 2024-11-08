@@ -15,8 +15,9 @@ type: blog
 postType: full
 episode: 5
 ---
-**Juniorlar** - Sizni, yangi ishga kirgan kompaniyangizga, foydangizdan ko'ra zararingiz ko'p bo'lishi mumkin, shuning uchun, "meni eshshakdek ishlatib arzimagan summa beryapti", "ketaman bu ishxonadan" deb siqilavermang. 
 
-Sizni yozgan kodlaringizni baribir kimdir, **soatini narxi qimmat bo'lgan** tajribali birortasi vaqtini ketqazib, tekshirib chiqadi. 
+**Juniorlar** - Sizni, yangi ishga kirgan kompaniyangizga, foydangizdan ko'ra zararingiz ko'p bo'lishi mumkin, shuning uchun, "meni eshshakdek ishlatib arzimagan summa beryapti", "ketaman bu ishxonadan" deb siqilavermang.
+
+Sizni yozgan kodlaringizni baribir kimdir, **soatini narxi qimmat bo'lgan** tajribali birortasi vaqtini ketqazib, tekshirib chiqadi.
 
 Mobodo tekshirmasdan nimadir xato narsa loyihaga o'tib ketsa, zararingiz 10x, 100x, 1000x bo'lishi mumkin. 1-2 ta tanish, o'rtoq juniorlar salgina yaxshiroq oylikli ishga kirdi degani, sizam shunaqasiga kirishingiz kerak, boshqasiga dam degani emas. Yana o'ziz bilasiz, Hojiboy aytadiyu: "Qorbobo" deb

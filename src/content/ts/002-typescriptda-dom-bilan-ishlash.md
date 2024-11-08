@@ -15,6 +15,7 @@ type: typescript
 postType: full
 episode: 3
 ---
+
 **TypeScriptda DOM** (Document Object Model) elementlari bilan ishlash JavaScriptga juda o'xshash, ammo TypeScriptning turlarni qo'llab-quvvatlashi tufayli biz xatolarga qarshi yanada ishonchliroq kod yozishimiz mumkin. DOM elementlari bilan ishlashda TypeScript sizga elementlarning turlarini aniq belgilash, ularga xos bo'lgan xususiyatlarni va usullarni ishlatish imkonini beradi.
 
 ![khodieff.uz](https://digitalpress.fra1.cdn.digitaloceanspaces.com/zn3wniw/2021/06/typescript.png "khodieff.uz")

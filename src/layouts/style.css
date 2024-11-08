@@ -1,14 +1,14 @@
 .wr img {
-    border-radius: 12px;
-    filter: grayscale(0);
+  border-radius: 12px;
+  filter: grayscale(0);
 }
 
 .wr img:hover {
-    border-radius: 12px;
-    filter: grayscale(1);
+  border-radius: 12px;
+  filter: grayscale(1);
 }
 
 .wr p {
-    line-height: 26px;
-    font-size: 15px;
+  line-height: 26px;
+  font-size: 15px;
 }

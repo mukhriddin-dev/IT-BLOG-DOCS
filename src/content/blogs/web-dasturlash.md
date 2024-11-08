@@ -16,10 +16,11 @@ type: blog
 postType: full
 episode: 1
 ---
+
 Hamma kundalik tarzda **Frontend** va **Backend** dasturchi degan so’zlarni eshitib turadi. Aslida bular nima ?
 
-**Frontend** - “*tashqi interfeys*” degan ma’noni bildirib, veb texnologiyalarning biridir. Bu texnologiya yordamida veb sahifalarning insonga ko‘rinib turuvchi, ma’lumot beruvchi vizual qismi yaratiladi. Frontend texnologiyalarini o‘rgangan inson o‘z ijodkorligi, kretiv yondoshuvi orqali turli g‘oyalarini veb sahifalar, dasturlar shaklida ro‘yobga chiqarishi mumkin bo‘ladi.
+**Frontend** - “_tashqi interfeys_” degan ma’noni bildirib, veb texnologiyalarning biridir. Bu texnologiya yordamida veb sahifalarning insonga ko‘rinib turuvchi, ma’lumot beruvchi vizual qismi yaratiladi. Frontend texnologiyalarini o‘rgangan inson o‘z ijodkorligi, kretiv yondoshuvi orqali turli g‘oyalarini veb sahifalar, dasturlar shaklida ro‘yobga chiqarishi mumkin bo‘ladi.
 
-**Backend** - “*server tomoni*” deb nomlanadi, bu veb-saytning siz ko’rmaydigan va o’zaro ishlamaydigan qismidir. Asosan, sahna ortida sodir bo’ladigan barcha narsalar veb-saytlarni ishlab chiqish bilan bog’liq bo’lishi mumkin.  Bu tizimning foydalanuvchilar bilan bevosita aloqada bo’lmagan qismi .
+**Backend** - “_server tomoni_” deb nomlanadi, bu veb-saytning siz ko’rmaydigan va o’zaro ishlamaydigan qismidir. Asosan, sahna ortida sodir bo’ladigan barcha narsalar veb-saytlarni ishlab chiqish bilan bog’liq bo’lishi mumkin.  Bu tizimning foydalanuvchilar bilan bevosita aloqada bo’lmagan qismi .
 
 \#frontend #web #backend #post

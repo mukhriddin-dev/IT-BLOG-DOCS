@@ -16,17 +16,14 @@ type: libraries
 postType: full
 episode: 42
 ---
+
 TanStack Query (avvalgi nomi React Query) — JavaScript kutubxonasi bo'lib, serverdan ma'lumotlarni olish, cache'lash va sinxronizatsiya qilish uchun mo'ljallangan. U asosan React uchun ishlatilgan bo'lsa-da, boshqa JavaScript platformalarida ham ishlatish mumkin (Vue, Svelte, Vanilla JS va boshqalar).
 
 TanStack Query orqali siz server bilan muloqot qilishni osonlashtirasiz, shu bilan birga ma'lumotlarni cache'lash, optimistik yangilanishlar, retry (qayta urinish), paginatsiya va yana ko'p funksiyalarni ham qo'llashingiz mumkin.
 
-
-
 ![khodieff.uz](https://i.ytimg.com/vi/lVLz_ASqAio/maxresdefault.jpg "RTK , khodieff.uz")
 
 ### Asosiy tushunchalar:
-
-
 
 #### 1. `useQuery` Hook
 
@@ -35,16 +32,16 @@ TanStack Query orqali siz server bilan muloqot qilishni osonlashtirasiz, shu bil
 Misol:
 
 ```javascript
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const fetchTodos = async () => {
-  const { data } = await axios.get('/api/todos');
+  const { data } = await axios.get("/api/todos");
   return data;
 };
 
 const MyComponent = () => {
-  const { data, error, isLoading } = useQuery(['todos'], fetchTodos);
+  const { data, error, isLoading } = useQuery(["todos"], fetchTodos);
 
   if (isLoading) return <div>Yuklanmoqda...</div>;
   if (error) return <div>Xatolik yuz berdi!</div>;
@@ -66,11 +63,11 @@ Bu yerda `useQuery` orqali ma'lumotlar serverdan olinadi va holatlar boshqarilad
 Mutation serverga ma'lumot yuborish, o'zgartirish yoki o'chirish uchun ishlatiladi. Bu hook CRUD operatsiyalarini bajarish uchun juda qulay.
 
 ```javascript
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 
 const addTodo = async (newTodo) => {
-  const { data } = await axios.post('/api/todos', newTodo);
+  const { data } = await axios.post("/api/todos", newTodo);
   return data;
 };
 
@@ -78,7 +75,7 @@ const AddTodoComponent = () => {
   const mutation = useMutation(addTodo);
 
   const handleAddTodo = () => {
-    mutation.mutate({ title: 'Yangi vazifa', completed: false });
+    mutation.mutate({ title: "Yangi vazifa", completed: false });
   };
 
   return (
@@ -97,7 +94,7 @@ const AddTodoComponent = () => {
 Query Client orqali barcha query va mutationlarni global miqyosda boshqarish mumkin. Bu client har bir query'ning cache'lash, retry qilish va boshqa parametrlarini sozlaydi.
 
 ```javascript
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
@@ -112,14 +109,14 @@ const App = () => (
 
 TanStack Query sizga query'larni ancha moslashtirish imkonini beradi. Quyida ba'zi asosiy opsiyalar keltirilgan:
 
-* **staleTime**: Ma'lumotlar yangilanmaganidan keyin qayta fetch qilishga vaqt beradi.
-* **cacheTime**: Cache'da qancha vaqt davomida ma'lumot saqlanadi.
-* **retry**: Agar query muvaffaqiyatsiz tugasa, qanchalik qayta urinish qilish kerakligini belgilaydi.
+- **staleTime**: Ma'lumotlar yangilanmaganidan keyin qayta fetch qilishga vaqt beradi.
+- **cacheTime**: Cache'da qancha vaqt davomida ma'lumot saqlanadi.
+- **retry**: Agar query muvaffaqiyatsiz tugasa, qanchalik qayta urinish qilish kerakligini belgilaydi.
 
 Misol:
 
 ```javascript
-const { data } = useQuery(['todos'], fetchTodos, {
+const { data } = useQuery(["todos"], fetchTodos, {
   staleTime: 5000, // 5 soniya davomida query yangi deb hisoblanadi
   cacheTime: 10000, // Cache 10 soniya davomida saqlanadi
   retry: 3, // 3 marta qayta urinish qiladi agar xato bo'lsa
@@ -131,9 +128,9 @@ const { data } = useQuery(['todos'], fetchTodos, {
 Prefetching yordamida siz ma'lumotlarni oldindan yuklab, sahifalararo o'tishda yoki foydalanuvchi harakatlaridan oldin ma'lumotni tayyorlab qo'yishingiz mumkin.
 
 ```javascript
-import { queryClient } from './path-to-your-queryClient';
+import { queryClient } from "./path-to-your-queryClient";
 
-queryClient.prefetchQuery(['todos'], fetchTodos);
+queryClient.prefetchQuery(["todos"], fetchTodos);
 ```
 
 #### 6. `invalidateQueries`
@@ -141,23 +138,23 @@ queryClient.prefetchQuery(['todos'], fetchTodos);
 Bu funksiyadan foydalanib, siz cache'dagi ma'lumotlarni yangilab, query'larni qayta fetch qilishingiz mumkin. Bu usul mutation operatsiyasidan keyin yangilanish kerak bo'lgan query'larni yangilaydi.
 
 ```javascript
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const queryClient = useQueryClient();
 
 const mutation = useMutation(addTodo, {
   onSuccess: () => {
     // "todos" query'sini yangilash
-    queryClient.invalidateQueries(['todos']);
+    queryClient.invalidateQueries(["todos"]);
   },
 });
 ```
 
 ### TanStack Query-ning afzalliklari:
 
-* **Automatik caching va sinxronizatsiya**: Query'lar avtomatik cache'lanadi va ma'lumotlar server bilan sinxron bo'ladi.
-* **Optimistik yangilanish**: Serverga ma'lumot yuborilishidan oldin ma'lumotlarni vaqtinchalik yangilab turadi.
-* **Global error handling**: Osonlik bilan xatoliklarni global darajada boshqarish imkonini beradi.
-* **Paginatsiya va infinit scroll**: Paginatsiya qilish va cheksiz skroll qilish oson.
+- **Automatik caching va sinxronizatsiya**: Query'lar avtomatik cache'lanadi va ma'lumotlar server bilan sinxron bo'ladi.
+- **Optimistik yangilanish**: Serverga ma'lumot yuborilishidan oldin ma'lumotlarni vaqtinchalik yangilab turadi.
+- **Global error handling**: Osonlik bilan xatoliklarni global darajada boshqarish imkonini beradi.
+- **Paginatsiya va infinit scroll**: Paginatsiya qilish va cheksiz skroll qilish oson.
 
 TanStack Query — modern JavaScript aplikatsiyalarida ma'lumotlarni boshqarish uchun kuchli vosita hisoblanadi va oson ishlatish uchun mo'ljallangan.

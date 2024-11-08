@@ -16,9 +16,10 @@ type: vue
 postType: full
 episode: 7
 ---
+
 ![khodieff.uz](https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnbf9xrhg2i4j6j9wqdvk.jpg "vue.js | khodieff.uz")
 
-**Assalamu alaykum !** Vue.js da `watch` funksiyasi qanday ishlaydimva va vazifasi nima? 
+**Assalamu alaykum !** Vue.js da `watch` funksiyasi qanday ishlaydimva va vazifasi nima?
 
 watch dan foydalanish juda qulay. `watch` funksiyasi Vue komponentida qaysidir ma'lumot (state) o'zgarishini kuzatib, kerakli vazifalarni bajarish imkonini beradi. Quyida oddiy misol orqali tushuntiraman:
 
@@ -30,21 +31,21 @@ Keling, oddiy bir misolni ko'rib chiqaylik. Bu misolda biz bir input elementiga 
 ```html
 <template>
   <div>
-    <input v-model="name" placeholder="Ismingizni kiriting">
+    <input v-model="name" placeholder="Ismingizni kiriting" />
     <p>Ismingiz: {{ name }}</p>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+  import { ref, watch } from "vue";
 
-// name o'zgaruvchisini e'lon qilamiz
-const name = ref('')
+  // name o'zgaruvchisini e'lon qilamiz
+  const name = ref("");
 
-// name o'zgaruvchisini kuzatamiz
-watch(name, (newValue, oldValue) => {
-  console.log(`Ism o'zgardi: ${oldValue} dan ${newValue} ga`)
-})
+  // name o'zgaruvchisini kuzatamiz
+  watch(name, (newValue, oldValue) => {
+    console.log(`Ism o'zgardi: ${oldValue} dan ${newValue} ga`);
+  });
 </script>
 ```
 
@@ -54,15 +55,16 @@ watch(name, (newValue, oldValue) => {
    `ref` yordamida o'zgaruvchi yaratamiz. Bu o'zgaruvchi reaktsion bo'lib, uning qiymati o'zgarsa, Vue avtomatik ravishda komponentni qayta render qiladi.
 
    ```javascript
-   const name = ref('')
+   const name = ref("");
    ```
+
 2. **`watch` funksiyasi:**
    `watch` funksiyasi birinchi argument sifatida kuzatiladigan o'zgaruvchini, ikkinchi argument sifatida esa callback funksiyani qabul qiladi. Callback funksiyasining birinchi argumenti yangi qiymat, ikkinchi argumenti esa eski qiymatdir.
 
    ```javascript
    watch(name, (newValue, oldValue) => {
-     console.log(`Ism o'zgardi: ${oldValue} dan ${newValue} ga`)
-   })
+     console.log(`Ism o'zgardi: ${oldValue} dan ${newValue} ga`);
+   });
    ```
 
 `watch` funksiyasi yordamida siz har qanday reaktsion o'zgaruvchini (shu jumladan `ref`, `reactive` yoki computed o'zgaruvchilarni) kuzatishingiz mumkin. Bu metod komponentdagi ma'lumotlar o'zgarganda aniq amalni bajarishga imkon beradi.

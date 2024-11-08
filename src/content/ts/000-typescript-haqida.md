@@ -14,6 +14,7 @@ type: typescript
 postType: full
 episode: 1
 ---
+
 ## TypeScript haqida gaplashamiz :)
 
 ![khodieff.uz](https://miro.medium.com/v2/resize:fit:1200/1*VTW6T-7KkQHPjf4mtfQ0Zg.png "khodieff.uz")
@@ -29,7 +30,7 @@ function add(a, b) {
   return a + b;
 }
 
-console.log(add(10, '20')); // "1020"
+console.log(add(10, "20")); // "1020"
 ```
 
 Bu yerda, `a` raqam, lekin `b` qator. JavaScriptda bu ikki tur avtomatik tarzda qatorlarga birlashtiriladi va natija noto'g'ri bo'lishi mumkin. TypeScriptda esa bu kabi xatolarni oldini olish mumkin:
@@ -40,14 +41,14 @@ function add(a: number, b: number): number {
 }
 
 console.log(add(10, 20)); // 30
-console.log(add(10, '20')); // TypeScript xatolik ko'rsatadi
+console.log(add(10, "20")); // TypeScript xatolik ko'rsatadi
 ```
 
-Bu orqali siz TypeScript yordamida ancha ishonchli va xavfsizroq kod yozishimiz mumkin. 
+Bu orqali siz TypeScript yordamida ancha ishonchli va xavfsizroq kod yozishimiz mumkin.
 
 TypeScriptni o'rnatish juda oson. Bizga kerak bo'lgan narsa Node.js va NPM (Node Package Manager) o'rnatilgan bo'lishi kerak. Agar sizda hali Node.js va NPM o'rnatilmagan bo'lsa, birinchi navbatda ularni quyidagi rasmiy veb-saytdan yuklab olishingiz kerak:
 
-* [Node.js rasmi veb-sayti](https://nodejs.org/)
+- [Node.js rasmi veb-sayti](https://nodejs.org/)
 
 Node.js o'rnatilgandan so'ng, TypeScriptni o'rnatish uchun quyidagi qadamlarni bajaramiz:
 

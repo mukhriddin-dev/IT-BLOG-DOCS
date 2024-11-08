@@ -15,6 +15,7 @@ type: javascript
 postType: full
 episode: 17
 ---
+
 ## JavaScript funksiyalari bilan bog'liq qo'shimcha tushunchalarni ko'rib chiqamiz.
 
 ### 1. **`return` operatori**
@@ -60,9 +61,9 @@ Bu funksiyani chaqirganingda, agar `name` parametriga qiymat berilmasa, u avtoma
 
 JavaScriptda funksiyalar birinchi darajali ob'ektlar sifatida qaraladi. Boshqacha aytganda, ular:
 
-* O'zgaruvchilarga tayinlanishi mumkin,
-* Boshqa funksiyalarga argument sifatida o'tkazilishi mumkin,
-* Funksiyadan qaytarilishi mumkin.
+- O'zgaruvchilarga tayinlanishi mumkin,
+- Boshqa funksiyalarga argument sifatida o'tkazilishi mumkin,
+- Funksiyadan qaytarilishi mumkin.
 
 Misol:
 
@@ -119,13 +120,13 @@ Bu funksiyalar kiritilgan qiymatlardan tashqari, tashqi holatlarga ham bog‘liq
 
 ### REVIEW
 
-* **`return`** funksiyadan natijani qaytarish uchun ishlatiladi.
-* **Default parametrlar** funksiyaga qiymat kiritilmasa avtomatik beriladi.
-* **First-class functions** funksiyalarni o'zgaruvchilarga o'rnatish va boshqa funksiyalarga argument sifatida berish mumkin.
-* **Pure functions** har doim bir xil kirish bilan bir xil natija qaytaradi va tashqi ta'sir qilmaydi.
-* **Impure functions** tashqi holatlarni o‘zgartiradi va bir xil kirish qiymatlari bilan har doim bir xil natija qaytarishi mumkin emas.
+- **`return`** funksiyadan natijani qaytarish uchun ishlatiladi.
+- **Default parametrlar** funksiyaga qiymat kiritilmasa avtomatik beriladi.
+- **First-class functions** funksiyalarni o'zgaruvchilarga o'rnatish va boshqa funksiyalarga argument sifatida berish mumkin.
+- **Pure functions** har doim bir xil kirish bilan bir xil natija qaytaradi va tashqi ta'sir qilmaydi.
+- **Impure functions** tashqi holatlarni o‘zgartiradi va bir xil kirish qiymatlari bilan har doim bir xil natija qaytarishi mumkin emas.
 
-- - -
+---
 
 ### 1. **Higher-Order Functions (Yuqori darajali funksiyalar)**
 
@@ -144,7 +145,7 @@ function processNumbers(numbers, operation) {
   return numbers.map(operation); // operation - funksiya
 }
 
-let result = processNumbers([1, 2, 3], double); 
+let result = processNumbers([1, 2, 3], double);
 console.log(result); // [2, 4, 6]
 ```
 
@@ -184,7 +185,7 @@ Misol:
 ```jsx
 function outer() {
   let outerVar = "I'm outer!";
-  
+
   function inner() {
     console.log(outerVar); // ichki funksiya tashqi o'zgaruvchiga kirishi mumkin
   }
@@ -219,18 +220,18 @@ console.log(factorial(5)); // 120
 
 Bu misolda `factorial` funksiyasi o‘zini qayta chaqirish orqali faktoriyani hisoblaydi.
 
-- - -
+---
 
 Bu tushunchalar bilan JavaScript funksiyalarini chuqurroq tushunib olamiz
 
-* **Higher-Order Functions**: Funksiyalarni argument sifatida berish yoki natija sifatida qaytarish.
-* **Callback Functions**: Funksiyani argument sifatida boshqa funksiyaga o'tkazish.
-* **Closure**: Funksiya tashqi doiradagi o‘zgaruvchilarni "eslay olishi".
-* **Recursion**: O‘zini o‘zi chaqiradigan funksiya.
-* **Hoisting**: Funksiya deklaratsiyasi oldindan chaqirilishi mumkin.
-* **Arrow Functions**: O‘q funksiyalari qisqa va `this` kontekstini boshqarish oson.
+- **Higher-Order Functions**: Funksiyalarni argument sifatida berish yoki natija sifatida qaytarish.
+- **Callback Functions**: Funksiyani argument sifatida boshqa funksiyaga o'tkazish.
+- **Closure**: Funksiya tashqi doiradagi o‘zgaruvchilarni "eslay olishi".
+- **Recursion**: O‘zini o‘zi chaqiradigan funksiya.
+- **Hoisting**: Funksiya deklaratsiyasi oldindan chaqirilishi mumkin.
+- **Arrow Functions**: O‘q funksiyalari qisqa va `this` kontekstini boshqarish oson.
 
-- - -
+---
 
 Keling, **pipe**, **currying**, va **factory functions** tushunchalarini batafsil ko'rib chiqamiz:
 
@@ -243,12 +244,14 @@ Keling, **pipe**, **currying**, va **factory functions** tushunchalarini batafsi
 Misol:
 
 ```jsx
-const double = x => x * 2;
-const increment = x => x + 1;
-const square = x => x * x;
+const double = (x) => x * 2;
+const increment = (x) => x + 1;
+const square = (x) => x * x;
 
-const pipe = (...functions) => input =>
-  functions.reduce((acc, func) => func(acc), input);
+const pipe =
+  (...functions) =>
+  (input) =>
+    functions.reduce((acc, func) => func(acc), input);
 
 let result = pipe(double, increment, square)(5);
 
@@ -257,8 +260,8 @@ console.log(result); // 144
 
 Bu yerda:
 
-* `pipe` funksiyasi funksiyalarni zanjirga ulaydi.
-* 5 soni birinchi `double` funksiyasiga beriladi (`5 * 2 = 10`), keyin `increment` funksiyasiga (`10 + 1 = 11`), va oxirida `square` funksiyasiga uzatiladi (`11 * 11 = 121`).
+- `pipe` funksiyasi funksiyalarni zanjirga ulaydi.
+- 5 soni birinchi `double` funksiyasiga beriladi (`5 * 2 = 10`), keyin `increment` funksiyasiga (`10 + 1 = 11`), va oxirida `square` funksiyasiga uzatiladi (`11 * 11 = 121`).
 
 ### 2. **Currying**
 
@@ -270,8 +273,8 @@ Misol:
 
 ```jsx
 function add(a) {
-  return function(b) {
-    return function(c) {
+  return function (b) {
+    return function (c) {
       return a + b + c;
     };
   };
@@ -287,7 +290,7 @@ Amaliy misol:
 
 ```jsx
 function multiply(a) {
-  return function(b) {
+  return function (b) {
     return a * b;
   };
 }
@@ -296,7 +299,7 @@ let multiplyBy2 = multiply(2); // Birinchi qadam: 2 ga ko'paytirish funksiyasi y
 console.log(multiplyBy2(5)); // Ikkinchi qadam: 2 * 5 = 10
 ```
 
-### 3. **Factory Function** 
+### 3. **Factory Function**
 
 **Factory function** — bu yangi ob'ekt yaratadigan funksiya. Odatda, `new` kalit so'zidan foydalanmasdan ob'ekt yaratish uchun ishlatiladi. `Factory functions` kodni qayta ishlatish va moslashtirish imkonini beradi.
 
@@ -311,7 +314,7 @@ function createPerson(name, age) {
     age: age,
     greet() {
       console.log("Hello, my name is " + name);
-    }
+    },
   };
 }
 
@@ -326,8 +329,8 @@ Bu misolda `createPerson` funksiyasi har safar yangi ob'ekt (shaxs) yaratadi. Bo
 
 ### Xulosa:
 
-* **Pipe**: Funksiyalarni ketma-ket ulash va natijani biridan ikkinchisiga uzatish texnikasi.
-* **Currying**: Ko‘p argumentli funksiyani ketma-ket bitta argument qabul qiladigan funksiyalarga bo‘lish.
-* **Factory Functions**: Yangi ob'ektlar yaratish uchun ishlatiladigan funksiyalar. Bu `class` yoki `constructor` funksiyalarga alternativ usul bo‘lib, moslashuvchan va oson ishlatiladi. Keyingi postlarda this , constructor va class haqida ham gaplashamiz.
+- **Pipe**: Funksiyalarni ketma-ket ulash va natijani biridan ikkinchisiga uzatish texnikasi.
+- **Currying**: Ko‘p argumentli funksiyani ketma-ket bitta argument qabul qiladigan funksiyalarga bo‘lish.
+- **Factory Functions**: Yangi ob'ektlar yaratish uchun ishlatiladigan funksiyalar. Bu `class` yoki `constructor` funksiyalarga alternativ usul bo‘lib, moslashuvchan va oson ishlatiladi. Keyingi postlarda this , constructor va class haqida ham gaplashamiz.
 
 Bu tushunchalar funktsional dasturlashda va JavaScriptda dinamik o‘zgartirishlar kiritishda juda foydali.

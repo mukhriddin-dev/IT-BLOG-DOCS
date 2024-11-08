@@ -15,6 +15,7 @@ type: typescript
 postType: full
 episode: 5
 ---
+
 TypeScriptni React bilan birgalikda ishlatish dastur kodini yanada xavfsiz va aniq qiladi, chunki TypeScriptning kuchli tiplash (static typing) imkoniyatlari bilan React komponentlarining strukturasini, xususiyatlarini va holatini oldindan belgilab olish mumkin. Quyida TypeScriptni Reactda qanday ishlatish va uning asosiy aspektlari haqida batafsil tanishamiz.
 
 ![react.js](https://miro.medium.com/v2/resize:fit:800/0*CBjisl422hUyLxiG.png "react.js")
@@ -294,7 +295,7 @@ Bu misolda `useRef<HTMLInputElement>` yordamida `inputEl` refi tipi aniq belgila
 
 ### Demak:
 
-TypeScriptni React bilan ishlatish komponentlar, `props`, `state`, xooklar, va kontekst bilan aniq va xavfsiz ishlash imkonini beradi. Bu nafaqat kodni tartibli qiladi, balki xatolarni oldini olishda ham kotta yordam beradi. 
+TypeScriptni React bilan ishlatish komponentlar, `props`, `state`, xooklar, va kontekst bilan aniq va xavfsiz ishlash imkonini beradi. Bu nafaqat kodni tartibli qiladi, balki xatolarni oldini olishda ham kotta yordam beradi.
 
 Bizni tarmoqlarda kuzatishingiz mumkin va maqola foydali bo’lsa do’stlaringizga ham ulashing. 🫡
 

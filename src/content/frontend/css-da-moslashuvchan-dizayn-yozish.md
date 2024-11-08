@@ -17,6 +17,7 @@ type: html
 postType: full
 episode: 39
 ---
+
 Saytimizni responsiv dizayn qilish uchun **CSS** va **HTML** da bir necha asosiy tushunchalarni bilishingiz kerak. Quyida responsiv dizayn yaratishda muhim bo'lgan konsepsiyalar va qanday kod yozish kerakligi batafsil ko'rib chiqamiz.
 
 ![khodieff.uz](https://kinsta.com/wp-content/uploads/2020/08/media-queries.png "khodieff.uz")
@@ -58,8 +59,8 @@ Bu responsiv dizayn yaratishda eng asosiy vositalardan biri. **Media Queries** t
 
 Responsiv dizayn yaratishda foizlar, em, rem kabi mos keladigan birliklardan foydalanish kerak. Bu elementlarning o‘lchamini ekran kengligiga qarab moslashishiga yordam beradi.
 
-* **rem** va **em** – matn o‘lchami va boshqa o‘lchamlar uchun.
-* **%** – kenglik yoki boshqa o‘lchamlar uchun.
+- **rem** va **em** – matn o‘lchami va boshqa o‘lchamlar uchun.
+- **%** – kenglik yoki boshqa o‘lchamlar uchun.
 
 ```css
 .container {
@@ -69,7 +70,7 @@ Responsiv dizayn yaratishda foizlar, em, rem kabi mos keladigan birliklardan foy
 
 img {
   max-width: 100%; /* Tasvirni ekran kengligiga moslashadi */
-  height: auto;    /* Tasvirning nisbiy balandligi saqlanadi */
+  height: auto; /* Tasvirning nisbiy balandligi saqlanadi */
 }
 ```
 
@@ -96,7 +97,10 @@ Bu ikki zamonaviy CSS uslubi responsiv dizayn yaratishda ko'p ishlatiladi, chunk
 ```css
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ekran kengligiga qarab elementlar moslashadi */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Ekran kengligiga qarab elementlar moslashadi */
   gap: 20px;
 }
 ```
@@ -106,7 +110,7 @@ Bu ikki zamonaviy CSS uslubi responsiv dizayn yaratishda ko'p ishlatiladi, chunk
 HTML faylingizda viewport ni belgilash responsiv dizayn uchun muhimdir. Bu qurilma ekranining o‘lchamlariga qarab dizaynning qanday ko‘rinishini boshqaradi.
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
 ### 5. **Responsive Images**
@@ -114,10 +118,12 @@ HTML faylingizda viewport ni belgilash responsiv dizayn uchun muhimdir. Bu quril
 Tasvirlarni ekran o‘lchamlariga qarab moslashtirish uchun `srcset` atributi va **CSS** da max-width qoidasidan foydalaning.
 
 ```html
-<img src="small.jpg" 
-     srcset="medium.jpg 768w, large.jpg 1024w" 
-     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" 
-     alt="Responsive Image">
+<img
+  src="small.jpg"
+  srcset="medium.jpg 768w, large.jpg 1024w"
+  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  alt="Responsive Image"
+/>
 ```
 
 ### 6. **Font o‘lchamlarini moslashtirish**
@@ -179,11 +185,11 @@ body {
 
 #### Mobile First’ning afzalliklari:
 
-* **Tez yuklanish**: Mobil uchun tayyorlangan sayt odatda eng yengil versiya bo‘ladi, resurslar kamroq yuklanadi.
-* **Progressive Enhancement (o‘zgaruvchan yaxshilanish)**: Mobil dizayn asos sifatida qo‘llanilib, o‘lcham kattalashgan sari funksiyalar qo‘shiladi.
-* **Zamonaviy tendensiya**: Ko‘p foydalanuvchilar saytlarga mobil qurilmalar orqali kirishadi, shuning uchun bu yondashuv foydali.
+- **Tez yuklanish**: Mobil uchun tayyorlangan sayt odatda eng yengil versiya bo‘ladi, resurslar kamroq yuklanadi.
+- **Progressive Enhancement (o‘zgaruvchan yaxshilanish)**: Mobil dizayn asos sifatida qo‘llanilib, o‘lcham kattalashgan sari funksiyalar qo‘shiladi.
+- **Zamonaviy tendensiya**: Ko‘p foydalanuvchilar saytlarga mobil qurilmalar orqali kirishadi, shuning uchun bu yondashuv foydali.
 
-- - -
+---
 
 ### 2. **Desktop First yondashuvi**
 
@@ -214,10 +220,10 @@ body {
 
 #### Desktop First’ning afzalliklari:
 
-* **Progressive Degradation (o‘zgaruvchan soddalashtirish)**: Katta ekranlar uchun barcha funksiyalar mavjud bo‘ladi, keyin ularni kichik qurilmalar uchun moslashtirish orqali soddalashtirish mumkin.
-* **Murakkab dizaynlar uchun yaxshi**: Katta ekranlarda murakkab interfeyslarni dastlab yaratib, keyin kichik ekranga moslab o‘zgartirish oson bo‘lishi mumkin.
+- **Progressive Degradation (o‘zgaruvchan soddalashtirish)**: Katta ekranlar uchun barcha funksiyalar mavjud bo‘ladi, keyin ularni kichik qurilmalar uchun moslashtirish orqali soddalashtirish mumkin.
+- **Murakkab dizaynlar uchun yaxshi**: Katta ekranlarda murakkab interfeyslarni dastlab yaratib, keyin kichik ekranga moslab o‘zgartirish oson bo‘lishi mumkin.
 
-- - -
+---
 
 ## Keling edni asosiy tushunchalarni ko'rib chiqamiz.
 
@@ -227,10 +233,10 @@ Breakpoints – bu ekranning kengligi (yoki boshqa xususiyati) o‘zgarishi bila
 
 #### Eng ko‘p ishlatiladigan Breakpoints:
 
-* **Mobil qurilmalar**: `max-width: 767px`
-* **Planshetlar**: `min-width: 768px` va `max-width: 1023px`
-* **Katta planshetlar va kichik laptoplar**: `min-width: 1024px` va `max-width: 1279px`
-* **Katta ekranlar (desktop)**: `min-width: 1280px`
+- **Mobil qurilmalar**: `max-width: 767px`
+- **Planshetlar**: `min-width: 768px` va `max-width: 1023px`
+- **Katta planshetlar va kichik laptoplar**: `min-width: 1024px` va `max-width: 1279px`
+- **Katta ekranlar (desktop)**: `min-width: 1280px`
 
 #### Misol:
 
@@ -259,65 +265,68 @@ Breakpoints – bu ekranning kengligi (yoki boshqa xususiyati) o‘zgarishi bila
 
 ### 4. **Mobile First va Desktop First yondashuvlarini tanlash:**
 
-* Agar saytning asosiy foydalanuvchilari mobil qurilmalardan kirsa, **Mobile First** yondashuvi yaxshi variant.
-* Agar sayt juda murakkab bo'lsa va katta ekranlar uchun batafsil interfeys kerak bo'lsa, **Desktop First** yondashuvi samarali bo'lishi mumkin.
+- Agar saytning asosiy foydalanuvchilari mobil qurilmalardan kirsa, **Mobile First** yondashuvi yaxshi variant.
+- Agar sayt juda murakkab bo'lsa va katta ekranlar uchun batafsil interfeys kerak bo'lsa, **Desktop First** yondashuvi samarali bo'lishi mumkin.
 
 Breakpoints va Media Queries yordamida ekran kengliklari turli o‘lchamlarda bo‘lsa ham, foydalanuvchi interfeysi moslashuvchan bo‘ladi.
 
- **Desktop First** va **Mobile First** yondashuvlariga mos ravishda **CSS** kodlari yozib ko'ramiz.
+**Desktop First** va **Mobile First** yondashuvlariga mos ravishda **CSS** kodlari yozib ko'ramiz.
 
 ### 1. **Mobile First yondashuvi misoli**
 
 Bu misolda dastlab kichik ekran (mobil) uchun dizayn yoziladi va keyin katta ekranlarga moslashtiriladi.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Mobil uchun asosiy dizayn */
-    body {
-      background-color: lightblue;
-      font-size: 16px;
-    }
-
-    .container {
-      width: 100%;
-      padding: 10px;
-      background-color: white;
-    }
-
-    /* Planshetlar va o'rta o'lchamdagi ekranlar uchun */
-    @media (min-width: 768px) {
-      .container {
-        width: 80%;
-        padding: 20px;
-      }
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Mobil uchun asosiy dizayn */
       body {
-        font-size: 18px;
+        background-color: lightblue;
+        font-size: 16px;
       }
-    }
 
-    /* Desktop uchun */
-    @media (min-width: 1024px) {
       .container {
-        width: 60%;
-        padding: 30px;
+        width: 100%;
+        padding: 10px;
+        background-color: white;
       }
-      body {
-        font-size: 20px;
-        background-color: lightyellow;
+
+      /* Planshetlar va o'rta o'lchamdagi ekranlar uchun */
+      @media (min-width: 768px) {
+        .container {
+          width: 80%;
+          padding: 20px;
+        }
+        body {
+          font-size: 18px;
+        }
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Mobile First Misoli</h1>
-    <p>Bu misolda dizayn mobil uchun boshlanib, keyin kattaroq ekranlarga moslashtiriladi.</p>
-  </div>
-</body>
+
+      /* Desktop uchun */
+      @media (min-width: 1024px) {
+        .container {
+          width: 60%;
+          padding: 30px;
+        }
+        body {
+          font-size: 20px;
+          background-color: lightyellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mobile First Misoli</h1>
+      <p>
+        Bu misolda dizayn mobil uchun boshlanib, keyin kattaroq ekranlarga
+        moslashtiriladi.
+      </p>
+    </div>
+  </body>
 </html>
 ```
 
@@ -326,54 +335,57 @@ Bu misolda dastlab kichik ekran (mobil) uchun dizayn yoziladi va keyin katta ekr
 Bu misolda dastlab katta ekran (desktop) uchun dizayn yoziladi va keyin kichik ekranlarga moslashtiriladi.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Desktop uchun asosiy dizayn */
-    body {
-      background-color: lightyellow;
-      font-size: 20px;
-    }
-
-    .container {
-      width: 60%;
-      padding: 30px;
-      background-color: white;
-    }
-
-    /* Planshetlar va o'rta o'lchamdagi ekranlar uchun */
-    @media (max-width: 1024px) {
-      .container {
-        width: 80%;
-        padding: 20px;
-      }
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Desktop uchun asosiy dizayn */
       body {
-        font-size: 18px;
-        background-color: lightgreen;
+        background-color: lightyellow;
+        font-size: 20px;
       }
-    }
 
-    /* Mobil uchun */
-    @media (max-width: 768px) {
       .container {
-        width: 100%;
-        padding: 10px;
+        width: 60%;
+        padding: 30px;
+        background-color: white;
       }
-      body {
-        font-size: 16px;
-        background-color: lightblue;
+
+      /* Planshetlar va o'rta o'lchamdagi ekranlar uchun */
+      @media (max-width: 1024px) {
+        .container {
+          width: 80%;
+          padding: 20px;
+        }
+        body {
+          font-size: 18px;
+          background-color: lightgreen;
+        }
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Desktop First Misoli</h1>
-    <p>Bu misol dastlab desktop uchun yozilgan va keyin kichik ekranlarga moslashtirilgan.</p>
-  </div>
-</body>
+
+      /* Mobil uchun */
+      @media (max-width: 768px) {
+        .container {
+          width: 100%;
+          padding: 10px;
+        }
+        body {
+          font-size: 16px;
+          background-color: lightblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Desktop First Misoli</h1>
+      <p>
+        Bu misol dastlab desktop uchun yozilgan va keyin kichik ekranlarga
+        moslashtirilgan.
+      </p>
+    </div>
+  </body>
 </html>
 ```
 

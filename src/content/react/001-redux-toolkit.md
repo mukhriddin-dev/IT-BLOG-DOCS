@@ -16,6 +16,7 @@ type: libraries
 postType: full
 episode: 2
 ---
+
 Redux Toolkit — bu Redux bilan ishlashni sezilarli darajada osonlashtiruvchi kutubxona bo‘lib, eng yaxshi amaliyotlarni taqdim etadi va dastur kodini qisqartirishga yordam beradi. Endi Redux Toolkit’ning so‘nggi versiyasini o‘rnatish va uni qanday ishlatishni bosqichma-bosqich ko‘rib chiqamiz.
 
 ### 1. Redux Toolkit va React-Redux’ni o‘rnatish
@@ -23,11 +24,13 @@ Redux Toolkit — bu Redux bilan ishlashni sezilarli darajada osonlashtiruvchi k
 Dastlab, Redux Toolkit va React-Redux paketlarini o‘rnatishingiz kerak. Buning uchun `npm` yoki `yarn` paket menejerlaridan foydalanishingiz mumkin.
 
 **npm yordamida o‘rnatish:**
+
 ```bash
 npm install @reduxjs/toolkit react-redux
 ```
 
 **yarn yordamida o‘rnatish:**
+
 ```bash
 yarn add @reduxjs/toolkit react-redux
 ```
@@ -39,9 +42,10 @@ Bu buyruqlar sizga Redux Toolkit va React bilan ishlash uchun kerakli paketlarni
 Keyingi bosqichda, biz `configureStore` funksiyasi yordamida Redux do‘konini yaratamiz. Bu funktsiya Redux Toolkit’da standart bo‘lib, Redux do‘konini yaratishni osonlashtiradi.
 
 **`store.js` faylida:**
+
 ```js
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./counterSlice";
 
 const store = configureStore({
   reducer: {
@@ -59,11 +63,12 @@ Bu yerda biz `configureStore` orqali do‘kon yaratmoqdamiz va `counterSlice`ni 
 Redux Toolkit’da `createSlice` yordamida bir joyda reducer va action'larni yaratish mumkin. Misol tariqasida oddiy counter slice yaratamiz.
 
 **`counterSlice.js` faylida:**
+
 ```js
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState: { value: 0 },
   reducers: {
     increment: (state) => {
@@ -89,18 +94,19 @@ Bu yerda `counterSlice` nomli slice yaratib, boshlang‘ich holat (`initialState
 React ilovangizda Redux bilan ishlash uchun `Provider` komponentidan foydalanib, do‘konni barcha komponentlarga taqdim etishingiz kerak.
 
 **`index.js` yoki `App.js` faylida:**
+
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from './store';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./store";
+import App from "./App";
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root"),
 );
 ```
 
@@ -111,10 +117,11 @@ Bu yerda `Provider` Redux do‘konini React ilovasiga taqdim etadi va siz butun 
 Endi React komponentida Redux Toolkit yordamida holatni boshqarishni ko‘ramiz. `useSelector` va `useDispatch` hooklaridan foydalanib, holatni olish va action’larni yuborish mumkin.
 
 **`Counter.js` faylida:**
+
 ```js
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementByAmount } from './counterSlice';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement, incrementByAmount } from "./counterSlice";
 
 function Counter() {
   const count = useSelector((state) => state.counter.value);
@@ -136,6 +143,7 @@ export default Counter;
 ```
 
 Bu yerda:
+
 - **`useSelector`**: Redux do‘konidan `counter` qiymatini olish uchun ishlatiladi.
 - **`useDispatch`**: `increment`, `decrement` va `incrementByAmount` action'larini yuborish uchun ishlatiladi.
 
@@ -146,32 +154,33 @@ Agar siz API chaqiruvlari kabi asinxron ishlarga ehtiyoj sezsangiz, Redux Toolki
 Misol uchun, foydalanuvchi ma'lumotlarini API orqali olish uchun `createAsyncThunk`dan foydalanamiz:
 
 **`userSlice.js` faylida:**
+
 ```js
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchUserById = createAsyncThunk(
-  'users/fetchById',
+  "users/fetchById",
   async (userId) => {
     const response = await fetch(`/api/user/${userId}`);
     return response.json();
-  }
+  },
 );
 
 const userSlice = createSlice({
-  name: 'users',
-  initialState: { user: null, status: 'idle' },
+  name: "users",
+  initialState: { user: null, status: "idle" },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserById.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(fetchUserById.fulfilled, (state, action) => {
         state.user = action.payload;
-        state.status = 'succeeded';
+        state.status = "succeeded";
       })
       .addCase(fetchUserById.rejected, (state) => {
-        state.status = 'failed';
+        state.status = "failed";
       });
   },
 });
@@ -180,6 +189,7 @@ export default userSlice.reducer;
 ```
 
 Bu yerda:
+
 - **`fetchUserById`**: Foydalanuvchini asinxron tarzda yuklaydigan thunk funksiyasi.
 - **`pending`, `fulfilled`, `rejected`**: Asinxron jarayonlarning holatlari avtomatik boshqariladi.
 

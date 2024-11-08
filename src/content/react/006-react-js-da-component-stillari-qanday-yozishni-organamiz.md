@@ -16,6 +16,7 @@ type: react
 postType: full
 episode: 6
 ---
+
 ## React komponentlariga va uning elementlariga stil yozishning bir necha usuli mavjud: CSS, SCSS, internal (inline) uslublar va styled component'da. Har bir usulni misollar bilan tanishamiz.
 
 ![khodieff.uz](https://res.cloudinary.com/practicaldev/image/fetch/s--iKV_2Ulf--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://thepracticaldev.s3.amazonaws.com/i/ce27dyfg7v46855iabnc.png "khodieff.uz")
@@ -38,11 +39,12 @@ CSS fayllarini alohida `.css` fayllarda saqlash va ularni komponentlarga import 
      color: darkblue;
    }
    ```
+
 2. **`src/App.jsx`**: CSS faylini import qilish va stil berish.
 
    ```jsx
-   import React from 'react';
-   import './App.css'; // CSS faylini import qilish
+   import React from "react";
+   import "./App.css"; // CSS faylini import qilish
 
    function App() {
      return (
@@ -55,8 +57,8 @@ CSS fayllarini alohida `.css` fayllarda saqlash va ularni komponentlarga import 
    export default App;
    ```
 
-* **`import './App.css';`**: CSS faylini import qiladi.
-* **`className="container"`** va **`className="title"`**: CSS klasslarini qo‘llaydi.
+- **`import './App.css';`**: CSS faylini import qiladi.
+- **`className="container"`** va **`className="title"`**: CSS klasslarini qo‘llaydi.
 
 ### 2. **SCSS (Sassy CSS)**
 
@@ -80,11 +82,12 @@ SCSS — bu CSS preprocessor bo‘lib, CSS'ga qo‘shimcha xususiyatlar (masalan
      }
    }
    ```
+
 2. **`src/App.jsx`**: SCSS faylini import qilish va stil berish.
 
    ```jsx
-   import React from 'react';
-   import './App.scss'; // SCSS faylini import qilish
+   import React from "react";
+   import "./App.scss"; // SCSS faylini import qilish
 
    function App() {
      return (
@@ -97,8 +100,8 @@ SCSS — bu CSS preprocessor bo‘lib, CSS'ga qo‘shimcha xususiyatlar (masalan
    export default App;
    ```
 
-* **`import './App.scss';`**: SCSS faylini import qiladi.
-* **`className="container"`** va **`className="title"`**: SCSS klasslarini qo‘llaydi.
+- **`import './App.scss';`**: SCSS faylini import qiladi.
+- **`className="container"`** va **`className="title"`**: SCSS klasslarini qo‘llaydi.
 
 ### 3. **Internal (Inline) CSS**
 
@@ -107,16 +110,16 @@ Inline CSS — bu CSS uslublarini to‘g‘ridan-to‘g‘ri React komponentida,
 #### 3.1 **Misol**
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 function App() {
   const containerStyle = {
-    backgroundColor: 'lightblue',
-    padding: '20px',
+    backgroundColor: "lightblue",
+    padding: "20px",
   };
 
   const titleStyle = {
-    color: 'darkblue',
+    color: "darkblue",
   };
 
   return (
@@ -129,8 +132,8 @@ function App() {
 export default App;
 ```
 
-* **`const containerStyle = { ... }`**: CSS uslublari JavaScript obyekti sifatida yoziladi.
-* **`style={containerStyle}`** va **`style={titleStyle}`**: Inline uslub sifatida qo‘llanadi.
+- **`const containerStyle = { ... }`**: CSS uslublari JavaScript obyekti sifatida yoziladi.
+- **`style={containerStyle}`** va **`style={titleStyle}`**: Inline uslub sifatida qo‘llanadi.
 
 ### 4. **CSS-in-JS**
 
@@ -141,8 +144,8 @@ CSS-in-JS — bu CSS uslublarini JavaScript fayllarida yozish va boshqarish imko
 1. **`src/App.jsx`**: `styled-components` kutubxonasidan foydalanish.
 
    ```jsx
-   import React from 'react';
-   import styled from 'styled-components';
+   import React from "react";
+   import styled from "styled-components";
 
    const Container = styled.div`
      background-color: lightblue;
@@ -164,12 +167,12 @@ CSS-in-JS — bu CSS uslublarini JavaScript fayllarida yozish va boshqarish imko
    export default App;
    ```
 
-* **`styled.div` va `styled.h1`**: `styled-components` kutubxonasi yordamida CSS-in-JS uslubi.
-* **`Container` va `Title`**: Stilingizni JavaScript fayllarida yozish va boshqarish imkonini beradi.
-* **CSS**: Alohida `.css` fayllarda uslublarni saqlash va import qilish orqali qo‘llaniladi.
-* **SCSS**: CSS preprocessor, qo‘shimcha funksiyalar bilan uslublarni yozishga imkon beradi. SCSS fayllari CSS'ga kompilyatsiya qilinadi.
-* **Inline CSS**: JavaScript obyekti sifatida uslublarni to‘g‘ridan-to‘g‘ri komponentda qo‘llash.
-* **CSS-in-JS**: CSS uslublarini JavaScript fayllarida yozish va boshqarish imkonini beruvchi kutubxonalar yordamida amalga oshiriladi.
+- **`styled.div` va `styled.h1`**: `styled-components` kutubxonasi yordamida CSS-in-JS uslubi.
+- **`Container` va `Title`**: Stilingizni JavaScript fayllarida yozish va boshqarish imkonini beradi.
+- **CSS**: Alohida `.css` fayllarda uslublarni saqlash va import qilish orqali qo‘llaniladi.
+- **SCSS**: CSS preprocessor, qo‘shimcha funksiyalar bilan uslublarni yozishga imkon beradi. SCSS fayllari CSS'ga kompilyatsiya qilinadi.
+- **Inline CSS**: JavaScript obyekti sifatida uslublarni to‘g‘ridan-to‘g‘ri komponentda qo‘llash.
+- **CSS-in-JS**: CSS uslublarini JavaScript fayllarida yozish va boshqarish imkonini beruvchi kutubxonalar yordamida amalga oshiriladi.
 
 Har bir usulning o‘ziga xos afzalliklari va kamchiliklari mavjud, shuning uchun loyihaning talablariga qarab usulni tanlash kerak bo'ladi , yokida UI kit ishlatish bilan qutilish mumkin : )
 

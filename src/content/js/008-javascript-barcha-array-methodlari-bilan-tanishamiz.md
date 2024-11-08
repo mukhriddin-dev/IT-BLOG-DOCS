@@ -14,6 +14,7 @@ type: javascript
 postType: full
 episode: 8
 ---
+
 #### JavaScriptda massiv (array) bilan ishlash uchun ko'plab metodlar mavjud. Quyida asosiy array metodlari bilan tanishamiz:
 
 ![khodieff.uz | js darslari](https://miro.medium.com/v2/resize:fit:1400/1*qnyXNVzWKpevpQhex6E2-g.png "khodieff.uz | js darslari")
@@ -56,15 +57,15 @@ episode: 8
 ### 1. `push()`
 
 ```javascript
-let fruits = ['apple', 'banana'];
-fruits.push('orange');
+let fruits = ["apple", "banana"];
+fruits.push("orange");
 console.log(fruits); // ['apple', 'banana', 'orange']
 ```
 
 ### 2. `pop()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
+let fruits = ["apple", "banana", "orange"];
 fruits.pop();
 console.log(fruits); // ['apple', 'banana']
 ```
@@ -72,7 +73,7 @@ console.log(fruits); // ['apple', 'banana']
 ### 3. `shift()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
+let fruits = ["apple", "banana", "orange"];
 fruits.shift();
 console.log(fruits); // ['banana', 'orange']
 ```
@@ -80,16 +81,16 @@ console.log(fruits); // ['banana', 'orange']
 ### 4. `unshift()`
 
 ```javascript
-let fruits = ['banana', 'orange'];
-fruits.unshift('apple');
+let fruits = ["banana", "orange"];
+fruits.unshift("apple");
 console.log(fruits); // ['apple', 'banana', 'orange']
 ```
 
 ### 5. `concat()`
 
 ```javascript
-let fruits = ['apple', 'banana'];
-let moreFruits = ['orange', 'mango'];
+let fruits = ["apple", "banana"];
+let moreFruits = ["orange", "mango"];
 let allFruits = fruits.concat(moreFruits);
 console.log(allFruits); // ['apple', 'banana', 'orange', 'mango']
 ```
@@ -97,7 +98,7 @@ console.log(allFruits); // ['apple', 'banana', 'orange', 'mango']
 ### 6. `slice()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange', 'mango'];
+let fruits = ["apple", "banana", "orange", "mango"];
 let slicedFruits = fruits.slice(1, 3);
 console.log(slicedFruits); // ['banana', 'orange']
 ```
@@ -105,39 +106,39 @@ console.log(slicedFruits); // ['banana', 'orange']
 ### 7. `splice()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
-fruits.splice(1, 1, 'mango');
+let fruits = ["apple", "banana", "orange"];
+fruits.splice(1, 1, "mango");
 console.log(fruits); // ['apple', 'mango', 'orange']
 ```
 
 ### 8. `indexOf()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
-let index = fruits.indexOf('banana');
+let fruits = ["apple", "banana", "orange"];
+let index = fruits.indexOf("banana");
 console.log(index); // 1
 ```
 
 ### 9. `lastIndexOf()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange', 'banana'];
-let index = fruits.lastIndexOf('banana');
+let fruits = ["apple", "banana", "orange", "banana"];
+let index = fruits.lastIndexOf("banana");
 console.log(index); // 3
 ```
 
 ### 10. `includes()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
-let hasBanana = fruits.includes('banana');
+let fruits = ["apple", "banana", "orange"];
+let hasBanana = fruits.includes("banana");
 console.log(hasBanana); // true
 ```
 
 ### 11. `forEach()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
+let fruits = ["apple", "banana", "orange"];
 fruits.forEach((fruit) => console.log(fruit));
 // apple
 // banana
@@ -148,7 +149,7 @@ fruits.forEach((fruit) => console.log(fruit));
 
 ```javascript
 let numbers = [1, 2, 3];
-let doubled = numbers.map(num => num * 2);
+let doubled = numbers.map((num) => num * 2);
 console.log(doubled); // [2, 4, 6]
 ```
 
@@ -156,7 +157,7 @@ console.log(doubled); // [2, 4, 6]
 
 ```javascript
 let numbers = [1, 2, 3, 4, 5];
-let evenNumbers = numbers.filter(num => num % 2 === 0);
+let evenNumbers = numbers.filter((num) => num % 2 === 0);
 console.log(evenNumbers); // [2, 4]
 ```
 
@@ -180,7 +181,7 @@ console.log(difference); // -2
 
 ```javascript
 let numbers = [1, 2, 3, 4, 5];
-let found = numbers.find(num => num > 3);
+let found = numbers.find((num) => num > 3);
 console.log(found); // 4
 ```
 
@@ -188,7 +189,7 @@ console.log(found); // 4
 
 ```javascript
 let numbers = [1, 2, 3, 4, 5];
-let foundIndex = numbers.findIndex(num => num > 3);
+let foundIndex = numbers.findIndex((num) => num > 3);
 console.log(foundIndex); // 3
 ```
 
@@ -196,7 +197,7 @@ console.log(foundIndex); // 3
 
 ```javascript
 let numbers = [2, 4, 6, 8];
-let allEven = numbers.every(num => num % 2 === 0);
+let allEven = numbers.every((num) => num % 2 === 0);
 console.log(allEven); // true
 ```
 
@@ -204,14 +205,14 @@ console.log(allEven); // true
 
 ```javascript
 let numbers = [1, 2, 3, 4, 5];
-let hasEven = numbers.some(num => num % 2 === 0);
+let hasEven = numbers.some((num) => num % 2 === 0);
 console.log(hasEven); // true
 ```
 
 ### 20. `sort()`
 
 ```javascript
-let fruits = ['banana', 'apple', 'orange'];
+let fruits = ["banana", "apple", "orange"];
 fruits.sort();
 console.log(fruits); // ['apple', 'banana', 'orange']
 ```
@@ -219,7 +220,7 @@ console.log(fruits); // ['apple', 'banana', 'orange']
 ### 21. `reverse()`
 
 ```javascript
-let fruits = ['banana', 'apple', 'orange'];
+let fruits = ["banana", "apple", "orange"];
 fruits.reverse();
 console.log(fruits); // ['orange', 'apple', 'banana']
 ```
@@ -227,8 +228,8 @@ console.log(fruits); // ['orange', 'apple', 'banana']
 ### 22. `join()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
-let joinedFruits = fruits.join(', ');
+let fruits = ["apple", "banana", "orange"];
+let joinedFruits = fruits.join(", ");
 console.log(joinedFruits); // 'apple, banana, orange'
 ```
 
@@ -244,7 +245,7 @@ console.log(flatNumbers); // [1, 2, 3, 4, 5, 6]
 
 ```javascript
 let numbers = [1, 2, 3];
-let flatMapped = numbers.flatMap(num => [num, num * 2]);
+let flatMapped = numbers.flatMap((num) => [num, num * 2]);
 console.log(flatMapped); // [1, 2, 2, 4, 3, 6]
 ```
 
@@ -259,7 +260,7 @@ console.log(numbers); // [1, 0, 0, 4]
 ### 26. `from()`
 
 ```javascript
-let str = 'hello';
+let str = "hello";
 let arrayFromString = Array.from(str);
 console.log(arrayFromString); // ['h', 'e', 'l', 'l', 'o']
 ```
@@ -289,10 +290,10 @@ console.log(numbers); // [4, 5, 3, 4, 5]
 ### 30. `entries()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
+let fruits = ["apple", "banana", "orange"];
 let iterator = fruits.entries();
 for (let entry of iterator) {
-    console.log(entry);
+  console.log(entry);
 }
 // [0, 'apple']
 // [1, 'banana']
@@ -302,10 +303,10 @@ for (let entry of iterator) {
 ### 31. `keys()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
+let fruits = ["apple", "banana", "orange"];
 let iterator = fruits.keys();
 for (let key of iterator) {
-    console.log(key);
+  console.log(key);
 }
 // 0
 // 1
@@ -315,10 +316,10 @@ for (let key of iterator) {
 ### 32. `values()`
 
 ```javascript
-let fruits = ['apple', 'banana', 'orange'];
+let fruits = ["apple", "banana", "orange"];
 let iterator = fruits.values();
 for (let value of iterator) {
-    console.log(value);
+  console.log(value);
 }
 // 'apple'
 // 'banana'

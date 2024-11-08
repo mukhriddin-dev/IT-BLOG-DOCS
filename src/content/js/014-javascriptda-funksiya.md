@@ -14,6 +14,7 @@ type: javascript
 postType: full
 episode: 13
 ---
+
 Dasturlashda funksiya — bu ma'lum bir vazifani bajarish uchun yozilgan kod blokidir. Funksiya dastur kodini takrorlashni kamaytiradi va kodni qayta ishlatishga imkon beradi. Funksiya bir marta yoziladi va keyinchalik chaqirilganda, ichidagi kod bajariladi.
 
 ![khodieff.uz](https://miro.medium.com/v2/resize:fit:1400/1*hfpSnP09__6d_YWOnkbQJw.png "khodieff.uz")
@@ -31,9 +32,9 @@ console.log(natija);
 
 Bu misolda:
 
-* `sum` nomli funksiya yaratilgan, u ikkita sonni qabul qiladi (`a` va `b`).
-* Funksiya argumentlar qiymatini yig‘ib, natijani qaytaradi.
-* `summ(5, 3)` chaqirig‘i `8` natijasini beradi.
+- `sum` nomli funksiya yaratilgan, u ikkita sonni qabul qiladi (`a` va `b`).
+- Funksiya argumentlar qiymatini yig‘ib, natijani qaytaradi.
+- `summ(5, 3)` chaqirig‘i `8` natijasini beradi.
 
 Funktsiyalar kodni modularlash va aniq vazifalarga ajratishga yordam beradi, bu esa kodni boshqarishni osonlashtiradi.
 
@@ -45,15 +46,17 @@ Tushunish uchun, oshxonada biror taomni pishirish jarayonini tasavvur qilaylik. 
 
 **Funksiya: "oshpazlik"**
 
-* **Funksiya nomi**: Oshpazlik (taomni tayyorlash)
-* **Argumentlar (kirish qiymatlari)**: Masalliqlar (masalan, go‘sht, kartoshka, sabzavotlar va ziravorlar)
-* **Natija**: Tayyor taom
+- **Funksiya nomi**: Oshpazlik (taomni tayyorlash)
+- **Argumentlar (kirish qiymatlari)**: Masalliqlar (masalan, go‘sht, kartoshka, sabzavotlar va ziravorlar)
+- **Natija**: Tayyor taom
 
 Kodni shunday yozsak bo'ladi:
 
 ```javascript
 function taomTayyorlash(go_sht, kartoshka, sabzavot) {
-  console.log("Tayyorlanmoqda: " + go_sht + " va " + kartoshka + " bilan " + sabzavot);
+  console.log(
+    "Tayyorlanmoqda: " + go_sht + " va " + kartoshka + " bilan " + sabzavot,
+  );
   return "Tayyor taom";
 }
 
@@ -88,24 +91,24 @@ Funksiya nomlarini yozishda quyidagi case uslublari ishlatiladi:
 
 #### 1. **camelCase** (JavaScript, TypeScript, Python):
 
-* Bu case uslubida birinchi so‘z kichik harfda, keyingi so‘zlar esa katta harf bilan boshlanadi. Eng ko‘p ishlatiladigan uslub.
-* Funksiyalarga nom berishda **camelCase** tavsiya qilinadi.
-* Masalan: `calculateTotal`, `getUserInfo`, `updateProfile`.
+- Bu case uslubida birinchi so‘z kichik harfda, keyingi so‘zlar esa katta harf bilan boshlanadi. Eng ko‘p ishlatiladigan uslub.
+- Funksiyalarga nom berishda **camelCase** tavsiya qilinadi.
+- Masalan: `calculateTotal`, `getUserInfo`, `updateProfile`.
 
 #### 2. **PascalCase** (C#, .NET kabi tillarda keng tarqalgan):
 
-* Bu uslubda har bir so‘z katta harf bilan boshlanadi, shuningdek, sinf nomlarini yozishda ko‘p ishlatiladi.
-* Masalan: `CalculateSum`, `SendData`.
+- Bu uslubda har bir so‘z katta harf bilan boshlanadi, shuningdek, sinf nomlarini yozishda ko‘p ishlatiladi.
+- Masalan: `CalculateSum`, `SendData`.
 
 #### 3. **snake_case** (Python va ba'zi boshqa tillarda):
 
-* So‘zlar orasida pastki chiziq (`_`) ishlatiladi, va barcha harflar kichik bo‘ladi.
-* Masalan: `calculate_total`, `get_user_info`.
+- So‘zlar orasida pastki chiziq (`_`) ishlatiladi, va barcha harflar kichik bo‘ladi.
+- Masalan: `calculate_total`, `get_user_info`.
 
 #### 4. **kebab-case** (HTML yoki URLda keng tarqalgan):
 
-* So‘zlar orasiga chiziqcha (`-`) qo‘yiladi, bu case funksiyalar uchun emas, odatda CSS uslublarini nomlashda yoki fayl nomlarida ishlatiladi.
-* Masalan: `calculate-total`, `send-email`.
+- So‘zlar orasiga chiziqcha (`-`) qo‘yiladi, bu case funksiyalar uchun emas, odatda CSS uslublarini nomlashda yoki fayl nomlarida ishlatiladi.
+- Masalan: `calculate-total`, `send-email`.
 
 ### Funksiya nomlash uslubiga misol:
 
@@ -117,7 +120,7 @@ function getUserData() {
 }
 
 function calculateDiscount(price, discount) {
-  return price - (price * discount / 100);
+  return price - (price * discount) / 100;
 }
 
 function sendNotification(message) {

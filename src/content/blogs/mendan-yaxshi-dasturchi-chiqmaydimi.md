@@ -14,17 +14,18 @@ type: blog
 postType: full
 episode: 17
 ---
+
 ### Mendan yaxshi dasturchi chiqmaydimi ?
 
 Nega ana ular mendan tez o'rganishadi, men esa...?
 
-kabi savollarni ko'p kuzatamiz. 
-Aslida bu savollar to'g'rimi ? 
+kabi savollarni ko'p kuzatamiz.
+Aslida bu savollar to'g'rimi ?
 Ularga javobni qanday bilsak bo'ladi ?
 
 #### **Javobim:**
 
-**Dasturlash bo'yicha aytadigan bo'lsa. Insonlarni uch turga bo'lishimiz mumkin.** 
+**Dasturlash bo'yicha aytadigan bo'lsa. Insonlarni uch turga bo'lishimiz mumkin.**
 
 1. Alloh bergan iqtidor, qobiliyat egalari.
    Bular dasturlashni juda oson va tez o'rgana olishadi va katta natijalarga erisha olishadi. Qo’shimchasiga til, matematika va hokazo ilmlari bo’lsa, unda🔥.
@@ -33,17 +34,17 @@ Ularga javobni qanday bilsak bo'ladi ?
 3. Oddiy, iqtidorsiz va ilmsiz insonlar.
    Bular na til bilishadi, na matematika va na iqtidorlari bor. Bularda dasturlashni o'rganish ancha qiyin. Ammo, uddalasa bo'ladi.
 
- **Endi siz bulardan qaysi biriga kirishingizni aniqlang va o'qishni davom eting.**
+**Endi siz bulardan qaysi biriga kirishingizni aniqlang va o'qishni davom eting.**
 
-1. **Agar siz birinchi toifaga kirsangiz.** 
+1. **Agar siz birinchi toifaga kirsangiz.**
    Harakatdan to'xtab qolmang. O’zingizga ortiqcha ishonib yubormang.
    Qo’shimcha ilmlarni bilmasangiz, ularni ham qo’shing.
-2. **Agar siz ikkinchi toifaga kirsangiz.** 
+2. **Agar siz ikkinchi toifaga kirsangiz.**
    Qo'lingizdagi qurollar bilan 2 barobar ko'proq harakat qilsangiz, iqtidorli va qo’shimcha qurolli insonlardan kam joyingiz qolmaydi. :)
    Bir barobar harakat qilsangiz, albatta ulardan qolib ketishingiz mumkin.
-3. **Agar siz uchinchi toifaga kirsangiz.** 
+3. **Agar siz uchinchi toifaga kirsangiz.**
    Kayfiyatni tushurmang. Yon-atrofingizdagi odamlar sizdan juda ham tez o'tib ketishiga siqilmang. Ularni ba'zilari iqtidorli, ba'zilarini esa qo'lida qurollari mavjud. Siz esa bularga qarshi o'zingizga nisbatan 3-4 barobar ko'proq harakat va izlanish qilishingiz kerak. Ko'proq harakat qilsangiz, inshaaAlloh siz xatto ulardan ham o'tib ketishingiz mumkin. Yoki yana bir narsa, o’zingizda boshqa kasbga qobiliyatingiz va xohishingiz bo’lsa, yo’lni qayta boshlashdan cho’chimang. Yaxshi reja orqali, boshqasiga sakrashga qiynalmaysiz Xudo xohlasa.
-4. Shuni unutmaslik kerakki, barchasi Allohdan. Biror narsa uchun qancha ko'p sabablarini qilsangiz, Alloh xohlasa shuncha tez unga erishasiz. 
+4. Shuni unutmaslik kerakki, barchasi Allohdan. Biror narsa uchun qancha ko'p sabablarini qilsangiz, Alloh xohlasa shuncha tez unga erishasiz.
    Alloh ba’zilarga nimadirni berib sinasa, ba’zilardan olib sinaydi. Bir ne’matdan sinov kelsa, boshqa son-sanoqsiz ne’matlarga noshukr bo’lmang. **“Nega menda o’xshamaydi?!**” deyavermang.
    Hammasiga **Alhamdulillah** deng, xatolaringiz ustida ishlang, to’g’ri reja qiling va yo’lda davom eting.
 

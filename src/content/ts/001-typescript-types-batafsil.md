@@ -14,6 +14,7 @@ type: typescript
 postType: full
 episode: 1
 ---
+
 ## TypeScriptda typelar (types) — bu qiymatlarning qanday turdagi bo‘lishini oldindan belgilash imkonini beruvchi xususiyatdir. JavaScriptda qiymatlar dinamik turlarga ega, ya'ni bir o‘zgaruvchi bir vaqtda raqam bo‘lsa, keyingi vaqtda qator bo‘lishi mumkin. TypeScript esa, qiymatlarning aniq turlarini belgilash orqali bunday noaniqliklarni oldini oladi.
 
 ![khodieff.uz](https://miro.medium.com/v2/resize:fit:1400/1*tMSUrnvbQogNRk3rRk0bog.jpeg "khodieff.uz")
@@ -27,13 +28,15 @@ episode: 1
    let age: number = 25;
    let pi: number = 3.14;
    ```
+
 2. **Matn (String)**:
    Matnli qiymatlar uchun ishlatiladi. "String"lar esa qo‘shtirnoq yoki bitta tirnoq ichida yoziladi.
 
    ```typescript
    let name: string = "John";
-   let greeting: string = 'Hello, world!';
+   let greeting: string = "Hello, world!";
    ```
+
 3. **Mantiqiy (Boolean)**:
    Faqat `true` yoki `false` qiymatlarini qabul qiladigan tip.
 
@@ -41,6 +44,7 @@ episode: 1
    let isStudent: boolean = true;
    let hasJob: boolean = false;
    ```
+
 4. **Array**:
    Bir xil turdagi qiymatlarni saqlash uchun ishlatiladi. Arraylarni ikki usulda belgilash mumkin.
 
@@ -48,12 +52,14 @@ episode: 1
    let numbers: number[] = [1, 2, 3, 4];
    let strings: Array<string> = ["one", "two", "three"];
    ```
+
 5. **Tuples**:
    Har xil turdagi qiymatlarni aniq tartibda saqlash uchun ishlatiladi.
 
    ```typescript
    let person: [string, number] = ["John", 25];
    ```
+
 6. **Enum (Enumlar)**:
    Belgilangan nomli doimiy qiymatlarning to‘plamini yaratish imkonini beradi.
 
@@ -61,10 +67,11 @@ episode: 1
    enum Color {
      Red,
      Green,
-     Blue
+     Blue,
    }
    let c: Color = Color.Green;
    ```
+
 7. **Any (Lyubboy)**:
    Har qanday turdagi qiymatni saqlash uchun ishlatiladi. Bu tip TypeScriptning statik tiplaridan vaqtincha qochish uchun ishlatilishi mumkin agar faqat any ishlatsangiz siz JavaScriptda yoza qoling 😅.
 
@@ -73,6 +80,7 @@ episode: 1
    randomValue = "Hello";
    randomValue = true;
    ```
+
 8. **Void**:
    Qaytish qiymatiga ega bo‘lmagan funksiyalar uchun ishlatiladi.
 
@@ -81,6 +89,7 @@ episode: 1
      console.log(message);
    }
    ```
+
 9. **Null va Undefined**:
    `null` — qiymat mavjud emasligini bildiradi, `undefined` esa o‘zgaruvchi qiymati hali belgilangan emasligini bildiradi.
 
@@ -88,6 +97,7 @@ episode: 1
    let n: null = null;
    let u: undefined = undefined;
    ```
+
 10. **Never** :
     Hech qachon qiymat qaytarmaydigan funksiyalar uchun ishlatiladi, masalan, doimo xato , kasha qiladigan yoki hech qachon tugamaydigan funksiyalar.
 
@@ -127,6 +137,7 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
     id = 101;
     id = "E102";
     ```
+
 12. **Intersection Types (Kesishma turlar)**:
     Intersection turlar bir nechta turdagi xususiyatlarni bir o‘zgaruvchiga birlashtiradi. Bu, ayniqsa, bir nechta interfeyslarni birlashtirishda foydali.
 
@@ -139,17 +150,19 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
     }
     let emp: Person & Employee = {
       name: "John",
-      employeeId: 101
+      employeeId: 101,
     };
     ```
+
 13. **Literal Types (Literal turlar)**:
     Literal turlar o‘zgaruvchi faqat aniq bir qiymatga ega bo‘lishini bildiradi. Bu qoida bilan ishlashni aniqlashda yoki qiymatlarni cheklashda yordam beradi.
 
     ```typescript
     let direction: "left" | "right";
-    direction = "left";  // To'g'ri
-    direction = "up";    // Xato
+    direction = "left"; // To'g'ri
+    direction = "up"; // Xato
     ```
+
 14. **Type Aliases (Tip aliase)**:
     Type alias yordamida murakkab turlarni qulay nomlar bilan belgilab qo‘yish mumkin. Bu kodni o‘qilishi oson va qayta foydalanish imkonini beradi.
 
@@ -159,6 +172,7 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
     sample = 101;
     sample = "Hello";
     ```
+
 15. **Interface (Interfeys)**:
     Interfeys tiplari ko‘pincha obyektlarning strukturasini belgilashda ishlatiladi. Ular yordamida obyektlarning qanday xususiyatlarga ega bo‘lishi kerakligini belgilashingiz mumkin.
 
@@ -171,20 +185,21 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
     let myCar: Car = {
       brand: "Toyota",
       model: "Corolla",
-      year: 2020
+      year: 2020,
     };
     ```
+
 16. **Class (Klasslar)**:
     TypeScriptda klasslar obyektga yo'naltirilgan dasturlashda ishlatiladi. Ular yordamida obyektlar va ularning xatti-harakatlarini belgilashingiz mumkin.
 
     ```typescript
     class Animal {
       name: string;
-      
+
       constructor(name: string) {
         this.name = name;
       }
-      
+
       speak(): void {
         console.log(`${this.name} is making a noise.`);
       }
@@ -193,6 +208,7 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
     let dog = new Animal("Dog");
     dog.speak();
     ```
+
 17. **Generic Types (Umumiy turlar)**:
     Generic turlar TypeScriptda qayta foydalaniladigan komponentlar yaratishda ishlatiladi. Bu turlar aniq bir turga bog‘liq bo‘lmasdan umumiy kod yozishga imkon beradi.
 
@@ -204,20 +220,22 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
     let output1 = identity<string>("Hello");
     let output2 = identity<number>(123);
     ```
+
 18. **Optional and Readonly Properties (Majburiy emas va faqat o‘qiladigan xususiyatlar)**:
     Interfeys yoki tiplarda xususiyatlar majburiy emas qilib belgilanishi yoki faqat o‘qiladigan qilib o‘rnatilishi mumkin.
 
     ```typescript
     interface Point {
       x: number;
-      y?: number;    // Optional
-      readonly z: number;  // Readonly
+      y?: number; // Optional
+      readonly z: number; // Readonly
     }
 
     let point: Point = { x: 10, z: 20 };
     point.y = 15;
-    point.z = 30;  // Xato: faqat o'qish mumkin
+    point.z = 30; // Xato: faqat o'qish mumkin
     ```
+
 19. **Mapped Types (Xaritalangan turlar)**:
     Xaritalangan turlar boshqa tip asosida yangi tiplarni yaratish imkonini beradi.
 
@@ -233,10 +251,11 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
 
     let todo: Readonly<Todo> = {
       title: "Learn TypeScript",
-      description: "Read the TypeScript handbook"
+      description: "Read the TypeScript handbook",
     };
-    todo.title = "New Title";  // Xato: faqat o'qish mumkin
+    todo.title = "New Title"; // Xato: faqat o'qish mumkin
     ```
+
 20. **Type Assertions (Tipni aniqlash)**:
     Ba'zida siz TypeScript kompilatoriga ma'lum bir o‘zgaruvchining aniq bir turga ega ekanligini aytmoqchisiz. Buni tip aniqlash orqali amalga oshirish mumkin.
 
@@ -244,6 +263,7 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
     let someValue: any = "this is a string";
     let strLength: number = (someValue as string).length;
     ```
+
 21. **Function Types (Funksiya typelari)**:
     TypeScriptda funksiya turlarini ham aniq belgilash mumkin. Bu orqali funksiya qanday parametrlarni qabul qilishi va qanday qiymatni qaytarishi kerakligini ko‘rsatadi.
 
@@ -252,7 +272,7 @@ Bu yerda `a` va `b` raqamli tipga ega, shuningdek, funksiya number qiymat qaytar
     myFunc = (x, y) => x + y;
     ```
 
-Bu turdagi turlar TypeScriptda kod yozishni qulaylashtiradi va xatoliklardan himoyalaydi. 
+Bu turdagi turlar TypeScriptda kod yozishni qulaylashtiradi va xatoliklardan himoyalaydi.
 
 TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapirdik, endi esa qo‘shimcha va murakkab tiplar haqida tushuntiraman.
 
@@ -266,6 +286,7 @@ TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapi
     id = 101;
     id = "E102";
     ```
+
 12. **Intersection Types (Kesishma turlar)**:
     Intersection turlar bir nechta turdagi xususiyatlarni bir o‘zgaruvchiga birlashtiradi. Bu, ayniqsa, bir nechta interfeyslarni birlashtirishda foydali.
 
@@ -278,17 +299,19 @@ TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapi
     }
     let emp: Person & Employee = {
       name: "John",
-      employeeId: 101
+      employeeId: 101,
     };
     ```
+
 13. **Literal Types (Literal turlar)**:
     Literal turlar o‘zgaruvchi faqat aniq bir qiymatga ega bo‘lishini bildiradi. Bu qoida bilan ishlashni aniqlashda yoki qiymatlarni cheklashda yordam beradi.
 
     ```typescript
     let direction: "left" | "right";
-    direction = "left";  // To'g'ri
-    direction = "up";    // Xato
+    direction = "left"; // To'g'ri
+    direction = "up"; // Xato
     ```
+
 14. **Type Aliases (Tip aliase)**:
     Type alias yordamida murakkab turlarni qulay nomlar bilan belgilab qo‘yish mumkin. Bu kodni o‘qilishi oson va qayta foydalanish imkonini beradi.
 
@@ -298,6 +321,7 @@ TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapi
     sample = 101;
     sample = "Hello";
     ```
+
 15. **Interface (Interfeys)**:
     Interfeys tiplari ko‘pincha obyektlarning strukturasini belgilashda ishlatiladi. Ular yordamida obyektlarning qanday xususiyatlarga ega bo‘lishi kerakligini belgilashingiz mumkin.
 
@@ -310,20 +334,21 @@ TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapi
     let myCar: Car = {
       brand: "Toyota",
       model: "Corolla",
-      year: 2020
+      year: 2020,
     };
     ```
+
 16. **Class (Klasslar)**:
     TypeScriptda klasslar obyektga yo'naltirilgan dasturlashda ishlatiladi. Ular yordamida obyektlar va ularning xatti-harakatlarini belgilashingiz mumkin.
 
     ```typescript
     class Animal {
       name: string;
-      
+
       constructor(name: string) {
         this.name = name;
       }
-      
+
       speak(): void {
         console.log(`${this.name} is making a noise.`);
       }
@@ -332,6 +357,7 @@ TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapi
     let dog = new Animal("Dog");
     dog.speak();
     ```
+
 17. **Generic Types (Umumiy turlar)**:
     Generic turlar TypeScriptda qayta foydalaniladigan komponentlar yaratishda ishlatiladi. Bu turlar aniq bir turga bog‘liq bo‘lmasdan umumiy kod yozishga imkon beradi.
 
@@ -343,20 +369,22 @@ TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapi
     let output1 = identity<string>("Hello");
     let output2 = identity<number>(123);
     ```
+
 18. **Optional and Readonly Properties (Majburiy emas va faqat o‘qiladigan xususiyatlar)**:
     Interfeys yoki tiplarda xususiyatlar majburiy emas qilib belgilanishi yoki faqat o‘qiladigan qilib o‘rnatilishi mumkin.
 
     ```typescript
     interface Point {
       x: number;
-      y?: number;    // Optional
-      readonly z: number;  // Readonly
+      y?: number; // Optional
+      readonly z: number; // Readonly
     }
 
     let point: Point = { x: 10, z: 20 };
     point.y = 15;
-    point.z = 30;  // Xato: faqat o'qish mumkin
+    point.z = 30; // Xato: faqat o'qish mumkin
     ```
+
 19. **Mapped Types (Xaritalangan turlar)**:
     Xaritalangan turlar boshqa tip asosida yangi tiplarni yaratish imkonini beradi.
 
@@ -372,10 +400,11 @@ TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapi
 
     let todo: Readonly<Todo> = {
       title: "Learn TypeScript",
-      description: "Read the TypeScript handbook"
+      description: "Read the TypeScript handbook",
     };
-    todo.title = "New Title";  // Xato: faqat o'qish mumkin
+    todo.title = "New Title"; // Xato: faqat o'qish mumkin
     ```
+
 20. **Type Assertions (Tipni aniqlash)**:
     Ba'zida siz TypeScript kompilatoriga ma'lum bir o‘zgaruvchining aniq bir turga ega ekanligini aytmoqchisiz. Buni tip aniqlash orqali amalga oshirish mumkin.
 
@@ -383,6 +412,7 @@ TypeScriptda ko‘plab turdagi tiplar mavjud. Yuqorida asosiy tiplar haqida gapi
     let someValue: any = "this is a string";
     let strLength: number = (someValue as string).length;
     ```
+
 21. **Function Types (Funksiya tiplari)**:
     TypeScriptda funksiya turlarini ham aniq belgilash mumkin. Bu orqali funksiya qanday parametrlarni qabul qilishi va qanday qiymatni qaytarishi kerakligini ko‘rsatadi.
 
