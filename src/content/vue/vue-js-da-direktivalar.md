@@ -1,5 +1,5 @@
 ---
-title: Vue.js da Direktivalar
+title: 011. Vue.js da Direktivalar
 pubDate: 09 Nov 2024
 cover: /3.webp
 id: 11
