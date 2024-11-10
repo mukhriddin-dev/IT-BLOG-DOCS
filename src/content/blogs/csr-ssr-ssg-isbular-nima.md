@@ -1,5 +1,5 @@
 ---
-title: CSR , SSR , SSG , isbular nima ?
+title: CSR , SSR , SSG va ISR haqida
 pubDate: 10 Nov 2024
 cover: https://media2.dev.to/dynamic/image/width=1080,height=1080,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fiyjj6r3zjo2dm7ilyeub.jpg
 id: 5
