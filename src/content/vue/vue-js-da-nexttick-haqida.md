@@ -1,5 +1,5 @@
 ---
-title: Vue.js da nextTick haqida
+title: 015. Vue.js da nextTick haqida
 pubDate: 09 Dec 2024
 cover: https://5f3923a5.mukhridden-dev.pages.dev/3.webp
 id: 14

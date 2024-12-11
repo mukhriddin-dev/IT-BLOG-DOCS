@@ -1,5 +1,5 @@
 ---
-title: 014. Vue.js da custom diretivalar bilan qanday ishlaymiz ?
+title: 016. Vue.js da custom diretivalar bilan qanday ishlaymiz ?
 pubDate: 11 Dec 2024
 cover: https://5f3923a5.mukhridden-dev.pages.dev/3.webp
 id: 15
