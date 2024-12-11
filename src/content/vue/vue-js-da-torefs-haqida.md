@@ -1,5 +1,5 @@
 ---
-title: Vue.js da toRefs haqida
+title: 014. Vue.js da toRefs haqida
 pubDate: 11 Nov 2024
 cover: https://5f3923a5.mukhridden-dev.pages.dev/3.webp
 id: 13
